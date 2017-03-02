@@ -39,6 +39,16 @@ class Post extends Model
     }
 
     /**
+    * Set the title attribute and automatically the slug
+    *
+    * @param string $value
+    */
+    public function setSubtitleAttribute($value)
+    {
+        $this->attributes['subtitle'] = $value;
+    }
+
+    /**
     * Recursive routine to set a unique slug
     *
     * @param string $title
