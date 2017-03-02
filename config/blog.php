@@ -7,4 +7,7 @@ return [
         'storage' => 'local',
         'webpath' => '/uploads',
     ],
+    'blog.contact_email' => [
+
+    ],
 ];
