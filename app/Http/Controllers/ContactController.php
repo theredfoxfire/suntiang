@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactMeRequest;
 use Mail;
+use App\Mail\ContactMail;
 
 class ContactController extends Controller
 {
@@ -29,11 +30,8 @@ class ContactController extends Controller
         $data = $request->only('name', 'email', 'phone');
         $data['messageLines'] = explode("\n", $request->get('message'));
 
-        Mail::send('emails.contact', $data, function ($message) use ($data) {
-            $message->subject('Blog Contact Form: '.$data['name'])
-            ->to($data['email'])
-            ->replyTo($data['email']);
-        });
+        Mail::to($data['email'])->queue(new ContactMail($data)); // this for queueing sender
+        // Mail::to($data['email'])->send(new ContactMail($data)); // this for manually sender
 
         return back()
             ->withSuccess("Thank you for your message. It has been sent.");
