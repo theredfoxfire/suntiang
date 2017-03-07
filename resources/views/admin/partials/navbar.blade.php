@@ -11,13 +11,13 @@
       <a href="/admin/upload">Uploads</a>
     </li>
     <li @if (Request::is('admin/users*')) class="active" @endif>
-      <a href="{{ route('users.index') }}">Users</a>
+      <a href="{{ route('admin.users.index') }}">Users</a>
     </li>
     <li @if (Request::is('admin/roles*')) class="active" @endif>
-        <a href="{{ route('roles.index') }}">Roles</a>
+        <a href="{{ route('admin.roles.index') }}">Roles</a>
     </li>
     <li @if (Request::is('admin/itemCRUD2*')) class="active" @endif>
-        <a href="{{ route('itemCRUD2.index') }}">Items</a>
+        <a href="{{ route('admin.itemCRUD2.index') }}">Items</a>
     </li>
   @endif
 </ul>
