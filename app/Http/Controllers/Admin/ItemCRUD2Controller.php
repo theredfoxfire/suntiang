@@ -38,7 +38,7 @@ class ItemCRUD2Controller extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
+            'name' => 'required',
             'description' => 'required',
         ]);
 
@@ -82,7 +82,7 @@ class ItemCRUD2Controller extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required',
+            'name' => 'required',
             'description' => 'required',
         ]);
 
