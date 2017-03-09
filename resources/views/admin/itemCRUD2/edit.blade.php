@@ -8,7 +8,7 @@
 	            <h2>Edit New Item</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('itemCRUD2.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('admin.itemCRUD2.index') }}"> Back</a>
 	        </div>
 	    </div>
 	</div>
@@ -22,12 +22,12 @@
 			</ul>
 		</div>
 	@endif
-	{!! Form::model($item, ['method' => 'PATCH','route' => ['itemCRUD2.update', $item->id]]) !!}
+	{!! Form::model($item, ['method' => 'PATCH','route' => ['admin.itemCRUD2.update', $item->id]]) !!}
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Title:</strong>
-                {!! Form::text('title', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
+                {!! Form::text('name', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

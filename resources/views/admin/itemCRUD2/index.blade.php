@@ -29,7 +29,7 @@
 	@foreach ($items as $key => $item)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $item->title }}</td>
+		<td>{{ $item->name }}</td>
 		<td>{{ $item->description }}</td>
 		<td>
 			<a class="btn btn-info" href="{{ route('admin.itemCRUD2.show',$item->id) }}">Show</a>

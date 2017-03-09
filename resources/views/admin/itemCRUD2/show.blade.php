@@ -8,7 +8,7 @@
 	            <h2> Show Item</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('itemCRUD2.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('admin.itemCRUD2.index') }}"> Back</a>
 	        </div>
 	    </div>
 	</div>
@@ -16,7 +16,7 @@
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Title:</strong>
-                {{ $item->title }}
+                {{ $item->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

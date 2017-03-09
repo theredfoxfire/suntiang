@@ -13,6 +13,12 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call('PostTableSeeder');
+        $this->call('ItemTableSeeder');
+        $this->call('PermissionTableSeeder');
+        $this->call('RolesTableSeeder');
+        $this->call('UserTableSeeder');
+        $this->call('RoleUserTableSeeder');
+        $this->call('PermissionRoleTableSeeder');
     }
 
 }

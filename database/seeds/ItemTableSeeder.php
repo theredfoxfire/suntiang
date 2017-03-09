@@ -14,16 +14,19 @@ class ItemTableSeeder extends Seeder
     {
         $permission = [
             [
-                'title' => 'role-list',
-                'description' => 'Display Role Listing',
+                'name' => 'Lorem ipsum dolor sit amet',
+                'description' => 'Morbi blandit, neque eget fermentum tempus,
+                    ante nisi pretium orci, at iaculis justo arcu id nulla.
+                    Duis varius ultrices mollis',
             ],
             [
-                'title' => 'manager',
-                'description' => 'Manager',
+                'name' => 'Consectetur adipiscing elit',
+                'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
             ],
             [
-                'title' => 'supervisor',
-                'description' => 'Supervisor',
+                'name' => 'Fusce nec risus non ligula auctor',
+                'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
+                    neque justo vehicula velit, a elementum eros metus sit amet magna',
             ],
         ];
 

@@ -14,7 +14,6 @@ class RestructurePostTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('subtitle')->after('title');
             $table->renameColumn('content', 'content_raw');
             $table->text('content_html')->after('content');
             $table->string('page_image')->after('content_html');
