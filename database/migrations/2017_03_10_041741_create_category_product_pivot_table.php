@@ -13,7 +13,7 @@ class CreateCategoryProductPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_product_pivot', function () {
+        Schema::create('category_product_pivot', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id')->unsigned()->index();
             $table->integer('product_id')->unsigned()->index();

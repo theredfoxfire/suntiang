@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Item;
+use App\Products;
 
-class ItemTableSeeder extends Seeder
+class ProductsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -43,7 +43,7 @@ class ItemTableSeeder extends Seeder
         ];
 
         foreach ($permission as $key => $value) {
-            Item::create($value);
+            Products::create($value);
         }
     }
 }

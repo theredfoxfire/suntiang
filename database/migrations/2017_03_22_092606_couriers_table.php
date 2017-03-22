@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomProductsTable extends Migration
+class CouriersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateCustomProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('custom_products', function () {
+        Schema::create('couriers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('photo');
+            $table->string('phone');
+            $table->string('email');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateCustomProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('custom_products');
+        Schema::dropIfExists('couriers');
     }
 }
