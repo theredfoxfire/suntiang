@@ -15,7 +15,7 @@ class RolesTableSeeder extends Seeder
         $roles = [
             [
                 'id' => 1,
-                'name' => 'Super User',
+                'name' => 'super-user',
                 'display_name' => 'Super User',
                 'description' => 'Fermentum tempus,
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
@@ -23,13 +23,13 @@ class RolesTableSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'name' => 'User Level 1',
+                'name' => 'user-level-1',
                 'display_name' => 'User Level 1',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
             ],
             [
                 'id' => 3,
-                'name' => 'User Level 2',
+                'name' => 'user-level-2',
                 'display_name' => 'User Level 2',
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',

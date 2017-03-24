@@ -13,10 +13,11 @@ class CreateProductItemsPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_items_pivot', function (Blueprint $table) {
+        Schema::create('product_items_pivots', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id')->unsigned()->index();
             $table->integer('items_id')->unsigned()->index();
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateProductItemsPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_items_pivot');
+        Schema::dropIfExists('product_items_pivots');
     }
 }

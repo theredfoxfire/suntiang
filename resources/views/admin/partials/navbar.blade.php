@@ -16,12 +16,13 @@
     <li @if (Request::is('admin/roles*')) class="active" @endif>
         <a href="{{ route('admin.roles.index') }}">Roles</a>
     </li>
+    @if(Auth::user()->hasRole(['user-level-1', 'super-user']))
     <li @if (Request::is('admin/itemCRUD2*')) class="active" @endif>
         <a href="{{ route('admin.itemCRUD2.index') }}">Items</a>
     </li>
+    @endif
   @endif
 </ul>
-
 <ul class="nav navbar-nav navbar-right">
   @if (Auth::guest())
     <li><a href="/login">Login</a></li>
