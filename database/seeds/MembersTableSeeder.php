@@ -33,7 +33,7 @@ class MembersTableSeeder extends Seeder
                 'id' => 2,
                 'user_id' => 3,
                 'name' => 'Juki Suprime',
-                'email' => 'juki@gmail.com',
+                'email' => 'juki168@gmail.com',
                 'phone' => '6283793839',
                 'bank_account_number' => '03928290202',
                 'bank_account_name' => 'Juki Suprime',

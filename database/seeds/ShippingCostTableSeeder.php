@@ -15,14 +15,17 @@ class ShippingCostTableSeeder extends Seeder
         	[
                 'id' => 1,
         		'name' => 'Cost 1',
+                'fare' => 1000,
         	],
         	[
                 'id' => 2,
         		'name' => 'Cost 2',
+                'fare' => 2000,
         	],
         	[
                 'id' => 3,
         		'name' => 'Cost 3',
+                'fare' => 4000,
         	],
         ];
 

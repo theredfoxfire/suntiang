@@ -13,9 +13,10 @@ class CreateShippingCostTable extends Migration
      */
     public function up()
     {
-        Schema::create('shipping_cost', function (Blueprint $table) {
+        Schema::create('shipping_costs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('fare')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateShippingCostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shipping_cost');
+        Schema::dropIfExists('shipping_costs');
     }
 }

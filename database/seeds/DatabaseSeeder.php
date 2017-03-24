@@ -11,14 +11,34 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
-        $this->call('PostTableSeeder');
+        $this->call('AdditionalProductPivotTableSeeder');
+        $this->call('CartsProductPivotTableSeeder');
+        $this->call('CartsTableSeeder');
+        $this->call('CategoriesTableSeeder');
+        $this->call('CategoryProductPivotTableSeeder');
+        $this->call('CouriersTableSeeder');
+        $this->call('DeliveriesTableSeeder');
+        $this->call('DeliveryTrackingsTableSeeder');
+        $this->call('ItemImagesTableSeeder');
         $this->call('ItemTableSeeder');
-        $this->call('PermissionTableSeeder');
+        $this->call('MembersTableSeeder');
+        $this->call('OrderDetailTableSeeder');
+        $this->call('OrdersTableSeeder');
+        $this->call('PaymentsTableSeeder');
         $this->call('RolesTableSeeder');
+        $this->call('PermissionTableSeeder');
         $this->call('UserTableSeeder');
-        $this->call('RoleUserTableSeeder');
         $this->call('PermissionRoleTableSeeder');
+        $this->call('ProductImagesTableSeeder');
+        $this->call('ProductItemsPivotTableSeeder');
+        $this->call('ProductsTableSeeder');
+        $this->call('ProductTagsPivotTableSeeder');
+        $this->call('PromotionsTableSeeder');
+        $this->call('RoleUserTableSeeder');
+        $this->call('SessionsTableSeeder');
+        $this->call('ShippingCostTableSeeder');
+        $this->call('SlidersTableSeeder');
+        $this->call('PostTableSeeder');
     }
 
 }

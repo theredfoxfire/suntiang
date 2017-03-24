@@ -5,5 +5,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class ShippingCost extends Model
 {
-    public $fillable = ['name'];
+    public $fillable = ['name', 'fare'];
 }

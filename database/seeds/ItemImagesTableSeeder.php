@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\ProductImages;
+use App\ItemImages;
 
 class ItemImagesTableSeeder extends Seeder
 {
