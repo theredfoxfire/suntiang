@@ -39,6 +39,10 @@ class DatabaseSeeder extends Seeder
         $this->call('ShippingCostTableSeeder');
         $this->call('SlidersTableSeeder');
         $this->call('PostTableSeeder');
+        $this->call('PagesTableSeeder');
+        $this->call('PageImagesTableSeeder');
+        $this->call('PageFieldsTableSeeder');
+        $this->call('TagTableSeeder');
     }
 
 }

@@ -37,14 +37,13 @@
 			<a class="btn btn-primary" href="{{ route('admin.roles.edit',$role->id) }}">Edit</a>
 			@endpermission
 			@permission('role-delete')
-			{!! Form::open(['method' => 'DELETE','route' => ['admin.roles.destroy', $role->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-        	{!! Form::close() !!}
-        	@endpermission
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/roles/{{ $role->id }}">Delete</a>
+    	@endpermission
 		</td>
 	</tr>
 	@endforeach
 	</table>
 	{!! $roles->render() !!}
+	@include('admin.partials.deleteConfirm')
 </div>
 @endsection

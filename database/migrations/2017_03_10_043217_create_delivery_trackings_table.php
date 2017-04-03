@@ -21,7 +21,7 @@ class CreateDeliveryTrackingsTable extends Migration
             $table->integer('refference_id')->nullable();
             $table->integer('tracking_status');
             $table->text('current_position');
-            $table->text('additional_note');
+            $table->text('additional_note')->nullable();
             $table->timestamps();
         });
     }

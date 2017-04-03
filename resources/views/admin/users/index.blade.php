@@ -40,13 +40,12 @@
 		<td>
 			<a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
 			<a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-			{!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-        	{!! Form::close() !!}
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/users/{{ $user->id }}">Delete</a>
 		</td>
 	</tr>
 	@endforeach
 	</table>
 	{!! $data->render() !!}
+	@include('admin.partials.deleteConfirm')
 </div>
 @endsection

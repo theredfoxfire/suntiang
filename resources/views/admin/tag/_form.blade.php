@@ -31,26 +31,6 @@
 </div>
 
 <div class="form-group">
-  <label for="page_image" class="col-md-3 control-label">
-    Page Image
-  </label>
-  <div class="col-md-8">
-    <input type="text" class="form-control" name="page_image"
-           id="page_image" value="{{ $page_image }}">
-  </div>
-</div>
-
-<div class="form-group">
-  <label for="layout" class="col-md-3 control-label">
-    Layout
-  </label>
-  <div class="col-md-4">
-    <input type="text" class="form-control" name="layout" id="layout"
-           value="{{ $layout }}">
-  </div>
-</div>
-
-<div class="form-group">
   <label for="reverse_direction" class="col-md-3 control-label">
     Direction
   </label>
