@@ -18,8 +18,8 @@ class CreatePageFieldsTable extends Migration
             $table->integer('page_id');
             $table->string('field_name');
             $table->text('field_content')->nullable();
-            $table->integer('field_order');
-            $table->boolean('is_active');
+            $table->integer('field_order')->nullable();
+            $table->boolean('is_active')->nullable();
             $table->timestamps();
         });
     }

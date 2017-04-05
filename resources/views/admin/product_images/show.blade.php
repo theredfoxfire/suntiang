@@ -8,21 +8,21 @@
 	            <h2> Show Item</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('admin.item.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('admin.product_images.index') }}"> Back</a>
 	        </div>
 	    </div>
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Title:</strong>
-                {{ $item->name }}
+                <strong>Product ID:</strong>
+                {{ $product_images->product_id }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                {{ $item->description }}
+                <strong>Name:</strong>
+                {{ $product_images->name }}
             </div>
         </div>
 	</div>

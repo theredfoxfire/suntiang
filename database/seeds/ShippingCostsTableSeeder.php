@@ -1,8 +1,8 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\ShippingCost;
+use App\ShippingCosts;
 
-class ShippingCostTableSeeder extends Seeder
+class ShippingCostsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -30,7 +30,7 @@ class ShippingCostTableSeeder extends Seeder
         ];
 
         foreach ($permission as $key => $value) {
-        	ShippingCost::create($value);
+        	ShippingCosts::create($value);
         }
     }
 }

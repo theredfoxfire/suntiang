@@ -13,7 +13,7 @@ class PageFieldsCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,23 @@ class PageFieldsCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'page_id' => 'required',
+            'field_name' => 'required',
+            'field_content' => 'required',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'page_id.required' => 'Kolom Page harus diisi.',
+            'field_name.required' => 'Kolom Nama Kolom harus diisi.',
+            'field_content.required' => 'Kolom Konten harus diisi.',
         ];
     }
 }

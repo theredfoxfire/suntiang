@@ -13,7 +13,7 @@ class OrderDetailCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,25 @@ class OrderDetailCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'item_id' => 'required',
+          'order_id' => 'required',
+          'quantity' => 'required',
+          'total_cost' => 'required',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'item_id.required' => 'Kolom Item harus diisi.',
+            'order_id.required' => 'Kolom Order harus diisi.',
+            'quantity.required' => 'Kolom Quantity harus diisi.',
+            'total_cost.required' => 'Kolom Total Cost harus diisi.',
         ];
     }
 }

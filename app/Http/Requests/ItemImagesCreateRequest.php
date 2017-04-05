@@ -13,7 +13,7 @@ class ItemImagesCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class ItemImagesCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'item_id' => 'required',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'Kolom Nama harus diisi.',
+            'item_id.required' => 'Kolom Item harus diisi.',
         ];
     }
 }

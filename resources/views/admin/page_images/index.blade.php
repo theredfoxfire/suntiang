@@ -5,45 +5,41 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Items List</h2>
+	            <h2>List Pages Image</h2>
 	        </div>
 	        <div class="pull-right">
-	        	@permission('item-create')
-	            <a class="btn btn-success" href="{{ route('admin.item.create') }}"> Create New Item</a>
+	        	@permission('page_images-create')
+	            <a class="btn btn-success" href="{{ route('admin.page_images.create') }}"> Create New Page Image</a>
 	            @endpermission
 	        </div>
 	    </div>
 	</div>
-	@if ($message = Session::get('success'))
-		<div class="alert alert-success">
-			<p>{{ $message }}</p>
-		</div>
-	@endif
+	@include('admin.partials.success')
 	<table class="table table-bordered">
 		<tr>
 			<th>No</th>
-			<th>Title</th>
-			<th>Description</th>
+			<th>page_id</th>
+			<th>name</th>
 			<th width="280px">Action</th>
 		</tr>
-	@foreach ($items as $key => $item)
+	@foreach ($page_images as $key => $page_image)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $item->name }}</td>
-		<td>{{ $item->description }}</td>
+		<td>{{ $page_image->page_id }}</td>
+		<td>{{ $page_image->name }}</td>
 		<td>
-			<a class="btn btn-info" href="{{ route('admin.item.show',$item->id) }}">Show</a>
-			@permission('item-edit')
-			<a class="btn btn-primary" href="{{ route('admin.item.edit',$item->id) }}">Edit</a>
+			<a class="btn btn-info" href="{{ route('admin.page_images.show',$page_image->id) }}">Show</a>
+			@permission('page_images-edit')
+			<a class="btn btn-primary" href="{{ route('admin.page_images.edit',$page_image->id) }}">Edit</a>
 			@endpermission
-			@permission('item-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/item/{{ $item->id }}">Delete</a>
+			@permission('page_images-delete')
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/page_images/{{ $page_image->id }}">Delete</a>
     	@endpermission
 		</td>
 	</tr>
 	@endforeach
 	</table>
-	{!! $items->render() !!}
+	{!! $page_images->render() !!}
 	@include('admin.partials.deleteConfirm')
 </div>
 @endsection

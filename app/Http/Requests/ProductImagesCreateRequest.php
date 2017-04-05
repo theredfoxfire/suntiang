@@ -13,7 +13,7 @@ class ProductImagesCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class ProductImagesCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'product_id' => 'required',
+            'name' => 'required',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'product_id.required' => 'Kolom Product harus diisi.',
+            'name.required' => 'Kolom Name harus diisi.',
         ];
     }
 }

@@ -13,18 +13,32 @@ class ProductsUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'day' => 'required',
+            'available_date' => 'required',
+        ];
+    }
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'Kolom Nama harus diisi.',
+            'description.required' => 'Kolom Deskripsi harus diisi.',
+            'price.required' => 'Kolom harga harus diisi.',
+            'day.required' => 'Kolom hari harus diisi.',
+            'available_date.required' => 'Kolom Tanggal Tersedia harus diisi.',
         ];
     }
 }

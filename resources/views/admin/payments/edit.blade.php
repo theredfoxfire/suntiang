@@ -5,35 +5,38 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Edit New Item</h2>
+	            <h2>Payments</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('admin.item.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('admin.payments.index') }}"> Back</a>
 	        </div>
 	    </div>
 	</div>
-	@if (count($errors) > 0)
-		<div class="alert alert-danger">
-			<strong>Whoops!</strong> There were some problems with your input.<br><br>
-			<ul>
-				@foreach ($errors->all() as $error)
-					<li>{{ $error }}</li>
-				@endforeach
-			</ul>
-		</div>
-	@endif
-	{!! Form::model($item, ['method' => 'PATCH','route' => ['admin.item.update', $item->id]]) !!}
+	@include('admin.partials.errors')
+	{!! Form::model($payments, ['method' => 'PATCH','route' => ['admin.payments.update', $payments->id]]) !!}
 	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Title:</strong>
-                {!! Form::text('name', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
-            </div>
-        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
+                <strong>order_id:</strong>
+                {!! Form::text('order_id', null, array('placeholder' => 'order_id','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>amount:</strong>
+                {!! Form::text('amount', null, array('placeholder' => 'amount','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>payment_method:</strong>
+                {!! Form::text('payment_method', null, array('placeholder' => 'payment_method','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>payment_status:</strong>
+                {!! Form::text('payment_status', null, array('placeholder' => 'payment_status','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

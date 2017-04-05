@@ -13,7 +13,7 @@ class PaymentsCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,23 @@ class PaymentsCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'order_id' => 'required',
+            'amount' => 'required',
+            'payment_method' => 'required',
         ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+      return [
+          'order_id.required' => 'Kolom Oreder harus diisi.',
+          'amount.required' => 'Kolom Jumlah harus diisi.',
+          'payment_method.required' => 'Kolom Metode Pembayaran harus diisi.',
+      ];
     }
 }

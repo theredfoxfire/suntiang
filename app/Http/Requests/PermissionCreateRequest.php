@@ -13,7 +13,7 @@ class PermissionCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,24 @@ class PermissionCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|unique:permissions,name',
+            'display_name' => 'required',
+            'description' => 'required',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'Kolom Nama harus diisi.',
+            'name.unique' => 'Nama tersebut sudah digunakan coba dengan Nama lain.',
+            'display_name.required' => 'Kolom Nama Lengkap harus diisi.',
+            'description.required' => 'Kolom Deskripsi harus diisi.',
         ];
     }
 }

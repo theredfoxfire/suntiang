@@ -13,7 +13,7 @@ class OrdersCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,24 @@ class OrdersCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'member_id' => 'required',
+            'delivery_id' => 'required',
+            'payment_id' => 'required',
+            'total_cost' => 'required',
+        ];
+    }
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'member_id.required' => 'Kolom Member harus diisi.',
+            'delivery_id.required' => 'Kolom Delivery harus diisi.',
+            'payment_id.required' => 'Kolom Pembayaran harus diisi.',
+            'total_cost.required' => 'Kolom Total Harga harus diisi.',
         ];
     }
 }

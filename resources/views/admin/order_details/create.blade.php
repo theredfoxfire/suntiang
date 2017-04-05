@@ -5,35 +5,44 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Create New Item</h2>
+	            <h2>Order Detail</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('admin.item.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('admin.order_details.index') }}"> Back</a>
 	        </div>
 	    </div>
 	</div>
-	@if (count($errors) > 0)
-		<div class="alert alert-danger">
-			<strong>Whoops!</strong> There were some problems with your input.<br><br>
-			<ul>
-				@foreach ($errors->all() as $error)
-					<li>{{ $error }}</li>
-				@endforeach
-			</ul>
-		</div>
-	@endif
-	{!! Form::open(array('route' => 'admin.item.store','method'=>'POST')) !!}
+	@include('admin.partials.errors')
+	{!! Form::open(array('route' => 'admin.order_details.store','method'=>'POST')) !!}
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Title:</strong>
-                {!! Form::text('title', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
+                <strong>item_id:</strong>
+                {!! Form::text('item_id', null, array('placeholder' => 'item_id','class' => 'form-control')) !!}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
+                <strong>order_id:</strong>
+                {!! Form::text('order_id', null, array('placeholder' => 'order_id','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>quantity:</strong>
+                {!! Form::text('quantity', null, array('placeholder' => 'quantity','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>total_cost:</strong>
+                {!! Form::text('total_cost', null, array('placeholder' => 'total_cost','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>is_canceled:</strong>
+                {!! Form::text('is_canceled', null, array('placeholder' => 'is_canceled','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

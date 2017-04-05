@@ -8,21 +8,33 @@
 	            <h2> Show Item</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('admin.item.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('admin.orders.index') }}"> Back</a>
 	        </div>
 	    </div>
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Title:</strong>
-                {{ $item->name }}
+                <strong>Member:</strong>
+                {{ $orders->member_id }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                {{ $item->description }}
+                <strong>Delivery:</strong>
+                {{ $orders->delivery_id }}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Pembyaran:</strong>
+                {{ $orders->payment_id }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Total Harga:</strong>
+                {{ $orders->total_cost }}
             </div>
         </div>
 	</div>

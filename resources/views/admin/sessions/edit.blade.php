@@ -5,35 +5,50 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Edit New Item</h2>
+	            <h2>Sessions</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('admin.item.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('admin.sessions.index') }}"> Back</a>
 	        </div>
 	    </div>
 	</div>
-	@if (count($errors) > 0)
-		<div class="alert alert-danger">
-			<strong>Whoops!</strong> There were some problems with your input.<br><br>
-			<ul>
-				@foreach ($errors->all() as $error)
-					<li>{{ $error }}</li>
-				@endforeach
-			</ul>
-		</div>
-	@endif
-	{!! Form::model($item, ['method' => 'PATCH','route' => ['admin.item.update', $item->id]]) !!}
+	@include('admin.partials.errors')
+	{!! Form::model($sessions, ['method' => 'PATCH','route' => ['admin.sessions.update', $sessions->id]]) !!}
 	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Title:</strong>
-                {!! Form::text('name', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
-            </div>
-        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
+                <strong>Session ID:</strong>
+                {!! Form::text('id', null, array('placeholder' => 'Session ID','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>user_id:</strong>
+                {!! Form::text('user_id', null, array('placeholder' => 'user_id','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>ip_address:</strong>
+                {!! Form::text('ip_address', null, array('placeholder' => 'ip_address','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>user_agent:</strong>
+                {!! Form::text('user_agent', null, array('placeholder' => 'user_agent','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong> payload:</strong>
+                {!! Form::text('payload', null, array('placeholder' => ' payload','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong> Last activity:</strong>
+                {!! Form::text('last_activity', null, array('placeholder' => 'last_activity ','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

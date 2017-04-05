@@ -5,45 +5,43 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Items List</h2>
+	            <h2>List Page Fields</h2>
 	        </div>
 	        <div class="pull-right">
-	        	@permission('item-create')
-	            <a class="btn btn-success" href="{{ route('admin.item.create') }}"> Create New Item</a>
+	        	@permission('page_fields-create')
+	            <a class="btn btn-success" href="{{ route('admin.page_fields.create') }}"> Create New Page Fields</a>
 	            @endpermission
 	        </div>
 	    </div>
 	</div>
-	@if ($message = Session::get('success'))
-		<div class="alert alert-success">
-			<p>{{ $message }}</p>
-		</div>
-	@endif
+	@include('admin.partials.success')
 	<table class="table table-bordered">
 		<tr>
 			<th>No</th>
-			<th>Title</th>
-			<th>Description</th>
+			<th>page_id</th>
+			<th>field_name</th>
+			<th>field_content</th>
 			<th width="280px">Action</th>
 		</tr>
-	@foreach ($items as $key => $item)
+	@foreach ($page_fields as $key => $page_field)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $item->name }}</td>
-		<td>{{ $item->description }}</td>
+		<td>{{ $page_field->page_id }}</td>
+		<td>{{ $page_field->field_name }}</td>
+		<td>{{ $page_field->field_content }}</td>
 		<td>
-			<a class="btn btn-info" href="{{ route('admin.item.show',$item->id) }}">Show</a>
-			@permission('item-edit')
-			<a class="btn btn-primary" href="{{ route('admin.item.edit',$item->id) }}">Edit</a>
+			<a class="btn btn-info" href="{{ route('admin.page_fields.show',$page_field->id) }}">Show</a>
+			@permission('page_fields-edit')
+			<a class="btn btn-primary" href="{{ route('admin.page_fields.edit',$page_field->id) }}">Edit</a>
 			@endpermission
-			@permission('item-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/item/{{ $item->id }}">Delete</a>
+			@permission('page_fields-delete')
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/page_fields/{{ $page_field->id }}">Delete</a>
     	@endpermission
 		</td>
 	</tr>
 	@endforeach
 	</table>
-	{!! $items->render() !!}
+	{!! $page_fields->render() !!}
 	@include('admin.partials.deleteConfirm')
 </div>
 @endsection

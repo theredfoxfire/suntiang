@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class SlidersCreateRequest extends FormRequest
 {
-    /**
+  /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class SlidersCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+        ];
+    }
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required' => 'Kolom Nama harus diisi.'
         ];
     }
 }

@@ -13,7 +13,7 @@ class PageImagesCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class PageImagesCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'page_id' => 'required',
+            'name' => 'required',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'page_id.required' => 'Kolom Page harus diisi.',
+            'name.required' => 'Kolom Name harus diisi.',
         ];
     }
 }

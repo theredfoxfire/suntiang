@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
         $this->call('PromotionsTableSeeder');
         $this->call('RoleUserTableSeeder');
         $this->call('SessionsTableSeeder');
-        $this->call('ShippingCostTableSeeder');
+        $this->call('ShippingCostsTableSeeder');
         $this->call('SlidersTableSeeder');
         $this->call('PostTableSeeder');
         $this->call('PagesTableSeeder');
