@@ -14,27 +14,45 @@ class PagesTableSeeder extends Seeder
         $permission = [
         	[
                 'id' => 1,
-        		'name' => 'Contact Us',
+        		'name' => 'About Us',
                 'is_active' => 1,
-                'slug' => 'contact-us',
+                'slug' => 'about-us',
         	],
         	[
                 'id' => 2,
-                'name' => 'How To',
+                'name' => 'FAQ',
                 'is_active' => 1,
-                'slug' => 'how-to',
+                'slug' => 'faq',
         	],
         	[
                 'id' => 3,
-                'name' => 'Privacy & Policy',
+                'name' => 'How To Order',
+                'is_active' => 1,
+                'slug' => 'how-to-order',
+            ],
+            [
+                'id' => 4,
+                'name' => 'Contact Us',
+                'is_active' => 1,
+                'slug' => 'contact-us',
+            ],
+            [
+                'id' => 5,
+                'name' => 'Desclaimer',
+                'is_active' => 1,
+                'slug' => 'desclaimer',
+            ],
+            [
+                'id' => 6,
+                'name' => 'Privacy',
+                'is_active' => 1,
+                'slug' => 'privacy',
+            ],
+            [
+                'id' => 7,
+                'name' => 'Term Of Use',
                 'is_active' => 1,
                 'slug' => 'privacy-policy',
-        	],
-        	[
-                'id' => 4,
-                'name' => 'About Us',
-                'is_active' => 1,
-                'slug' => 'about-us',
         	],
         ];
 

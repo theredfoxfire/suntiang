@@ -2,10 +2,9 @@
 
 @section('content')
   <div class="container">
-    <h1>{{ $post->title }}</h1>
-    <h5>{{ $post->published_at->format('M jS Y g:ia') }}</h5>
+    <h1>{{ $item->name }}</h1>
     <hr>
-    {!! nl2br(e($post->content)) !!}
+    {!! nl2br(e($item->description)) !!}
     <hr>
     <button class="btn btn-primary" onclick="history.go(-1)">
       « Back

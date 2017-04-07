@@ -33,7 +33,7 @@
 			<a class="btn btn-primary" href="{{ route('admin.product_images.edit',$product_image->id) }}">Edit</a>
 			@endpermission
 			@permission('product_images-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/product_images/{{ $product_image->id }}">Delete</a>
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/product_images/{{ $product_image->id }}">Delete</a>
         	@endpermission
 		</td>
 	</tr>

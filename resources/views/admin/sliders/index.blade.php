@@ -31,7 +31,7 @@
 			<a class="btn btn-primary" href="{{ route('admin.sliders.edit',$slider->id) }}">Edit</a>
 			@endpermission
 			@permission('sliders-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/sliders/{{ $slider->id }}">Delete</a>
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/sliders/{{ $slider->id }}">Delete</a>
     	@endpermission
 		</td>
 	</tr>

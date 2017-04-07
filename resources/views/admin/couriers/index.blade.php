@@ -37,7 +37,7 @@
 			<a class="btn btn-primary" href="{{ route('admin.couriers.edit',$courier->id) }}">Edit</a>
 			@endpermission
 			@permission('couriers-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/couriers/{{ $courier->id }}">Delete</a>
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/couriers/{{ $courier->id }}">Delete</a>
     	@endpermission
 		</td>
 	</tr>

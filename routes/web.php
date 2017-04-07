@@ -12,11 +12,14 @@
 */
 
 Route::get('/', function () {
-    return redirect('/blog');
+    return redirect('/item');
 });
 
 Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@showPost');
+Route::get('item', 'ItemController@index');
+Route::get('item/{id}', 'ItemController@itemDetail');
+Route::get('page/{id}', 'PageController@pageDetail');
 Route::get('contact', 'ContactController@showForm');
 Route::post('contact', 'ContactController@sendContactInfo');
 
@@ -219,7 +222,7 @@ Route::group([
         'uses'=>'DeliveriesController@destroy',
         'middleware' => ['permission:deliveries-delete']]);
 
-    //DeliveryTrackings routes
+    //Delivery Trackings routes
     Route::get('admin/delivery_trackings', ['as'=>'admin.delivery_trackings.index',
         'uses'=>'DeliveryTrackingsController@index',
         'middleware' => ['permission:delivery_trackings-list|delivery_trackings-create|delivery_trackings-edit|delivery_trackings-delete'],

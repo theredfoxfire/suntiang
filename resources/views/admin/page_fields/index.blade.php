@@ -35,7 +35,7 @@
 			<a class="btn btn-primary" href="{{ route('admin.page_fields.edit',$page_field->id) }}">Edit</a>
 			@endpermission
 			@permission('page_fields-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/page_fields/{{ $page_field->id }}">Delete</a>
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/page_fields/{{ $page_field->id }}">Delete</a>
     	@endpermission
 		</td>
 	</tr>

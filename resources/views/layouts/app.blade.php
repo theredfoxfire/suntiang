@@ -35,7 +35,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ config('blog.prefix_url') }}">
                           {{ config('blog.title') }} ADMIN
                     </a>
                 </div>

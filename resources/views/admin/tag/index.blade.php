@@ -45,7 +45,7 @@
                 @endif
               </td>
               <td>
-                <a href="/admin/tag/{{ $tag->id }}/edit"
+                <a href="{{ config('blog.prefix_url') }}admin/tag/{{ $tag->id }}/edit"
                    class="btn btn-xs btn-info">
                   <i class="fa fa-edit"></i> Edit
                 </a>

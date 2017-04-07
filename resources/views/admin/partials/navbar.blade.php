@@ -18,17 +18,17 @@
             <li class="dropdown-header">News & Media</li>
             @permission('post-list')
             <li @if (Request::is('admin/post*')) class="active-child" @endif>
-              <a href="/admin/post">Posts</a>
+              <a href="{{ config('blog.prefix_url') }}admin/post">Posts</a>
             </li>
             @endpermission
             @permission('tag-list')
             <li @if (Request::is('admin/tag*')) class="active-child" @endif>
-              <a href="/admin/tag">Tags</a>
+              <a href="{{ config('blog.prefix_url') }}admin/tag">Tags</a>
             </li>
             @endpermission
             @permission('upload-list')
             <li @if (Request::is('admin/upload*')) class="active-child" @endif>
-              <a href="/admin/upload">Uploads</a>
+              <a href="{{ config('blog.prefix_url') }}admin/upload">Uploads</a>
             </li>
             @endpermission
         </ul>
@@ -233,7 +233,7 @@
 </ul>
 <ul class="nav navbar-nav navbar-right">
   @if (Auth::guest())
-    <li><a href="/login">Login</a></li>
+    <li><a href="{{ config('blog.prefix_url') }}login">Login</a></li>
   @else
     <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -241,7 +241,7 @@
         <span class="caret"></span>
       </a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="/logout">Logout</a></li>
+        <li><a href="{{ config('blog.prefix_url') }}logout">Logout</a></li>
       </ul>
     </li>
   @endif

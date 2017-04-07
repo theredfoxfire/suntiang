@@ -41,7 +41,7 @@
 			<a class="btn btn-primary" href="{{ route('admin.items.edit',$item->id) }}">Edit</a>
 			@endpermission
 			@permission('items-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/items/{{ $item->id }}">Delete</a>
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/items/{{ $item->id }}">Delete</a>
     	@endpermission
 		</td>
 	</tr>

@@ -39,7 +39,7 @@
 			<a class="btn btn-primary" href="{{ route('admin.categories.edit',$category->id) }}">Edit</a>
 			@endpermission
 			@permission('categories-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/categories/{{ $category->id }}">Delete</a>
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/categories/{{ $category->id }}">Delete</a>
     	@endpermission
 		</td>
 	</tr>

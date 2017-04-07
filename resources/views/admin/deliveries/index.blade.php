@@ -47,7 +47,7 @@
 			<a class="btn btn-primary btn-xs" href="{{ route('admin.deliveries.edit',$delivery->id) }}">Edit</a>
 			@endpermission
 			@permission('deliveries-delete')
-			<a class="btn btn-danger delete-confirm btn-xs" data-toggle="modal" data-target="#modal-delete" data-id="/admin/deliveries/{{ $delivery->id }}">Delete</a>
+			<a class="btn btn-danger delete-confirm btn-xs" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/deliveries/{{ $delivery->id }}">Delete</a>
     	@endpermission
 		</td>
 	</tr>
