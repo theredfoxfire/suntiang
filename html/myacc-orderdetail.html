@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!--[if IE 9]>
+		<script src="js/polyfill.js"></script>
+		<![endif]-->
+		<!--[if gte IE 9]>
+			<style type="text/css">
+			.gradient {
+				filter: none !important;
+			}
+			</style>
+		<![endif]-->
+		<!-- ****** favicons ****** -->
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="icon" sizes="16x16 32x32 64x64" href="images/favicon.ico">
+		<link rel="icon" type="image/png" sizes="196x196" href="images/favicon-192.png">
+		<link rel="icon" type="image/png" sizes="160x160" href="images/favicon-160.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96.png">
+		<link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+		<link rel="apple-touch-icon" href="images/favicon-57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/favicon-114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/favicon-72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="images/favicon-144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="images/favicon-60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/favicon-120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/favicon-76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/favicon-152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+		<meta name="msapplication-TileColor" content="#FFFFFF">
+		<meta name="msapplication-TileImage" content="images/favicon-144.png">
+		<meta name="msapplication-config" content="images/browserconfig.xml">
+		<!-- ****** favicons ****** -->
+		<title>Suntiang - Order Detail</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Damion"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css">
+		<link rel="stylesheet" href="css/lib.min.css"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">		<!-- <script src="http://192.168.1.66:1337/target/target-script-min.js#anonymous"></script> -->
+	</head>
+	<body>
+		<noscript>
+			<div class="alert alert-danger">
+				<span><strong>For full functionality of this site it is necessary to enable JavaScript. </strong> Here are the <a href="http://www.enable-javascript.com/" class="alert-link" target="_blank"> instructions how to enable JavaScript in your web browser</a>.</span>
+			</div>	
+		</noscript>
+		<header itemscope itemtype="https://schema.org/WPHeader">
+			<div class="bg-header">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-2 col-md-2">
+							<a id="logo" class="hidden-xs" href="home.html">
+								<img class="img-responsive" src="images/logo-suntiang.png" alt="">
+							</a>
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<nav class="navbar navbar-default navbar-right" itemscope itemtype="https://schema.org/SiteNavigationElement">
+								<div class="navbar-header">
+									<button id="btn-menu" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+									<a class="navbar-brand visible-xs-inline-block" href="home.html">
+										<img class="img-responsive" src="images/logo-suntiang.png" alt="">
+									</a>
+									<ul class="list-inline nav-mobile text-right visible-xs-inline-block">
+										<li class=""><a href="login.html"><span class="fa fa-sign-in"></span></a></li>
+										<li class="dropdown nav-search">
+											<a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+												<span class="fa fa-search"></span>
+											</a>
+											<div class="dropdown-menu sub-menu">
+												<div class="dropdown-content">
+													<form id="form-searchnav" class="form-horizontal form-default form-search" action="search.html">
+														<div class="input-group input-group-lg">
+															<input type="text" class="form-control" name="search" placeholder="Search for..." aria-label="search">
+															<span class="input-group-btn">
+																<button class="btn btn-default" type="submit"><span class="btn-yellow"><span class="fa fa-search"></span></span></button>
+															</span>
+														</div>
+														<div class="text-help"><span>part of </span>suntiang.com</div>
+													</form>
+												</div>
+											</div>									
+										</li>
+										<li class="cart">
+											<a href="cart.html">
+												<span class="img-wbubble">
+													<span class="icon icon-shopbag"></span>
+													<span class="bubble">9+</span>
+												</span>
+												<span class="hidden">Rp 1.950.000,-</span>
+											</a>
+										</li>
+									</ul>									
+								</div>                   
+								<div class="collapse navbar-collapse" id="main-menu">
+									<ul class="nav navbar-nav">
+										<li class="main-li "><a href="dm-prodlist.html">DAILY MEAL</a></li>
+										<li class="main-li "><a href="catering.html">CATERING</a></li>
+										<li class="main-li "><a href="snackbox.html">SNACK BOX</a></li>
+										<li class=" hidden-xs"><a href="login.html">Login</a></li>																				
+										<li class=""><a href="register.html">Register</a></li>
+										<li class="cart hidden-xs">
+											<a href="cart.html">
+												<span class="img-wbubble">
+													<span class="icon icon-shopbag"></span>
+													<span class="bubble">9+</span>
+												</span>
+												<span>Rp 1.950.000,-</span>
+											</a>
+										</li>
+										<li class="nav-search hidden-xs">
+											<form id="form-searchnav" class="form-horizontal form-default form-search" action="search.html">
+												<div class="input-group input-group-lg">
+													<input type="text" class="form-control" name="search" placeholder="Search for..." aria-label="search">
+													<span class="input-group-btn">
+														<button class="btn btn-default" type="submit"><span class="btn-yellow"><span class="fa fa-search"></span></span></button>
+													</span>
+												</div>
+												<div class="text-help"><span>part of </span>suntiang.com</div>
+											</form>
+										</li>
+										<li class="dropdown nav-search">
+											<a class="dropdown-toggle hidden-xs" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+												<span class="fa fa-search"></span>
+											</a>
+											<div class="dropdown-menu sub-menu">
+												<div class="dropdown-content">
+													<form id="form-searchnav" class="form-horizontal form-default form-search" action="search.html">
+														<div class="input-group input-group-lg">
+															<input type="text" class="form-control" name="search" placeholder="Search for..." aria-label="search">
+															<span class="input-group-btn">
+																<button class="btn btn-default" type="submit"><span class="btn-yellow"><span class="fa fa-search"></span></span></button>
+															</span>
+														</div>
+														<div class="text-help"><span>part of </span>suntiang.com</div>
+													</form>
+												</div>
+											</div>									
+										</li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header> 
+		<section class="page-sidenav page-bottompadd">
+	<div class="bg-body-brushup">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h2 class="text-damion-curved">My Account</h2>
+					<div class="row ">
+						<div class="col-sm-3">
+							<h3 class="text-damion">My Account</h3>
+							<ul class="list-normal list-sidenav">
+								<li><a href="myacc-myprof.html">My Profile</a></li>
+								<li class="active"><a href="myacc-orderhistory.html">Order History</a></li>
+								<li><a href="myacc-trackorder.html">Track Order</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-9">
+							<h3 class="text-damion text-yellow">Order Details</h3>
+                            <table class="table table-default table-green table-orderhead">
+                                <tbody>
+                                    <tr>
+                                        <th>ID Order # 123456789-1234</th>
+                                        <th class="bg-yellow" rowspan="2"><a href="myacc-orderhistory.html"><span class="fa fa-long-arrow-left"></span><br>BACK</a></th>                                       
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="box-padd">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-6">
+                                                <p class="text-label">ID order</p>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <p class="text-data">#123456789-12345</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-6">
+                                                <p class="text-label">Date</p>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <p class="text-data">23 June 2015</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-6">
+                                                <p class="text-label">Status</p>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <p class="text-data">Complete</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-6">
+                                                <p class="text-label">Payment</p>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <p class="text-data">23 June 2015</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-6">
+                                                <p class="text-label">Total</p>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <p class="text-data">Rp. 0.000.000</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-padd">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h5 class="text-darkgrey">Customer Information</h5>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-4">
+                                                <p class="text-label">Name</p>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <p class="text-data"><span class="colon"></span>Jhon</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-4">
+                                                <p class="text-label">Address</p>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <p class="text-data"><span class="colon"></span>Jl. Lorem Ipsun no.15</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-4">
+                                                <p class="text-label">City</p>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <p class="text-data"><span class="colon"></span>Jakarta</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-4">
+                                                <p class="text-label">Province</p>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <p class="text-data"><span class="colon"></span>DKI Jakarta</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-4">
+                                                <p class="text-label">District</p>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <p class="text-data"><span class="colon"></span>Kelapa Gading Barat</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-4">
+                                                <p class="text-label">Zipcode</p>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <p class="text-data"><span class="colon"></span>899089</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-4">
+                                                <p class="text-label">Phone</p>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <p class="text-data"><span class="colon"></span>123456789123</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-4">
+                                                <p class="text-label">Email</p>
+                                            </div>
+                                            <div class="col-xs-8">
+                                                <p class="text-data"><span class="colon"></span>johndoe@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h5 class="text-darkgrey">Delivery Information</h5>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-5">
+                                                <p class="text-label">Delivery Date</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p class="text-data"><span class="colon"></span>23 - 06 - 2015</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-5">
+                                                <p class="text-label">Delivery Time</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p class="text-data"><span class="colon"></span>07:00</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-5">
+                                                <p class="text-label">Name</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p class="text-data"><span class="colon"></span>John</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-5">
+                                                <p class="text-label">Address</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p class="text-data"><span class="colon"></span>Jl. Lorem Ipsun no.15</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-5">
+                                                <p class="text-label">City</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p class="text-data"><span class="colon"></span>Jakarta</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-5">
+                                                <p class="text-label">Province</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p class="text-data"><span class="colon"></span>DKI Jakarta</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-5">
+                                                <p class="text-label">District</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p class="text-data"><span class="colon"></span>Kelapa Gading Barat</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-5">
+                                                <p class="text-label">Phone</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p class="text-data"><span class="colon"></span>123456789123</p>
+                                            </div>
+                                        </div>
+                                        <div class="row text-metadata text-grey">
+                                            <div class="col-xs-5">
+                                                <p class="text-label">Email</p>
+                                            </div>
+                                            <div class="col-xs-7">
+                                                <p class="text-data"><span class="colon"></span>johndoe@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-default table-white table-orderhistdet-whead">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">List Poduct</th>
+                                        <th class="text-center">Price</th>
+                                        <th class="text-center">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="media media-thumb">
+                                                <div class="media-left">
+                                                    <img class="media-object" src="images/prod1.jpg" alt="">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5>SATE 4 musim</h5>
+                                                    <p class="text-grey">ID 12345</p>
+                                                    <p class="text-grey">Add. Sambal Korek</p>
+                                                    <p class="text-grey">Delivery 1 week 4-10 March 2017</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <p>Qty: 1</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p>Rp 119.000</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p>Rp 119.000</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="media media-thumb">
+                                                <div class="media-left">
+                                                    <img class="media-object" src="images/prod2.jpg" alt="">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5>Lidah Sapi</h5>
+                                                    <p class="text-grey">ID 12345</p>
+                                                    <p class="text-grey">Add. Sambal Korek</p>
+                                                    <p class="text-grey">Delivery 1, 4, 8 March 2017</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <p>Qty: 1</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p>Rp 119.000</p>
+                                        </td>
+                                        <td class="text-center">
+                                            <p>Rp 119.000</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+		<footer itemscope itemtype="https://schema.org/WPFooter">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<h3 class="text-damion text-inline">Join Our Cooking Class</h3>
+						<p>Be the next sushi chef!</p>
+						<ul class="list-inline">
+							<li><a target="_blank" href="#"><span class="fa fa-twitter"></span></a></li>
+							<li><a target="_blank" href="#"><span class="fa fa-instagram"></span></a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4">
+						<ul class="list-normal list-twocol clearfix">
+							<li class=""><a href="about.html">About Us</a></li>
+							<li class=""><a href="howtoorder.html">How to Order</a></li>
+							<li class=""><a href="faq.html">FAQ</a></li>
+							<li class=""><a href="payment-conf.html">Payment Confirmation</a></li>
+							<li class=""><a href="promo.html">Promo</a></li>					
+							<li class=""><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4">
+						<form id="form-subscribe" class="form-horizontal form-default" action="#">
+							<div class="form-group">
+								<label for="subscribe" class="control-label col-sm-12">Subscribe Our Newsletter</label>
+								<div class="col-sm-12">
+									<div class="input-group input-group-lg">							
+										<input id="subscribe" type="text" class="form-control" name="email">
+										<span class="input-group-btn">
+											<button class="btn btn-default btn-flareshort" type="submit">SUBMIT</button>
+										</span>
+									</div>
+								</div>										
+							</div>					
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-5">
+							<ul class="list-inline">
+								<li><a href="disclaimer.html">Disclaimer</a></li>
+								<li><a href="privacy.html">Privacy Policy</a></li>
+								<li><a href="tou.html">Terms of Use</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-7 text-right">
+							<p>&copy; 2017 Suntiang Kitchen All Rights Reserved. Developed by <a target="_blank" href="http://www.imajiku.com"><span class="icon logo-imajiku"></span></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+		<script src="js/lib.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

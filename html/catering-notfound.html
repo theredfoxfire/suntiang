@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!--[if IE 9]>
+		<script src="js/polyfill.js"></script>
+		<![endif]-->
+		<!--[if gte IE 9]>
+			<style type="text/css">
+			.gradient {
+				filter: none !important;
+			}
+			</style>
+		<![endif]-->
+		<!-- ****** favicons ****** -->
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="icon" sizes="16x16 32x32 64x64" href="images/favicon.ico">
+		<link rel="icon" type="image/png" sizes="196x196" href="images/favicon-192.png">
+		<link rel="icon" type="image/png" sizes="160x160" href="images/favicon-160.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96.png">
+		<link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+		<link rel="apple-touch-icon" href="images/favicon-57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/favicon-114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/favicon-72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="images/favicon-144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="images/favicon-60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/favicon-120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/favicon-76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/favicon-152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+		<meta name="msapplication-TileColor" content="#FFFFFF">
+		<meta name="msapplication-TileImage" content="images/favicon-144.png">
+		<meta name="msapplication-config" content="images/browserconfig.xml">
+		<!-- ****** favicons ****** -->
+		<title>Suntiang - Catering Not Found</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Damion"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css">
+		<link rel="stylesheet" href="css/lib.min.css"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">		<!-- <script src="http://192.168.1.66:1337/target/target-script-min.js#anonymous"></script> -->
+	</head>
+	<body>
+		<noscript>
+			<div class="alert alert-danger">
+				<span><strong>For full functionality of this site it is necessary to enable JavaScript. </strong> Here are the <a href="http://www.enable-javascript.com/" class="alert-link" target="_blank"> instructions how to enable JavaScript in your web browser</a>.</span>
+			</div>	
+		</noscript>
+		<header itemscope itemtype="https://schema.org/WPHeader">
+			<div class="bg-header">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-2 col-md-2">
+							<a id="logo" class="hidden-xs" href="home.html">
+								<img class="img-responsive" src="images/logo-suntiang.png" alt="">
+							</a>
+						</div>
+						<div class="col-md-10 col-sm-10">
+							<nav class="navbar navbar-default navbar-right" itemscope itemtype="https://schema.org/SiteNavigationElement">
+								<div class="navbar-header">
+									<button id="btn-menu" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+									<a class="navbar-brand visible-xs-inline-block" href="home.html">
+										<img class="img-responsive" src="images/logo-suntiang.png" alt="">
+									</a>
+									<ul class="list-inline nav-mobile text-right visible-xs-inline-block">
+										<li class=""><a href="login.html"><span class="fa fa-sign-in"></span></a></li>
+										<li class="dropdown nav-search">
+											<a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+												<span class="fa fa-search"></span>
+											</a>
+											<div class="dropdown-menu sub-menu">
+												<div class="dropdown-content">
+													<form id="form-searchnav" class="form-horizontal form-default form-search" action="search.html">
+														<div class="input-group input-group-lg">
+															<input type="text" class="form-control" name="search" placeholder="Search for..." aria-label="search">
+															<span class="input-group-btn">
+																<button class="btn btn-default" type="submit"><span class="btn-yellow"><span class="fa fa-search"></span></span></button>
+															</span>
+														</div>
+														<div class="text-help"><span>part of </span>suntiang.com</div>
+													</form>
+												</div>
+											</div>									
+										</li>
+										<li class="cart">
+											<a href="cart.html">
+												<span class="img-wbubble">
+													<span class="icon icon-shopbag"></span>
+													<span class="bubble">9+</span>
+												</span>
+												<span class="hidden">Rp 1.950.000,-</span>
+											</a>
+										</li>
+									</ul>									
+								</div>                   
+								<div class="collapse navbar-collapse" id="main-menu">
+									<ul class="nav navbar-nav">
+										<li class="main-li "><a href="dm-prodlist.html">DAILY MEAL</a></li>
+										<li class="main-li active"><a href="catering.html">CATERING</a></li>
+										<li class="main-li "><a href="snackbox.html">SNACK BOX</a></li>
+										<li class=" hidden-xs"><a href="login.html">Login</a></li>																				
+										<li class=""><a href="register.html">Register</a></li>
+										<li class="cart hidden-xs">
+											<a href="cart.html">
+												<span class="img-wbubble">
+													<span class="icon icon-shopbag"></span>
+													<span class="bubble">9+</span>
+												</span>
+												<span>Rp 1.950.000,-</span>
+											</a>
+										</li>
+										<li class="nav-search hidden-xs">
+											<form id="form-searchnav" class="form-horizontal form-default form-search" action="search.html">
+												<div class="input-group input-group-lg">
+													<input type="text" class="form-control" name="search" placeholder="Search for..." aria-label="search">
+													<span class="input-group-btn">
+														<button class="btn btn-default" type="submit"><span class="btn-yellow"><span class="fa fa-search"></span></span></button>
+													</span>
+												</div>
+												<div class="text-help"><span>part of </span>suntiang.com</div>
+											</form>
+										</li>
+										<li class="dropdown nav-search">
+											<a class="dropdown-toggle hidden-xs" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+												<span class="fa fa-search"></span>
+											</a>
+											<div class="dropdown-menu sub-menu">
+												<div class="dropdown-content">
+													<form id="form-searchnav" class="form-horizontal form-default form-search" action="search.html">
+														<div class="input-group input-group-lg">
+															<input type="text" class="form-control" name="search" placeholder="Search for..." aria-label="search">
+															<span class="input-group-btn">
+																<button class="btn btn-default" type="submit"><span class="btn-yellow"><span class="fa fa-search"></span></span></button>
+															</span>
+														</div>
+														<div class="text-help"><span>part of </span>suntiang.com</div>
+													</form>
+												</div>
+											</div>									
+										</li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header> 
+		<section id="page-catering">
+	<div id="banner">
+		<img class="img-responsive" src="images/banner3.jpg" alt="">
+	</div>
+	<div class="bg-body-brushup">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<ol class="breadcrumb">
+						<li><a href="home.html">Home</a></li>
+						<li class="active">Catering</li>
+					</ol>
+					<h2 class="text-damion-curved">Catering</h2>
+					<p class="text-center">Entertaining is a Way of Life Celebrate Your Life in Style</p>
+					<form id="form-cateringsearch" class="form-horizontal form-default form-label-indented form-inlined center-block" action="#">
+						<div class="row">
+							<div class="col-sm-3">
+								<div class="form-group">
+									<label for="sortby" class="control-label col-sm-12">Number of person</label>
+									<div class="col-sm-12">
+										<select id="sortby" class="selectpicker" name="sortby" data-width="100%" data-style="btn-lg">
+											<option value="1">100 pax</option>
+											<option value="lorem">Lorem</option>
+											<option value="lorem">Ipsum</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="form-group">
+									<label for="category" class="control-label col-sm-12">Type of event</label>
+									<div class="col-sm-12">
+										<select id="category" class="selectpicker" name="category" data-width="100%" data-style="btn-lg">
+											<option value="1">Wedding</option>
+											<option value="lorem">Lorem</option>
+											<option value="lorem">Ipsum</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="form-group">
+									<label for="country" class="control-label col-sm-12">Budget per person</label>
+									<div class="col-sm-12">
+										<select id="country" class="selectpicker" name="country" data-width="100%" data-style="btn-lg">
+											<option value="1">IDR 100,000</option>
+											<option value="lorem">Lorem</option>
+											<option value="lorem">Ipsum</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<button type="submit" class="btn btn-lg btn-flare">SUBMIT <span class="icon icon-servingdome"></span></button>
+							</div>
+						</div>
+					</form>
+                    <p class="text-center text-info">Sorry, there is no menu available. <a href="#">Please contact our marketing team</a> for more information.</p>
+                    <h4 class="text-blackyell">Other available menu</h4>
+					<div class="row multi-columns-row single-slidemob">
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="product">
+								<a href="#"><img class="img-responsive" src="images/catering1.jpg" alt=""></a>
+								<a href="#"><h5 class="oneline-ellipsis">Menu catring 1</h5></a>
+								<p class="text-grey">100 pax</p>
+								<p class="text-green">Now Only <span>Rp 1.549.000</span></p>
+								<a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="product">
+								<a href="#"><img class="img-responsive" src="images/catering2.jpg" alt=""></a>
+								<a href="#"><h5 class="oneline-ellipsis">Menu catring 2</h5></a>
+								<p class="text-grey">100 pax</p>
+								<p class="text-green">Now Only <span>Rp 4.000.000</span></p>
+								<a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="product">
+								<a href="#"><img class="img-responsive" src="images/catering3.jpg" alt=""></a>
+								<a href="#"><h5 class="oneline-ellipsis">Menu catring 3</h5></a>
+								<p class="text-grey">100 pax</p>
+								<p class="text-green">Now Only <span>Rp 1.900.000</span></p>
+								<a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="product">
+								<a href="#"><img class="img-responsive" src="images/catering4.jpg" alt=""></a>
+								<a href="#"><h5 class="oneline-ellipsis">Menu catring 4</h5></a>
+								<p class="text-grey">100 pax</p>
+								<p class="text-green">Now Only <span>Rp 4.000.000</span></p>
+								<a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="product">
+								<a href="#"><img class="img-responsive" src="images/catering1.jpg" alt=""></a>
+								<a href="#"><h5 class="oneline-ellipsis">Menu catring 1</h5></a>
+								<p class="text-grey">100 pax</p>
+								<p class="text-green">Now Only <span>Rp 1.549.000</span></p>
+								<a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="product">
+								<a href="#"><img class="img-responsive" src="images/catering2.jpg" alt=""></a>
+								<a href="#"><h5 class="oneline-ellipsis">Menu catring 2</h5></a>
+								<p class="text-grey">100 pax</p>
+								<p class="text-green">Now Only <span>Rp 4.000.000</span></p>
+								<a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="product">
+								<a href="#"><img class="img-responsive" src="images/catering3.jpg" alt=""></a>
+								<a href="#"><h5 class="oneline-ellipsis">Menu catring 3</h5></a>
+								<p class="text-grey">100 pax</p>
+								<p class="text-green">Now Only <span>Rp 1.900.000</span></p>
+								<a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="product">
+								<a href="#"><img class="img-responsive" src="images/catering4.jpg" alt=""></a>
+								<a href="#"><h5 class="oneline-ellipsis">Menu catring 4</h5></a>
+								<p class="text-grey">100 pax</p>
+								<p class="text-green">Now Only <span>Rp 4.000.000</span></p>
+								<a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+		<footer itemscope itemtype="https://schema.org/WPFooter">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<h3 class="text-damion text-inline">Join Our Cooking Class</h3>
+						<p>Be the next sushi chef!</p>
+						<ul class="list-inline">
+							<li><a target="_blank" href="#"><span class="fa fa-twitter"></span></a></li>
+							<li><a target="_blank" href="#"><span class="fa fa-instagram"></span></a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4">
+						<ul class="list-normal list-twocol clearfix">
+							<li class=""><a href="about.html">About Us</a></li>
+							<li class=""><a href="howtoorder.html">How to Order</a></li>
+							<li class=""><a href="faq.html">FAQ</a></li>
+							<li class=""><a href="payment-conf.html">Payment Confirmation</a></li>
+							<li class=""><a href="promo.html">Promo</a></li>					
+							<li class=""><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4">
+						<form id="form-subscribe" class="form-horizontal form-default" action="#">
+							<div class="form-group">
+								<label for="subscribe" class="control-label col-sm-12">Subscribe Our Newsletter</label>
+								<div class="col-sm-12">
+									<div class="input-group input-group-lg">							
+										<input id="subscribe" type="text" class="form-control" name="email">
+										<span class="input-group-btn">
+											<button class="btn btn-default btn-flareshort" type="submit">SUBMIT</button>
+										</span>
+									</div>
+								</div>										
+							</div>					
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-5">
+							<ul class="list-inline">
+								<li><a href="disclaimer.html">Disclaimer</a></li>
+								<li><a href="privacy.html">Privacy Policy</a></li>
+								<li><a href="tou.html">Terms of Use</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-7 text-right">
+							<p>&copy; 2017 Suntiang Kitchen All Rights Reserved. Developed by <a target="_blank" href="http://www.imajiku.com"><span class="icon logo-imajiku"></span></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+		<script src="js/lib.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,103 +1,79 @@
 @extends('layouts.front')
 
 @section('content')
-    <div class="container">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-         
-            <div class="item active">
-                <img src="{{ asset('uploads/sliders/image-slider.jpg') }}" alt="Life is Jokes!" class="img-responsive" style="margin: 0 auto;">
-                    <div class="carousel-caption">
-                        <h3>Foody!</h3>
-                        <p>Life is eat!</p>
-                    </div>
-            </div>
-
-            <div class="item">
-                <img src="{{ asset('uploads/sliders/image-slider.jpg') }}" alt="Life is Jokes!" class="img-responsive" style="margin: 0 auto;">
-                    <div class="carousel-caption">
-                        <h3>Foody!</h3>
-                        <p>Life is eat!</p>
-                    </div>
-            </div>
-
-            <div class="item">
-                <img src="{{ asset('uploads/sliders/image-slider.jpg') }}" alt="Life is Jokes!" class="img-responsive" style="margin: 0 auto;">
-                    <div class="carousel-caption">
-                        <h3>Foody!</h3>
-                        <p>Life is eat!</p>
-                    </div>
-            </div>
-          </div>
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-    </div>
-    <hr>
-    <form class="form-inline">
-      <div class="form-group">
-        <label for="exampleInputName2">Sort By</label>
-        <select class="form-control">
-          <option>Price Low To Hight</option>
-          <option>Price Hight To Low</option>
-        </select>
-      </div><div class="form-group">
-        <label for="exampleInputName2">Category</label>
-        <select class="form-control">
-          <option>Karbohidrate</option>
-          <option>Sayuran</option>
-        </select>
-      </div><div class="form-group">
-        <label for="exampleInputName2">Negara</label>
-        <select class="form-control">
-          <option>Indonesia</option>
-          <option>Italia</option>
-          <option>Perancis</option>
-        </select>
+<div class="modal fade" id="modal-nopadd" tabindex="-1" role="dialog" aria-labelledby="modalnopadd">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <img class="img-responsive center-block" src="{{ asset('images/popuppromo.jpg') }}" alt="">
       </div>
-      <button type="submit" class="btn btn-default">View All</button>
-    </form>
-    <hr>
-    <h5>Page {{ $items->currentPage() }} of {{ $items->lastPage() }}</h5>
-    <hr>
-    <ul>
-        @php
-            $catID = 0;
-        @endphp
-        @foreach ($items as $item)
-            @if ($catID != $item->catID)
-                <hr><h3>{{ $item->catName }}</h3>
-                @php
-                    $catID = $item->catID;
-                @endphp
-            @endif
-            <li>
-                <a href="{{ config('blog.prefix_url') }}item/{{ $item->id }}">{{ $item->name }}</a>
-                <p>
-                <img src="{{ asset('uploads/items') }}/{{ $item->imgName }}" height="45" width="80">
-                <br>
-                {{ str_limit($item->description) }}
-                </p>
-            </li>
-        @endforeach
-    </ul>
-    <hr>
-{!! $items->render() !!}
+  </div>
 </div>
+</div>
+<section>
+<div class="slider-1slide">
+  <div>
+      <div class="overlay-text">
+          <img class="img-responsive" src="{{ asset('images/home-slide1.jpg') }}" alt="">
+          <a href="dm-prodlist.html" class="btn btn-lg btn-flare overlay">SEE ALL MENU</a>
+      </div>
+  </div>
+  <div>
+      <div class="overlay-text">
+          <img class="img-responsive" src="{{ asset('images/home-slide1.jpg') }}" alt="">
+          <a href="dm-prodlist.html" class="btn btn-lg btn-flare overlay">SEE ALL MENU</a>
+      </div>
+  </div>
+  <div>
+      <div class="overlay-text">
+          <img class="img-responsive" src="{{ asset('images/home-slide1.jpg') }}" alt="">
+          <a href="dm-prodlist.html" class="btn btn-lg btn-flare overlay">SEE ALL MENU</a>
+      </div>
+  </div>
+</div>
+<div class="bg-body-brushup">
+  <div class="bg-dbbrush1">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12">
+                  <div id="howtoorder">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <h2 class="text-damion-curved text-damion-msmlg">Lorem Ipsum</h2>
+                                  <p class="text-center">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit</p>
+                                  <div class="row">
+                                      <div class="col-sm-4">
+                                          <a href="home.html" class="thumb-damion text-center">
+                                              <img class="img-responsive" src="{{ asset('images/icon-trilogreg.png') }}" alt="">
+                                              <h3 class="text-damion">Daily meal</h3>
+                                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                          </a>
+                                      </div>
+                                      <div class="col-sm-4 thumb-damion text-center">
+                                          <a href="catering.html" class="thumb-damion text-center">
+                                              <img class="img-responsive" src="{{ asset('images/icon-trimenulist.png') }}" alt="">
+                                              <h3 class="text-damion">Catering</h3>
+                                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                          </a>
+                                      </div>
+                                      <div class="col-sm-4 thumb-damion text-center">
+                                          <a href="snackbox.html" class="thumb-damion text-center">
+                                              <img class="img-responsive" src="{{ asset('images/icon-triplate.png') }}" alt="">
+                                              <h3 class="text-damion">Snack box</h3>
+                                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</section>
 @endsection
