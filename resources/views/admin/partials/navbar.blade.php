@@ -183,9 +183,11 @@
         <li class="col-sm-3">
           <ul>
             <li class="dropdown-header">Accounts Manager</li>
+            @permission('users-list')
             <li @if (Request::is('admin/users*')) class="active-child" @endif>
               <a href="{{ route('admin.users.index') }}">Users</a>
             </li>
+            @endpermission
             @permission('members-list')
             <li @if (Request::is('admin/members*')) class="active-child" @endif>
                 <a href="{{ route('admin.members.index') }}">List Member</a>

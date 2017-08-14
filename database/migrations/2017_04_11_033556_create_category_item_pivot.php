@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductItemsPivotTable extends Migration
+class CreateCategoryItemPivot extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateProductItemsPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_items_pivots', function (Blueprint $table) {
+        Schema::create('category_item_pivots', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('product_id')->unsigned()->index();
-            $table->integer('items_id')->unsigned()->index();
+            $table->integer('item_id')->unsigned()->index();
+            $table->integer('category_id')->unsigned()->index();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateProductItemsPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_items_pivots');
+        Schema::dropIfExists('category_item_pivots');
     }
 }

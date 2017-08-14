@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@showPost');
-Route::get('item', 'ItemController@index');
+Route::get('item', 'ItemController@index')->name('item.list');
 Route::get('item/{id}', 'ItemController@itemDetail');
 Route::get('page/{id}', 'PageController@pageDetail');
 Route::get('contact', 'ContactController@showForm');
@@ -65,24 +65,68 @@ Route::group([
         'middleware' => ['permission:tag-delete']]);
 
     // Upload Routes
-    Route::get('admin/upload', 'UploadController@index');
-    Route::post('admin/upload/file', 'UploadController@uploadFile');
-    Route::delete('admin/upload/file', 'UploadController@deleteFile');
-    Route::post('admin/upload/folder', 'UploadController@createFolder');
-    Route::delete('admin/upload/folder', 'UploadController@deleteFolder');
+    Route::get('admin/upload', ['as'=>'admin.upload.index',
+        'uses'=>'UploadController@index',
+        'middleware' => ['permission:upload-list|upload-file|upload-folder|upload-deleteFolder|upload-deleteFile'],
+        ]);
+    Route::post('admin/upload/file', ['as'=>'admin.upload.file',
+        'uses'=>'UploadController@uploadFile',
+        'middleware' => ['permission:upload-file']]);
+    Route::post('admin/upload/folder', ['as'=>'admin.upload.folder',
+        'uses'=>'UploadController@createFolder',
+        'middleware' => ['permission:upload-folder']]);
+    Route::delete('admin/upload/folder', ['as'=>'admin.upload.deleteFolder',
+        'uses'=>'UploadController@deleteFolder',
+        'middleware' => ['permission:upload-deleteFolder']]);
+    Route::delete('admin/upload/file', ['as'=>'admin.upload.deleteFile',
+        'uses'=>'UploadController@deleteFile',
+        'middleware' => ['permission:upload-deleteFile']]);
 
     // Posts routes
-    Route::resource('admin/post', 'PostController', ['except' => 'show']);
-    Route::post('admin/post/store', 'PostController@store')->name('admin.post.store');
-    Route::post('admin/post', 'PostController@index')->name('admin.post.index');
-    Route::put('admin/post/update/{id}', 'PostController@update')->name('admin.post.update');
-    Route::delete('admin/post/destroy/{id}', 'PostController@destroy')->name('admin.post.destroy');
+    Route::get('admin/post', ['as'=>'admin.post.index',
+        'uses'=>'PostController@index',
+        'middleware' => ['permission:post-list|post-create|post-edit|post-delete'],
+        ]);
+    Route::get('admin/post/create', ['as'=>'admin.post.create',
+        'uses'=>'PostController@create',
+        'middleware' => ['permission:post-create']]);
+    Route::post('admin/post/create', ['as'=>'admin.post.store',
+        'uses'=>'PostController@store',
+        'middleware' => ['permission:post-create']]);
+    Route::get('admin/post/{id}',['as'=>'admin.post.show',
+        'uses'=>'PostController@show']);
+    Route::get('admin/post/{id}/edit',['as'=>'admin.post.edit',
+        'uses'=>'PostController@edit',
+        'middleware' => ['permission:post-edit']]);
+    Route::put('admin/post/{id}',['as'=>'admin.post.update',
+        'uses'=>'PostController@update',
+        'middleware' => ['permission:post-edit']]);
+    Route::delete('admin/post/{id}',['as'=>'admin.post.destroy',
+        'uses'=>'PostController@destroy',
+        'middleware' => ['permission:post-delete']]);
 
     // Users Routes
-    Route::resource('admin/users','UserController');
-    Route::get('admin/users', 'UserController@index')->name('admin.users.index');
-    Route::get('admin/users/edit', 'UserController@edit')->name('admin.users.edit');
-    Route::delete('admin/users/{id}', 'UserController@destroy')->name('admin.users.delete');
+    Route::get('admin/users', ['as'=>'admin.users.index',
+        'uses'=>'UserController@index',
+        'middleware' => ['permission:users-list|users-create|users-edit|users-delete'],
+        ]);
+    Route::get('admin/users/create', ['as'=>'admin.users.create',
+        'uses'=>'UserController@create',
+        'middleware' => ['permission:users-create']]);
+    Route::post('admin/users/create', ['as'=>'admin.users.store',
+        'uses'=>'UserController@store',
+        'middleware' => ['permission:users-create']]);
+    Route::get('admin/users/{id}',['as'=>'admin.users.show',
+        'uses'=>'UserController@show']);
+    Route::get('admin/users/{id}/edit',['as'=>'admin.users.edit',
+        'uses'=>'UserController@edit',
+        'middleware' => ['permission:users-edit']]);
+    Route::patch('admin/users/{id}',['as'=>'admin.users.update',
+        'uses'=>'UserController@update',
+        'middleware' => ['permission:users-edit']]);
+    Route::delete('admin/users/{id}',['as'=>'admin.users.destroy',
+        'uses'=>'UserController@destroy',
+        'middleware' => ['permission:users-delete']]);
 
     // Roles routes
     Route::get('admin/roles', ['as'=>'admin.roles.index',
@@ -429,7 +473,7 @@ Route::group([
         'uses'=>'PaymentsController@destroy',
         'middleware' => ['permission:payments-delete']]);
 
-    //Payments routes
+    //Permissions routes
     Route::get('admin/permissions', ['as'=>'admin.permissions.index',
         'uses'=>'PermissionController@index',
         'middleware' => ['permission:permissions-list|permissions-create|permissions-edit|permissions-delete'],

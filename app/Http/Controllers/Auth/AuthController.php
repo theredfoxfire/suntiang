@@ -12,9 +12,6 @@ class AuthController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirectAfterLogout = '/login';
-    protected $redirectTo = '/admin/post';
-
     /**
      * Create a new authentication controller instance.
      */
@@ -46,6 +43,6 @@ class AuthController extends Controller
     protected function getLogout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect()->route('item.list');
     }
 }

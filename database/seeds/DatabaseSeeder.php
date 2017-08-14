@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         $this->call('UserTableSeeder');
         $this->call('PermissionRoleTableSeeder');
         $this->call('ProductImagesTableSeeder');
-        $this->call('ProductItemsPivotTableSeeder');
+        $this->call('CategoryItemPivotTableSeeder');
         $this->call('ProductsTableSeeder');
         $this->call('ProductTagsPivotTableSeeder');
         $this->call('PromotionsTableSeeder');

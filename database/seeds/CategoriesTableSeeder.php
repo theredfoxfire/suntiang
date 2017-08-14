@@ -14,7 +14,7 @@ class CategoriesTableSeeder extends Seeder
         $permission = [
         	[
                 'id' => 1,
-        		'name' => 'Cat level 1 a',
+        		'name' => 'Karbohidrate',
                 'slug' => 'Cat-level-1-a',
                 'description' => 'Cat level 1 a',
                 'parent_id' => 0,
@@ -22,7 +22,7 @@ class CategoriesTableSeeder extends Seeder
         	],
             [
                 'id' => 2,
-        		'name' => 'Cat level 1 b',
+        		'name' => 'Ayam',
                 'slug' => 'Cat-level-1-b',
                 'description' => 'Cat level 1 b',
                 'parent_id' => 0,
@@ -30,7 +30,7 @@ class CategoriesTableSeeder extends Seeder
         	],
             [
                 'id' => 3,
-        		'name' => 'Cat level 2 a',
+        		'name' => 'Sayuran',
                 'slug' => 'Cat-level-2-a',
                 'description' => 'Cat level 2 a',
                 'parent_id' => 1,
@@ -38,7 +38,7 @@ class CategoriesTableSeeder extends Seeder
         	],
             [
                 'id' => 4,
-        		'name' => 'Cat level 2 b',
+        		'name' => 'Sapi',
                 'slug' => 'Cat-level-2-b',
                 'description' => 'Cat level 2 b',
                 'parent_id' => 2,
@@ -46,7 +46,7 @@ class CategoriesTableSeeder extends Seeder
         	],
             [
                 'id' => 5,
-        		'name' => 'Cat level 3 a',
+        		'name' => 'Ikan',
                 'slug' => 'Cat-level-3-a',
                 'description' => 'Cat level 3 a',
                 'parent_id' => 3,
@@ -54,7 +54,7 @@ class CategoriesTableSeeder extends Seeder
         	],
             [
                 'id' => 6,
-        		'name' => 'Cat level 3 b',
+        		'name' => 'Condimen',
                 'slug' => 'Cat-level-3-b',
                 'description' => 'Cat level 3 b',
                 'parent_id' => 4,

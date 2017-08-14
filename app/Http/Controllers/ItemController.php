@@ -10,11 +10,9 @@ class ItemController extends Controller
 {
     public function index()
     {
-        $items = Item::where('created_at', '<=', Carbon::now())
-            ->orderBy('available_date', 'desc')
-            ->paginate(config('blog.posts_per_page'));
+        $datas = Item::itemIndex();
 
-        return view('item.index', compact('items'));
+        return view('item.index', $datas);
     }
 
     public function itemDetail($id)

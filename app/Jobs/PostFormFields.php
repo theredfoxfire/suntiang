@@ -33,7 +33,6 @@ class PostFormFields
         'is_draft' => "0",
         'publish_date' => '',
         'publish_time' => '',
-        'layout' => 'blog.layouts.post',
         'tags' => [],
     ];
 

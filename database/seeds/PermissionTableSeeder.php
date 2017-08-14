@@ -542,28 +542,106 @@ class PermissionTableSeeder extends Seeder
         	],
             [
                 'id' => 89,
-        		'name' => 'tag-list',
-        		'display_name' => 'Display tag Listing',
-        		'description' => 'See only Listing Of tag'
-        	],
+                'name' => 'tag-list',
+                'display_name' => 'Display tag Listing',
+                'description' => 'See only Listing Of tag'
+            ],
             [
                 'id' => 90,
-        		'name' => 'tag-create',
-        		'display_name' => 'Create tag',
-        		'description' => 'Create New tag'
-        	],
-        	[
+                'name' => 'tag-create',
+                'display_name' => 'Create tag',
+                'description' => 'Create New tag'
+            ],
+            [
                 'id' => 91,
-        		'name' => 'tag-edit',
-        		'display_name' => 'Edit tag',
-        		'description' => 'Edit tag'
+                'name' => 'tag-edit',
+                'display_name' => 'Edit tag',
+                'description' => 'Edit tag'
+            ],
+            [
+                'id' => 92,
+                'name' => 'tag-delete',
+                'display_name' => 'Delete tag',
+                'description' => 'Delete tag'
+            ],
+            [
+                'id' => 93,
+        		'name' => 'upload-list',
+        		'display_name' => 'Display tag upload-list',
+        		'description' => 'See only upload-list Of tag'
+        	],
+            [
+                'id' => 94,
+        		'name' => 'upload-file',
+        		'display_name' => 'Create upload-file',
+        		'description' => 'Create New upload-file'
         	],
         	[
-                'id' => 92,
-        		'name' => 'tag-delete',
-        		'display_name' => 'Delete tag',
-        		'description' => 'Delete tag'
+                'id' => 95,
+        		'name' => 'upload-folder',
+        		'display_name' => 'create upload-folder',
+        		'description' => 'create upload-folder'
         	],
+        	[
+                'id' => 96,
+                'name' => 'upload-deleteFolder',
+                'display_name' => 'Delete upload-deleteFolder',
+                'description' => 'Delete upload-deleteFolder'
+            ],
+            [
+                'id' => 97,
+        		'name' => 'upload-deleteFile',
+        		'display_name' => 'Delete upload-deleteFile',
+        		'description' => 'Delete upload-deleteFile'
+        	],
+            [
+                'id' => 98,
+                'name' => 'post-list',
+                'display_name' => 'Display post Listing',
+                'description' => 'See only Listing Of post'
+            ],
+            [
+                'id' => 99,
+                'name' => 'post-create',
+                'display_name' => 'Create post',
+                'description' => 'Create New post'
+            ],
+            [
+                'id' => 100,
+                'name' => 'post-edit',
+                'display_name' => 'Edit post',
+                'description' => 'Edit post'
+            ],
+            [
+                'id' => 101,
+                'name' => 'post-delete',
+                'display_name' => 'Delete post',
+                'description' => 'Delete post'
+            ],
+            [
+                'id' => 102,
+                'name' => 'users-list',
+                'display_name' => 'Display users Listing',
+                'description' => 'See only Listing Of users'
+            ],
+            [
+                'id' => 103,
+                'name' => 'users-create',
+                'display_name' => 'Create users',
+                'description' => 'Create New users'
+            ],
+            [
+                'id' => 104,
+                'name' => 'users-edit',
+                'display_name' => 'Edit users',
+                'description' => 'Edit users'
+            ],
+            [
+                'id' => 105,
+                'name' => 'users-delete',
+                'display_name' => 'Delete users',
+                'description' => 'Delete users'
+            ],
         ];
 
         foreach ($permission as $key => $value) {

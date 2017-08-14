@@ -31,7 +31,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/admin">{{ config('blog.title') }} ADMIN</a>
+      <a class="navbar-brand" href="{{ route('admin.post.index') }}">{{ config('blog.title') }} ADMIN</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-menu">
       @include('admin.partials.navbar')
