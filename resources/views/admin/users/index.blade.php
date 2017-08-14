@@ -8,15 +8,11 @@
 	            <h2>Users Management</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
+	            <a class="btn btn-success" href="{{ route('admin.users.create') }}"> Create New User</a>
 	        </div>
 	    </div>
 	</div>
-	@if ($message = Session::get('success'))
-		<div class="alert alert-success">
-			<p>{{ $message }}</p>
-		</div>
-	@endif
+	@include('admin.partials.success')
 	<table class="table table-bordered">
 		<tr>
 			<th>No</th>
@@ -38,15 +34,14 @@
 			@endif
 		</td>
 		<td>
-			<a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-			<a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-			{!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-        	{!! Form::close() !!}
+			<a class="btn btn-info" href="{{ route('admin.users.show',$user->id) }}">Show</a>
+			<a class="btn btn-primary" href="{{ route('admin.users.edit',$user->id) }}">Edit</a>
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="/admin/users/{{ $user->id }}">Delete</a>
 		</td>
 	</tr>
 	@endforeach
 	</table>
 	{!! $data->render() !!}
+	@include('admin.partials.deleteConfirm')
 </div>
 @endsection

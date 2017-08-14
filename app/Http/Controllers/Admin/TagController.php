@@ -15,8 +15,6 @@ class TagController extends Controller
         'title' => '',
         'subtitle' => '',
         'meta_description' => '',
-        'page_image' => '',
-        'layout' => 'blog.layouts.index',
         'reverse_direction' => 0,
       ];
     /**
@@ -51,15 +49,11 @@ class TagController extends Controller
      */
     public function store(TagCreateRequest $request)
     {
-
-        $tag = new Tag();
-        foreach (array_keys($this->fields) as $field) {
-            $tag->$field = $request->get($field);
-        }
-        $tag->save();
+        Tag::create($request->all());
+        $tag = $request->get('tag');
 
         return redirect('/admin/tag')
-            ->withSuccess("The tag '$tag->tag' was created.");
+            ->withSuccess("Input data tag '$tag' berhasil.");
     }
 
     /**
@@ -88,15 +82,10 @@ class TagController extends Controller
      */
     public function update(TagUpdateRequest $request, $id)
     {
-        $tag = Tag::findOrFail($id);
-
-        foreach (array_keys(array_except($this->fields, ['tag'])) as $field) {
-            $tag->$field = $request->get($field);
-        }
-        $tag->save();
+        Tag::findOrFail($id)->update($request->all());
 
         return redirect("/admin/tag/$id/edit")
-            ->withSuccess("Changes saved.");
+            ->withSuccess("Update data berhasil.");
     }
 
     /**
@@ -111,6 +100,6 @@ class TagController extends Controller
         $tag->delete();
 
         return redirect('/admin/tag')
-          ->withSuccess("The '$tag->tag' tag has been deleted.");
+          ->withSuccess("Tag '$tag->tag' berhasil dihapus.");
     }
 }

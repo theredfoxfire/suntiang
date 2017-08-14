@@ -18,7 +18,7 @@ class CouriersTable extends Migration
             $table->string('name');
             $table->string('photo');
             $table->string('phone');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }

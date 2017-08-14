@@ -1,10 +1,6 @@
-<html>
-<head>
-  <title>{{ $post->title }}</title>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
-        rel="stylesheet">
-</head>
-<body>
+@extends('layouts.front')
+
+@section('content')
   <div class="container">
     <h1>{{ $post->title }}</h1>
     <h5>{{ $post->published_at->format('M jS Y g:ia') }}</h5>
@@ -15,5 +11,4 @@
       « Back
     </button>
   </div>
-</body>
-</html>
+@endsection

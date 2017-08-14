@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ config('blog.title') }} Admin</title>
+  <title>{{ config('blog.title') }} ADMIN</title>
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+  <link rel="stylesheet" href="{{ asset('css/imajiku-customs.css') }}">
   @yield('styles')
 
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/admin">{{ config('blog.title') }} Admin</a>
+      <a class="navbar-brand" href="{{ route('admin.post.index') }}">{{ config('blog.title') }} ADMIN</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-menu">
       @include('admin.partials.navbar')
@@ -53,6 +53,13 @@
     $("#tags").selectize({
       create: true
     });
+  });
+  $(document).on("click", ".delete-confirm", function () {
+     var itemID = $(this).data("id");
+     $(".modal-footer #deleteForm").attr("action", `${itemID}`);
+  });
+  $(document).on('click', '.mega-dropdown', function(e) {
+    e.stopPropagation()
   });
 </script>
 @yield('scripts')

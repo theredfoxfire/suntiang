@@ -1,34 +1,13 @@
-<html>
-<head>
-  <title>{{ config('blog.title') }}</title>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
-        rel="stylesheet">
-</head>
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed"
-                data-toggle="collapse" data-target="#navbar-menu">
-          <span class="sr-only">Toggle Navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">{{ config('blog.title') }}</a>
-      </div>
-      <div class="collapse navbar-collapse" id="navbar-menu">
-        @include('partials.navbar')
-      </div>
-    </div>
-  </nav>
+@extends('layouts.front')
+
+@section('content')
   <header class="intro-header"
           style="background-image: url('{{ page_image('contact-bg.jpg') }}')">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <div class="site-heading">
-            <h1>Contact Me</h1>
+            <h1>Contact Us</h1>
             <hr class="small">
             <h2 class="subheading">
               Have questions? I have answers (maybe).
@@ -88,8 +67,4 @@
       </div>
     </div>
   </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</body>
-</html>
+@endsection

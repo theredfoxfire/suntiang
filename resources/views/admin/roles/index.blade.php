@@ -14,11 +14,7 @@
 	        </div>
 	    </div>
 	</div>
-	@if ($message = Session::get('success'))
-		<div class="alert alert-success">
-			<p>{{ $message }}</p>
-		</div>
-	@endif
+	@include('admin.partials.success')
 	<table class="table table-bordered">
 		<tr>
 			<th>No</th>
@@ -37,14 +33,13 @@
 			<a class="btn btn-primary" href="{{ route('admin.roles.edit',$role->id) }}">Edit</a>
 			@endpermission
 			@permission('role-delete')
-			{!! Form::open(['method' => 'DELETE','route' => ['admin.roles.destroy', $role->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-        	{!! Form::close() !!}
-        	@endpermission
+			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/roles/{{ $role->id }}">Delete</a>
+    	@endpermission
 		</td>
 	</tr>
 	@endforeach
 	</table>
 	{!! $roles->render() !!}
+	@include('admin.partials.deleteConfirm')
 </div>
 @endsection

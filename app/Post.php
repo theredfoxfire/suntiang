@@ -11,7 +11,7 @@ class Post extends Model
 
     protected $fillable = [
         'title', 'subtitle', 'content_raw', 'page_image', 'meta_description',
-        'layout', 'is_draft', 'published_at',
+        'is_draft', 'published_at',
     ];
 
     /**

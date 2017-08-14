@@ -27,7 +27,23 @@ class TagCreateRequest extends FormRequest
           'tag' => 'required|unique:tags,tag',
           'title' => 'required',
           'subtitle' => 'required',
-          'layout' => 'required',
+          'meta_description' => 'required',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'title.required' => 'Kolom judul harus diisi.',
+            'tag.required'  => 'Kolom tag harus diisi.',
+            'tag.unique' => 'Tag tersebut sudah digunakan.',
+            'subtitle.required' => 'Kolom subtitle harus diisi.',
+            'meta_description.required' => 'Kolom meta description harus diisi.',
         ];
     }
 }

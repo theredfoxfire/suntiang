@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->integer('delivery_id');
             $table->integer('payment_id');
             $table->integer('total_cost');
-            $table->boolean('is_canceled');
+            $table->boolean('is_canceled')->nullable();
             $table->timestamps();
         });
     }

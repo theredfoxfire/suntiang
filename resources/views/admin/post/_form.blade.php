@@ -111,15 +111,6 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="layout" class="col-md-3 control-label">
-        Layout
-      </label>
-      <div class="col-md-8">
-        <input type="text" class="form-control" name="layout"
-               id="layout" value="{{ $layout }}">
-      </div>
-    </div>
-    <div class="form-group">
       <label for="meta_description" class="col-md-3 control-label">
         Meta
       </label>

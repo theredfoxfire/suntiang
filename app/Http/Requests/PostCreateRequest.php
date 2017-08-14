@@ -30,7 +30,6 @@ class PostCreateRequest extends FormRequest
             'content' => 'required',
             'publish_date' => 'required',
             'publish_time' => 'required',
-            'layout' => 'required',
         ];
     }
 
@@ -50,7 +49,6 @@ class PostCreateRequest extends FormRequest
             'meta_description' => $this->meta_description,
             'is_draft' => (bool)$this->is_draft,
             'published_at' => $published_at,
-            'layout' => $this->layout,
         ];
     }
 }

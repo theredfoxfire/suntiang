@@ -8,7 +8,7 @@
       </div>
       <div class="col-md-6 text-right">
         <a href="/admin/tag/create" class="btn btn-success btn-md">
-          <i class="fa fa-plus-circle"></i> New Tag
+          <i class="fa fa-plus-circle"></i> Tambah Tag
         </a>
       </div>
     </div>
@@ -25,9 +25,7 @@
             <th>Tag</th>
             <th>Title</th>
             <th class="hidden-sm">Subtitle</th>
-            <th class="hidden-md">Page Image</th>
             <th class="hidden-md">Meta Description</th>
-            <th class="hidden-md">Layout</th>
             <th class="hidden-sm">Direction</th>
             <th data-sortable="false">Actions</th>
           </tr>
@@ -38,9 +36,7 @@
               <td>{{ $tag->tag }}</td>
               <td>{{ $tag->title }}</td>
               <td class="hidden-sm">{{ $tag->subtitle }}</td>
-              <td class="hidden-md">{{ $tag->page_image }}</td>
               <td class="hidden-md">{{ $tag->meta_description }}</td>
-              <td class="hidden-md">{{ $tag->layout }}</td>
               <td class="hidden-sm">
                 @if ($tag->reverse_direction)
                   Reverse
@@ -49,7 +45,7 @@
                 @endif
               </td>
               <td>
-                <a href="/admin/tag/{{ $tag->id }}/edit"
+                <a href="{{ config('blog.prefix_url') }}admin/tag/{{ $tag->id }}/edit"
                    class="btn btn-xs btn-info">
                   <i class="fa fa-edit"></i> Edit
                 </a>
@@ -61,13 +57,4 @@
       </div>
     </div>
   </div>
-@stop
-
-@section('scripts')
-  <script>
-    $(function() {
-      $("#tags-table").DataTable({
-      });
-    });
-  </script>
 @stop
