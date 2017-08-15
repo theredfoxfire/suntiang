@@ -15,6 +15,41 @@ class ItemController extends Controller
         return view('item.index', $datas);
     }
 
+    public function dailyMeal()
+    {
+        $datas = Item::itemIndex();
+
+        return view('item.dailyMeal', $datas);
+    }
+
+    public function dailyMealDetail($id)
+    {
+        // $item = Item::whereId($id)->firstOrFail();
+
+        return view('item.dailyMealShow');
+    }
+
+    public function catering()
+    {
+        $datas = Item::itemIndex();
+
+        return view('item.catering', $datas);
+    }
+
+    public function snackbox()
+    {
+        $datas = Item::itemIndex();
+
+        return view('item.snackbox', $datas);
+    }
+
+    public function cateringDetail($id)
+    {
+        // $item = Item::whereId($id)->firstOrFail();
+
+        return view('item.cateringShow');
+    }
+
     public function itemDetail($id)
     {
         $item = Item::whereId($id)->firstOrFail();

@@ -59,7 +59,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-2 col-md-2">
-            <a id="logo" class="hidden-xs" href="home.html">
+            <a id="logo" class="hidden-xs" href="{{ route('item.list') }}">
               <img class="img-responsive" src="{{ asset('images/logo-suntiang.png') }}" alt="">
             </a>
           </div>
