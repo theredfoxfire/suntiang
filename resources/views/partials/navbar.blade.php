@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand visible-xs-inline-block" href="home.html">
+        <a class="navbar-brand visible-xs-inline-block" href="{{ route('item.list') }}">
             <img class="img-responsive" src="{{ asset('images/logo-suntiang.png') }}" alt="">
         </a>
         <ul class="list-inline nav-mobile text-right visible-xs-inline-block">
@@ -42,9 +42,9 @@
     </div>
     <div class="collapse navbar-collapse" id="main-menu">
         <ul class="nav navbar-nav">
-            <li class="main-li "><a href="dm-prodlist.html">DAILY MEAL</a></li>
-            <li class="main-li "><a href="catering.html">CATERING</a></li>
-            <li class="main-li "><a href="snackbox.html">SNACK BOX</a></li>
+            <li class="main-li "><a href="{{ route('item.dailyMeal') }}">DAILY MEAL</a></li>
+            <li class="main-li "><a href="{{ route('item.catering') }}">CATERING</a></li>
+            <li class="main-li "><a href="{{ route('item.snackbox') }}">SNACK BOX</a></li>
             <li class=" hidden-xs"><a href="login.html">Login</a></li>
             <li class=""><a href="register.html">Register</a></li>
             <li class="cart hidden-xs">

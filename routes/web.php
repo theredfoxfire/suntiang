@@ -18,7 +18,12 @@ Route::get('/', function () {
 Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@showPost');
 Route::get('item', 'ItemController@index')->name('item.list');
-Route::get('item/{id}', 'ItemController@itemDetail');
+Route::get('item/item-show/{id}', 'ItemController@itemDetail');
+Route::get('item/daily-meal', 'ItemController@dailyMeal')->name('item.dailyMeal');
+Route::get('item/daily-meal-show/{id}', 'ItemController@dailyMealDetail')->name('item.dailyMealShow');
+Route::get('item/catering', 'ItemController@catering')->name('item.catering');
+Route::get('item/catering/{id}', 'ItemController@cateringDetail')->name('item.cateringShow');
+Route::get('item/snackbox', 'ItemController@snackbox')->name('item.snackbox');
 Route::get('page/{id}', 'PageController@pageDetail');
 Route::get('contact', 'ContactController@showForm');
 Route::post('contact', 'ContactController@sendContactInfo');
