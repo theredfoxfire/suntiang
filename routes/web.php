@@ -17,19 +17,41 @@ Route::get('/', function () {
 
 Route::get('blog', 'BlogController@index');
 Route::get('blog/{slug}', 'BlogController@showPost');
+
+//Item
 Route::get('item', 'ItemController@index')->name('item.list');
 Route::get('item/item-show/{id}', 'ItemController@itemDetail');
 Route::get('item/daily-meal', 'ItemController@dailyMeal')->name('item.dailyMeal');
 Route::get('item/daily-meal-show/{id}', 'ItemController@dailyMealDetail')->name('item.dailyMealShow');
 Route::get('item/catering', 'ItemController@catering')->name('item.catering');
-Route::get('item/catering/{id}', 'ItemController@cateringDetail')->name('item.cateringShow');
 Route::get('item/snackbox', 'ItemController@snackbox')->name('item.snackbox');
+Route::get('item/search', 'ItemController@search')->name('item.search');
+Route::get('item/custom', 'ItemController@custom')->name('item.custom');
+
+//Page Static
+Route::get('page/show/{id}', 'PageController@pageDetail')->name('page.show');
+Route::get('page/about', 'PageController@about')->name('page.about');
+Route::get('page/faq', 'PageController@faq')->name('page.faq');
+Route::get('page/promo', 'PageController@promo')->name('page.promo');
+Route::get('page/faq', 'PageController@faq')->name('page.faq');
+Route::get('page/disclaimer', 'PageController@disclaimer')->name('page.disclaimer');
+Route::get('page/privacy', 'PageController@privacy')->name('page.privacy');
+Route::get('page/term-of-use', 'PageController@tou')->name('page.tou');
+Route::get('page/how-to-order', 'PageController@how')->name('page.how');
+Route::get('page/payment-confirmation', 'PageController@payment')->name('page.payment');
 Route::get('page/{id}', 'PageController@pageDetail');
-Route::get('contact', 'ContactController@showForm');
+
+//Shop
+Route::get('cart', 'ShopController@showCart')->name('cart');
+
+//Contact
+Route::get('contact', 'ContactController@showForm')->name('contact');
 Route::post('contact', 'ContactController@sendContactInfo');
 
 // Logging in and out
 Route::get('/login', 'Auth\AuthController@getLogin')->name('login');
+Route::get('/member-login', 'Auth\AuthController@memberLogin')->name('memberLogin');
+Route::get('/member-register', 'Auth\AuthController@memberRegister')->name('memberRegister');
 Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout');
 

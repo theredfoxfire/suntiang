@@ -22,18 +22,14 @@
         <table id="posts-table" class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>Published</th>
-              <th>Title</th>
-              <th>Subtitle</th>
-              <th data-sortable="false">Actions</th>
+              <th class="col-md-4">Title</th>
+              <th class="col-md-6">Subtitle</th>
+              <th class="col-md-2">Actions</th>
             </tr>
           </thead>
           <tbody>
             @foreach ($posts as $post)
               <tr>
-                <td data-order="{{ $post->published_at->timestamp }}">
-                  {{ $post->published_at->format('j-M-y g:ia') }}
-                </td>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->subtitle }}</td>
                 <td>

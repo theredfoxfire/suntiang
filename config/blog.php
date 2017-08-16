@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'CMS 5 ECOMMERCE',
+    'title' => 'SUNTIANG KITCHEN',
     'posts_per_page' => 15,
     'uploads' => [
         'storage' => 'local',

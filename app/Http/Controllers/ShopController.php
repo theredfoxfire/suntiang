@@ -7,16 +7,16 @@ use App\Http\Requests\ContactMeRequest;
 use Mail;
 use App\Mail\ContactMail;
 
-class ContactController extends Controller
+class ShopController extends Controller
 {
     /**
     * Show the form
     *
     * @return View
     */
-    public function showForm()
+    public function showCart()
     {
-        return view('contact.contact');
+        return view('shop.cart');
     }
 
     /**

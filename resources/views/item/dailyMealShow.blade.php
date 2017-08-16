@@ -10,13 +10,13 @@
       <div class="row">
           <div class="col-sm-12">
               <ol class="breadcrumb">
-                  <li><a href="home.html">Home</a></li>
-                  <li><a href="dm-prodlist.html">Daily Meal</a></li>
+                  <li><a href="{{ route('item.list') }}">Home</a></li>
+                  <li><a href="{{ route('item.dailyMeal') }}">Daily Meal</a></li>
                   <li class="active">Beef Enoki Saus Balado</li>
               </ol>
               <nav aria-label="backtomenu">
                   <ul class="pager">
-                      <li class="next"><a href="dm-prodlist.html"><span aria-hidden="true">&larr;</span> Back to Menu</a></li>
+                      <li class="next"><a href="#" onclick="window.history.back();"><span aria-hidden="true">&larr;</span> Back to Menu</a></li>
                   </ul>
               </nav>
               <div class="row">

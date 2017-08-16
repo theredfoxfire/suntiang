@@ -36,6 +36,26 @@ class AuthController extends Controller
     }
 
     /**
+    * MemberLogin action
+    *
+    * @return void
+    */
+    protected function memberLogin()
+    {
+        return view('auth.memberLogin');
+    }
+
+    /**
+    * memberRegister action
+    *
+    * @return void
+    */
+    protected function memberRegister()
+    {
+        return view('auth.memberRegister');
+    }
+
+    /**
     * Logout action
     *
     * @return void

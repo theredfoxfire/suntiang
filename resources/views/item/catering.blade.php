@@ -76,7 +76,7 @@
     <div class="row">
         <div class="col-sm-12">
             <ol class="breadcrumb">
-                <li><a href="home.html">Home</a></li>
+                <li><a href="{{ route('item.list') }}">Home</a></li>
                 <li class="active">Catering</li>
             </ol>
             <h2 class="text-damion-curved text-damion-msmlg">Catering</h2>
@@ -127,74 +127,74 @@
             <div class="row multi-columns-row single-slidemob">
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <div class="product">
-                        <a href="#"><img class="img-responsive" src="{{ asset('images/catering1.jpg') }}" alt=""></a>
-                        <a href="#"><h5 class="oneline-ellipsis">Menu catring 1</h5></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering1.jpg') }}" alt=""></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 1</h5></a>
                         <p class="text-grey">100 pax</p>
                         <p class="text-green">Now Only <span>Rp 1.549.000</span></p>
-                        <a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <div class="product">
-                        <a href="#"><img class="img-responsive" src="{{ asset('images/catering2.jpg') }}" alt=""></a>
-                        <a href="#"><h5 class="oneline-ellipsis">Menu catring 2</h5></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering2.jpg') }}" alt=""></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 2</h5></a>
                         <p class="text-grey">100 pax</p>
                         <p class="text-green">Now Only <span>Rp 4.000.000</span></p>
-                        <a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <div class="product">
-                        <a href="#"><img class="img-responsive" src="{{ asset('images/catering3.jpg') }}" alt=""></a>
-                        <a href="#"><h5 class="oneline-ellipsis">Menu catring 3</h5></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering3.jpg') }}" alt=""></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 3</h5></a>
                         <p class="text-grey">100 pax</p>
                         <p class="text-green">Now Only <span>Rp 1.900.000</span></p>
-                        <a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <div class="product">
-                        <a href="#"><img class="img-responsive" src="{{ asset('images/catering4.jpg') }}" alt=""></a>
-                        <a href="#"><h5 class="oneline-ellipsis">Menu catring 4</h5></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering4.jpg') }}" alt=""></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 4</h5></a>
                         <p class="text-grey">100 pax</p>
                         <p class="text-green">Now Only <span>Rp 4.000.000</span></p>
-                        <a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <div class="product">
-                        <a href="#"><img class="img-responsive" src="{{ asset('images/catering1.jpg') }}" alt=""></a>
-                        <a href="#"><h5 class="oneline-ellipsis">Menu catring 1</h5></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering1.jpg') }}" alt=""></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 1</h5></a>
                         <p class="text-grey">100 pax</p>
                         <p class="text-green">Now Only <span>Rp 1.549.000</span></p>
-                        <a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <div class="product">
-                        <a href="#"><img class="img-responsive" src="{{ asset('images/catering2.jpg') }}" alt=""></a>
-                        <a href="#"><h5 class="oneline-ellipsis">Menu catring 2</h5></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering2.jpg') }}" alt=""></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 2</h5></a>
                         <p class="text-grey">100 pax</p>
                         <p class="text-green">Now Only <span>Rp 4.000.000</span></p>
-                        <a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <div class="product">
-                        <a href="#"><img class="img-responsive" src="{{ asset('images/catering3.jpg') }}" alt=""></a>
-                        <a href="#"><h5 class="oneline-ellipsis">Menu catring 3</h5></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering3.jpg') }}" alt=""></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 3</h5></a>
                         <p class="text-grey">100 pax</p>
                         <p class="text-green">Now Only <span>Rp 1.900.000</span></p>
-                        <a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <div class="product">
-                        <a href="#"><img class="img-responsive" src="{{ asset('images/catering4.jpg') }}" alt=""></a>
-                        <a href="#"><h5 class="oneline-ellipsis">Menu catring 4</h5></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering4.jpg') }}" alt=""></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 4</h5></a>
                         <p class="text-grey">100 pax</p>
                         <p class="text-green">Now Only <span>Rp 4.000.000</span></p>
-                        <a href="#" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                     </div>
                 </div>
             </div>
@@ -207,7 +207,7 @@
             <div class="col-sm-12">
                 <h2 class="text-damion-curved">Custom Your Menu</h2>
                 <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit</p>
-                <a href="catering-custom.html" class="btn btn-lg btn-flaregreen">CUSTOM MENU <span class="icon icon-food"></span></a>
+                <a href="{{ route('item.custom') }}" class="btn btn-lg btn-flaregreen">CUSTOM MENU <span class="icon icon-food"></span></a>
             </div>
         </div>
     </div>
