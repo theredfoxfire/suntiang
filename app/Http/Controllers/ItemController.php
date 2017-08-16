@@ -43,11 +43,18 @@ class ItemController extends Controller
         return view('item.snackbox', $datas);
     }
 
-    public function cateringDetail($id)
+    public function search()
     {
-        // $item = Item::whereId($id)->firstOrFail();
+        $datas = Item::itemIndex();
 
-        return view('item.cateringShow');
+        return view('item.search', $datas);
+    }
+
+    public function custom()
+    {
+        $datas = Item::itemIndex();
+
+        return view('item.custom', $datas);
     }
 
     public function itemDetail($id)

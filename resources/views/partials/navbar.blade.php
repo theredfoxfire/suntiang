@@ -45,10 +45,10 @@
             <li class="main-li "><a href="{{ route('item.dailyMeal') }}">DAILY MEAL</a></li>
             <li class="main-li "><a href="{{ route('item.catering') }}">CATERING</a></li>
             <li class="main-li "><a href="{{ route('item.snackbox') }}">SNACK BOX</a></li>
-            <li class=" hidden-xs"><a href="login.html">Login</a></li>
-            <li class=""><a href="register.html">Register</a></li>
+            <li class=" hidden-xs"><a href="{{ route('memberLogin') }}">Login</a></li>
+            <li class=""><a href="{{ route('memberRegister') }}">Register</a></li>
             <li class="cart hidden-xs">
-                <a href="cart.html">
+                <a href="{{ route('cart') }}">
                 <span class="img-wbubble">
                 <span class="icon icon-shopbag"></span>
                 <span class="bubble">9+</span>
@@ -57,9 +57,12 @@
                 </a>
             </li>
             <li class="nav-search hidden-xs">
-                <form id="form-searchnav" class="form-horizontal form-default form-search" action="search.html">
+                <form id="form-searchnav" class="form-horizontal form-default form-search" action="{{ route('item.search') }}" method="get">
                     <div class="input-group input-group-lg">
-                        <input type="text" class="form-control" name="search" placeholder="Search for..." aria-label="search">
+                        <input onchange="event.preventDefault();
+                                 document.getElementById('form-searchnav').submit();"
+                                 type="text" class="form-control" name="keywords"
+                                 placeholder="Search for..." aria-label="search">
                         <span class="input-group-btn">
                           <button class="btn btn-default" type="submit"><span class="btn-yellow"><span class="fa fa-search"></span></span></button>
                         </span>

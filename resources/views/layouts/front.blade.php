@@ -84,12 +84,12 @@
         </div>
         <div class="col-sm-4">
           <ul class="list-normal list-twocol clearfix">
-            <li class=""><a href="about.html">About Us</a></li>
-            <li class=""><a href="howtoorder.html">How to Order</a></li>
-            <li class=""><a href="faq.html">FAQ</a></li>
-            <li class=""><a href="payment-conf.html">Payment Confirmation</a></li>
-            <li class=""><a href="promo.html">Promo</a></li>
-            <li class=""><a href="contact.html">Contact Us</a></li>
+            <li class=""><a href="{{ route('page.about') }}">About Us</a></li>
+            <li class=""><a href="{{ route('page.how') }}">How to Order</a></li>
+            <li class=""><a href="{{ route('page.faq') }}">FAQ</a></li>
+            <li class=""><a href="{{ route('page.payment') }}">Payment Confirmation</a></li>
+            <li class=""><a href="{{ route('page.promo') }}">Promo</a></li>
+            <li class=""><a href="{{ route('contact') }}">Contact Us</a></li>
           </ul>
         </div>
         <div class="col-sm-4">
@@ -114,9 +114,9 @@
         <div class="row">
           <div class="col-sm-5">
             <ul class="list-inline">
-              <li><a href="disclaimer.html">Disclaimer</a></li>
-              <li><a href="privacy.html">Privacy Policy</a></li>
-              <li><a href="tou.html">Terms of Use</a></li>
+              <li><a href="{{ route('page.disclaimer') }}">Disclaimer</a></li>
+              <li><a href="{{ route('page.privacy') }}">Privacy Policy</a></li>
+              <li><a href="{{ route('page.tou') }}">Terms of Use</a></li>
             </ul>
           </div>
           <div class="col-sm-7 text-right">
