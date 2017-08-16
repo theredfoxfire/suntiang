@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\PageFields;
+use App\Model\PageFields;
 
 class PageFieldsTableSeeder extends Seeder
 {

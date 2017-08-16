@@ -42,3 +42,27 @@ function page_image($value = null)
 
     return $value;
 }
+
+/**
+* @param integer $number, string nullable $locale
+* @return string formatted number
+*/
+function formattingNumber($number, $locale = null)
+{
+    return number_format($number, 0, ',', '.');
+}
+
+/**
+* @param $string string of sentence
+*	$limit number of words limit
+* @return string of truncated text
+*/
+function getWords($string, $limit) {
+	$text = $string;
+	if (str_word_count($string, 0) > $limit) {
+	  $words = str_word_count($string, 2);
+	  $pos = array_keys($words);
+	  $text = substr($string, 0, $pos[$limit]);
+	}
+	return $text;
+}

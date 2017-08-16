@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ShippingCostCreateRequest;
 use App\Http\Requests\ShippingCostUpdateRequest;
-use App\ShippingCosts;
+use App\Model\ShippingCosts;
 
 class ShippingCostsController extends Controller
 {
@@ -16,9 +16,9 @@ class ShippingCostsController extends Controller
      */
     public function index(Request $request)
     {
-        $shipping_costs = ShippingCosts::orderBy('id','DESC')->paginate(15);
+        $shipping_costs = ShippingCosts::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.shipping_costs.index',compact('shipping_costs'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class ShippingCostsController extends Controller
         ShippingCosts::create($request->all());
 
         return redirect()->route('admin.shipping_costs.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PromotionsCreateRequest;
 use App\Http\Requests\PromotionsUpdateRequest;
-use App\Promotions;
+use App\Model\Promotions;
 
 class PromotionsController extends Controller
 {
@@ -16,9 +16,9 @@ class PromotionsController extends Controller
      */
     public function index(Request $request)
     {
-        $promotions = Promotions::orderBy('id','DESC')->paginate(15);
+        $promotions = Promotions::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.promotions.index',compact('promotions'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class PromotionsController extends Controller
         Promotions::create($request->all());
 
         return redirect()->route('admin.promotions.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

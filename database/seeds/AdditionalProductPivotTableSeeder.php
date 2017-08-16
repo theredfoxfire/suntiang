@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\AdditionalProductPivot;
+use App\Model\AdditionalProductPivot;
 
 class AdditionalProductPivotTableSeeder extends Seeder
 {

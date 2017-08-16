@@ -7,6 +7,8 @@ return [
         'storage' => 'local',
         'webpath' => '/uploads',
     ],
+    'itemPath' => 'item',
+    'itemWebPath' => 'uploads/item',
     'blog.contact_email' => [
 
     ],

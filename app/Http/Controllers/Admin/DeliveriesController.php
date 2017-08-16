@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DeliveriesCreateRequest;
 use App\Http\Requests\DeliveriesUpdateRequest;
-use App\Deliveries;
+use App\Model\Deliveries;
 
 class DeliveriesController extends Controller
 {
@@ -16,9 +16,9 @@ class DeliveriesController extends Controller
      */
     public function index(Request $request)
     {
-        $deliveries = Deliveries::orderBy('id','DESC')->paginate(15);
+        $deliveries = Deliveries::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.deliveries.index',compact('deliveries'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class DeliveriesController extends Controller
         Deliveries::create($request->all());
 
         return redirect()->route('admin.deliveries.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

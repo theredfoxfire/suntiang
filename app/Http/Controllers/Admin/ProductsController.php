@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductsCreateRequest;
 use App\Http\Requests\ProductsUpdateRequest;
-use App\Products;
+use App\Model\Products;
 
 class ProductsController extends Controller
 {
@@ -16,9 +16,9 @@ class ProductsController extends Controller
      */
     public function index(Request $request)
     {
-        $products = Products::orderBy('id','DESC')->paginate(5);
+        $products = Products::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.products.index',compact('products'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**

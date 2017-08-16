@@ -6,8 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use App\Post;
-use App\Tag;
+use App\Model\Post;
+use App\Model\Tag;
 use Carbon\Carbon;
 
 class PostFormFields

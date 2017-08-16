@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PageFieldsCreateRequest;
 use App\Http\Requests\PageFieldsUpdateRequest;
-use App\PageFields;
+use App\Model\PageFields;
 
 class PageFieldsController extends Controller
 {
@@ -16,9 +16,9 @@ class PageFieldsController extends Controller
      */
     public function index(Request $request)
     {
-        $page_fields = PageFields::orderBy('id','DESC')->paginate(15);
+        $page_fields = PageFields::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.page_fields.index',compact('page_fields'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class PageFieldsController extends Controller
         PageFields::create($request->all());
 
         return redirect()->route('admin.page_fields.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

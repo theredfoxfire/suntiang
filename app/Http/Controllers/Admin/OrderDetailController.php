@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderDetailCreateRequest;
 use App\Http\Requests\OrderDetailUpdateRequest;
-use App\OrderDetail;
+use App\Model\OrderDetail;
 
 class OrderDetailController extends Controller
 {
@@ -16,9 +16,9 @@ class OrderDetailController extends Controller
      */
     public function index(Request $request)
     {
-        $order_details = OrderDetail::orderBy('id','DESC')->paginate(15);
+        $order_details = OrderDetail::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.order_details.index',compact('order_details'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class OrderDetailController extends Controller
         OrderDetail::create($request->all());
 
         return redirect()->route('admin.order_details.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

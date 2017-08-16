@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PermissionCreateRequest;
 use App\Http\Requests\PermissionUpdateRequest;
-use App\Permission;
+use App\Model\Permission;
 
 class PermissionController extends Controller
 {
@@ -16,9 +16,9 @@ class PermissionController extends Controller
      */
     public function index(Request $request)
     {
-        $permissions = Permission::orderBy('id','DESC')->paginate(15);
+        $permissions = Permission::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.permissions.index',compact('permissions'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class PermissionController extends Controller
         Permission::create($request->all());
 
         return redirect()->route('admin.permissions.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

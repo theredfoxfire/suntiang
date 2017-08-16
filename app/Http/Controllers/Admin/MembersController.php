@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MembersCreateRequest;
 use App\Http\Requests\MembersUpdateRequest;
-use App\Members;
+use App\Model\Members;
 
 class MembersController extends Controller
 {
@@ -16,9 +16,9 @@ class MembersController extends Controller
      */
     public function index(Request $request)
     {
-        $members = Members::orderBy('id','DESC')->paginate(15);
+        $members = Members::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.members.index',compact('members'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class MembersController extends Controller
         Members::create($request->all());
 
         return redirect()->route('admin.members.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

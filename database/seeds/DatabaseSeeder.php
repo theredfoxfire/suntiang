@@ -32,7 +32,6 @@ class DatabaseSeeder extends Seeder
         $this->call('ProductImagesTableSeeder');
         $this->call('CategoryItemPivotTableSeeder');
         $this->call('ProductsTableSeeder');
-        $this->call('ProductTagsPivotTableSeeder');
         $this->call('PromotionsTableSeeder');
         $this->call('RoleUserTableSeeder');
         $this->call('SessionsTableSeeder');
@@ -51,8 +50,8 @@ class PostTableSeeder extends Seeder
 {
     public function run()
     {
-        App\Post::truncate();
+        App\Model\Post::truncate();
 
-        factory(App\Post::class, 20)->create();
+        factory(App\Model\Post::class, 20)->create();
     }
 }

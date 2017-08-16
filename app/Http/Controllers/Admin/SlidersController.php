@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SlidersCreateRequest;
 use App\Http\Requests\SlidersUpdateRequest;
-use App\Sliders;
+use App\Model\Sliders;
 
 class SlidersController extends Controller
 {
@@ -16,9 +16,9 @@ class SlidersController extends Controller
      */
     public function index(Request $request)
     {
-        $sliders = Sliders::orderBy('id','DESC')->paginate(15);
+        $sliders = Sliders::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.sliders.index',compact('sliders'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class SlidersController extends Controller
         Sliders::create($request->all());
 
         return redirect()->route('admin.sliders.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Item;
+use App\Model\Item;
 use Carbon\Carbon;
 
 class ItemController extends Controller

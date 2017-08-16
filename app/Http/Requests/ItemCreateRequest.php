@@ -24,13 +24,34 @@ class ItemCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:item,name',
+            'name' => 'required|unique:items,name',
             'description' => 'required',
             'price' => 'required',
-            'day' => 'required',
-            'available_date' => 'required',
+            'photo' => 'image',
         ];
     }
+
+    /**
+     * Filled data and store file into public dir
+     *
+     * @return array
+     */
+    public function fillData()
+    {
+        if (!empty($this->photo)) {
+            $imageName = md5(uniqid()).'.'.$this->photo->getClientOriginalExtension();
+            $this->photo->storeAs(config('blog.itemPath'), $imageName);
+        } else {
+            $imageName = '';
+        }
+        $newPrice = implode("", explode(".", $this->price));
+        return [
+            'photo' => $imageName,
+            'name' => $this->name, 'price' => $newPrice,
+            'description' => $this->description, 'is_active' => $this->is_active,
+        ];
+    }
+
     /**
      * Get the error messages for the defined validation rules.
      *
@@ -43,8 +64,7 @@ class ItemCreateRequest extends FormRequest
             'name.unique' => 'Nama tersebut sudah digunakan, coba dengan nama lain.',
             'description.required' => 'Kolom Deskripsi harus diisi.',
             'price.required' => 'Kolom harga harus diisi.',
-            'day.required' => 'Kolom hari harus diisi.',
-            'available_date.required' => 'Kolom Tanggal Tersedia harus diisi.',
+            'photo.image' => 'Hanya diperbolehkan mengupload file gambar (jpeg, png, bmp, gif, atau svg).',
         ];
     }
 }

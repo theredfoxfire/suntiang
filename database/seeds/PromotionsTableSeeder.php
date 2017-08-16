@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Promotions;
+use App\Model\Promotions;
 
 class PromotionsTableSeeder extends Seeder
 {

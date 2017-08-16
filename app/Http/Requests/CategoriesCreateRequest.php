@@ -25,8 +25,7 @@ class CategoriesCreateRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:categories,name',
-            'slug' => 'required|unique:categories,slug',
-            'description' => 'required',
+            'group' => 'required',
         ];
     }
 
@@ -39,10 +38,8 @@ class CategoriesCreateRequest extends FormRequest
     {
         return [
             'name.required' => 'Kolom Nama harus diisi.',
-            'slug.required' => 'Kolom Slug harus diisi.',
-            'slug.unique' => 'Slug tersebut sudah digunakan, coba dengan nama slug yang lain.',
+            'group.required' => 'Kolom Slug harus diisi.',
             'name.unique' => 'Nama tersebut sudah digunakan, coba dengan nama yang lain.',
-            'description.required' => 'Kolom Deskripsi harus diisi.',
         ];
     }
 }

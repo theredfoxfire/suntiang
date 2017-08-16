@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Carts;
+use App\Model\Carts;
 
 class CartsTableSeeder extends Seeder
 {
