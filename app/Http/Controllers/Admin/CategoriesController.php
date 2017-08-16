@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoriesCreateRequest;
 use App\Http\Requests\CategoriesUpdateRequest;
-use App\Categories;
+use App\Model\Categories;
 
 class CategoriesController extends Controller
 {
@@ -16,9 +16,9 @@ class CategoriesController extends Controller
      */
     public function index(Request $request)
     {
-        $categories = Categories::orderBy('id','DESC')->paginate(15);
+        $categories = Categories::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.categories.index',compact('categories'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class CategoriesController extends Controller
         Categories::create($request->all());
 
         return redirect()->route('admin.categories.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

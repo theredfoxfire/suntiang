@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PageImagesCreateRequest;
 use App\Http\Requests\PageImagesUpdateRequest;
-use App\PageImages;
+use App\Model\PageImages;
 
 class PageImagesController extends Controller
 {
@@ -16,9 +16,9 @@ class PageImagesController extends Controller
      */
     public function index(Request $request)
     {
-        $page_images = PageImages::orderBy('id','DESC')->paginate(15);
+        $page_images = PageImages::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.page_images.index',compact('page_images'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class PageImagesController extends Controller
         PageImages::create($request->all());
 
         return redirect()->route('admin.page_images.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

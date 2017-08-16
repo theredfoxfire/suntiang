@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CartsCreateRequest;
 use App\Http\Requests\CartsUpdateRequest;
-use App\Carts;
+use App\Model\Carts;
 
 class CartsController extends Controller
 {
@@ -16,9 +16,9 @@ class CartsController extends Controller
      */
     public function index(Request $request)
     {
-        $carts = Carts::orderBy('id','DESC')->paginate(15);
+        $carts = Carts::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.carts.index',compact('carts'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class CartsController extends Controller
         Carts::create($request->all());
 
         return redirect()->route('admin.carts.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

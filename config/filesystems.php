@@ -48,7 +48,7 @@ return [
           'root'   => public_path('uploads'),
         ],
 
-        'public' => [
+        'lib' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',

@@ -57,79 +57,19 @@
                         </div>
                     </div>
                 </form>
+
                 <div class="row multi-columns-row single-slidemob">
+                    @foreach ($items as $key => $value)
                     <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                         <div class="product">
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/prod1.jpg') }}" alt=""></a>
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Paket nasi ayam</h5></a>
-                            <p class="text-grey text-linethrough">Rp 69.000</p>
-                            <p class="text-green">Now Only <span>Rp 49.000</span></p>
-                            <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+                            <a href="{{ route('item.dailyMealShow', $value->id) }}"><img class="img-responsive" src="{{ asset('images/prod1.jpg') }}" alt=""></a>
+                            <a href="{{ route('item.dailyMealShow', $value->id) }}"><h5 class="oneline-ellipsis">{{ $value->name }}</h5></a>
+                            <p class="text-grey text-linethrough">Rp {{ formattingNumber($value->price) }}</p>
+                            <p class="text-green">Now Only <span>Rp {{ formattingNumber($value->price) }}</span></p>
+                            <a href="{{ route('item.dailyMealShow', $value->id) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                        <div class="product">
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/prod2.jpg') }}" alt=""></a>
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Paket Lidah Sapi</h5></a>
-                            <p class="text-grey text-linethrough">Rp 69.000</p>
-                            <p class="text-green">Now Only <span>Rp 49.000</span></p>
-                            <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                        <div class="product">
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/prod3.jpg') }}" alt=""></a>
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Paket Tunjang Rice Bowl</h5></a>
-                            <p class="text-grey text-linethrough">Rp 69.000</p>
-                            <p class="text-green">Now Only <span>Rp 49.000</span></p>
-                            <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                        <div class="product">
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/prod4.jpg') }}" alt=""></a>
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">paket Ramen Cabai Hijau</h5></a>
-                            <p class="text-grey text-linethrough">Rp 69.000</p>
-                            <p class="text-green">Now Only <span>Rp 49.000</span></p>
-                            <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                        <div class="product">
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/prod1.jpg') }}" alt=""></a>
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Paket nasi ayam</h5></a>
-                            <p class="text-grey text-linethrough">Rp 69.000</p>
-                            <p class="text-green">Now Only <span>Rp 49.000</span></p>
-                            <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                        <div class="product">
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/prod2.jpg') }}" alt=""></a>
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Paket Lidah Sapi</h5></a>
-                            <p class="text-grey text-linethrough">Rp 69.000</p>
-                            <p class="text-green">Now Only <span>Rp 49.000</span></p>
-                            <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                        <div class="product">
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/prod3.jpg') }}" alt=""></a>
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Paket Tunjang Rice Bowl</h5></a>
-                            <p class="text-grey text-linethrough">Rp 69.000</p>
-                            <p class="text-green">Now Only <span>Rp 49.000</span></p>
-                            <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                        <div class="product">
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/prod4.jpg') }}" alt=""></a>
-                            <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">paket Ramen Cabai Hijau</h5></a>
-                            <p class="text-grey text-linethrough">Rp 69.000</p>
-                            <p class="text-green">Now Only <span>Rp 49.000</span></p>
-                            <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

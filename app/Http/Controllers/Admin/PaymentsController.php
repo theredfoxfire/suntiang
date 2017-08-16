@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PaymentsCreateRequest;
 use App\Http\Requests\PaymentsUpdateRequest;
-use App\Payments;
+use App\Model\Payments;
 
 class PaymentsController extends Controller
 {
@@ -16,9 +16,9 @@ class PaymentsController extends Controller
      */
     public function index(Request $request)
     {
-        $payments = Payments::orderBy('id','DESC')->paginate(15);
+        $payments = Payments::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.payments.index',compact('payments'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class PaymentsController extends Controller
         Payments::create($request->all());
 
         return redirect()->route('admin.payments.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductImagesCreateRequest;
 use App\Http\Requests\ProductImagesUpdateRequest;
-use App\ProductImages;
+use App\Model\ProductImages;
 
 class ProductImagesController extends Controller
 {
@@ -16,9 +16,9 @@ class ProductImagesController extends Controller
      */
     public function index(Request $request)
     {
-        $product_images = ProductImages::orderBy('id','DESC')->paginate(15);
+        $product_images = ProductImages::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.product_images.index',compact('product_images'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class ProductImagesController extends Controller
         ProductImages::create($request->all());
 
         return redirect()->route('admin.product_images.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

@@ -3,8 +3,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Role;
-use App\Permission;
+use App\Model\Role;
+use App\Model\Permission;
 use DB;
 
 class RoleController extends Controller
@@ -17,10 +17,10 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
-        $roles = Role::orderBy('id','DESC')->paginate(5);
+        $roles = Role::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
 
         return view('admin.roles.index',compact('roles'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**

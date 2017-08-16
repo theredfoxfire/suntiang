@@ -23,26 +23,13 @@
     </div>
 	<div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Slug:</strong>
-            {!! Form::text('slug', null, array('placeholder' => 'Slug','class' => 'form-control')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Description:</strong>
-            {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
-        </div>
-    </div>
-	<div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Parent ID:</strong>
-            {!! Form::text('parent_id', null, array('placeholder' => 'Parent ID','class' => 'form-control')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Level:</strong>
-            {!! Form::text('level', null, array('placeholder' => 'Parent ID','class' => 'form-control')) !!}
+            <strong>Kelompok:</strong>
+            <select name="group" class="form-control">
+				<option value="">Berdasarkan</option>
+				<option value="region">Regional</option>
+				<option value="jenis">Jenis</option>
+				<option value="isi">Isi/Kandungan</option>
+			</select>
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

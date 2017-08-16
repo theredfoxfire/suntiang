@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Sessions;
+use App\Model\Sessions;
 
 class SessionsTableSeeder extends Seeder
 {
@@ -21,7 +21,7 @@ class SessionsTableSeeder extends Seeder
                 'last_activity' => '2017-03-12 14:20:11',
             ],
         	[
-                'id' => 'ury7373899rruewe334ifmrj', 
+                'id' => 'ury7373899rruewe334ifmrj',
                 'user_id' => 1,
                 'ip_address' => '192.168.1.12',
                 'user_agent' => 'web-kit',

@@ -17,30 +17,26 @@
 	@include('admin.partials.success')
 	<table class="table table-bordered">
 		<tr>
-			<th>No</th>
-			<th>Name</th>
-			<th>Slug</th>
-			<th>Description</th>
-			<th>Parent ID</th>
-			<th>Level</th>
-			<th width="280px">Action</th>
+			<th class="col-sm-1">No</th>
+			<th class="col-sm-5">Name</th>
+			<th class="col-sm-4">Kelompok</th>
+			<th class="col-sm-2">Action</th>
 		</tr>
 	@foreach ($categories as $key => $category)
 	<tr>
 		<td>{{ ++$i }}</td>
 		<td>{{ $category->name }}</td>
-		<td>{{ $category->slug }}</td>
-		<td>{{ $category->description }}</td>
-		<td>{{ $category->parent_id }}</td>
-		<td>{{ $category->level }}</td>
+		<td>{{ strtoupper($category->group) }}</td>
 		<td>
-			<a class="btn btn-info" href="{{ route('admin.categories.show',$category->id) }}">Show</a>
+			<a class="btn btn-info btn-xs" href="{{ route('admin.categories.show',$category->id) }}">Show</a>
 			@permission('categories-edit')
-			<a class="btn btn-primary" href="{{ route('admin.categories.edit',$category->id) }}">Edit</a>
+			<a class="btn btn-primary btn-xs" href="{{ route('admin.categories.edit',$category->id) }}">Edit</a>
 			@endpermission
 			@permission('categories-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/categories/{{ $category->id }}">Delete</a>
-    	@endpermission
+			@if ($category->id > 2)
+				<a class="btn btn-danger btn-xs delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/categories/{{ $category->id }}">Delete</a>
+			@endif
+	    	@endpermission
 		</td>
 	</tr>
 	@endforeach

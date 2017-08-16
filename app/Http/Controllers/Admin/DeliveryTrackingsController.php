@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DeliveryTrackingsCreateRequest;
 use App\Http\Requests\DeliveryTrackingsUpdateRequest;
-use App\DeliveryTrackings;
+use App\Model\DeliveryTrackings;
 
 class DeliveryTrackingsController extends Controller
 {
@@ -16,9 +16,9 @@ class DeliveryTrackingsController extends Controller
      */
     public function index(Request $request)
     {
-        $delivery_trackings = DeliveryTrackings::orderBy('id','DESC')->paginate(15);
+        $delivery_trackings = DeliveryTrackings::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.delivery_trackings.index',compact('delivery_trackings'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class DeliveryTrackingsController extends Controller
         DeliveryTrackings::create($request->all());
 
         return redirect()->route('admin.delivery_trackings.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

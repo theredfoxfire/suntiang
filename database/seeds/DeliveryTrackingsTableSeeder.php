@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\DeliveryTrackings;
+use App\Model\DeliveryTrackings;
 
 class DeliveryTrackingsTableSeeder extends Seeder
 {

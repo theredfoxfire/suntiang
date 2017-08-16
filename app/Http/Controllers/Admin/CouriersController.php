@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CouriersCreateRequest;
 use App\Http\Requests\CouriersUpdateRequest;
-use App\Couriers;
+use App\Model\Couriers;
 
 class CouriersController extends Controller
 {
@@ -16,9 +16,9 @@ class CouriersController extends Controller
      */
     public function index(Request $request)
     {
-        $couriers = Couriers::orderBy('id','DESC')->paginate(15);
+        $couriers = Couriers::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.couriers.index', compact('couriers'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class CouriersController extends Controller
         Couriers::create($request->all());
 
         return redirect()->route('admin.couriers.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

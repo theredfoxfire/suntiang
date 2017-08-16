@@ -5,7 +5,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ItemCreateRequest;
 use App\Http\Requests\ItemUpdateRequest;
-use App\Item;
+use App\Model\Item;
+use App\Jobs\ItemFormFields;
 
 class ItemController extends Controller
 {
@@ -16,9 +17,9 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     {
-        $items = Item::orderBy('id','DESC')->paginate(5);
+        $items = Item::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.item.index',compact('items'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -28,7 +29,9 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('admin.item.create');
+        $data = $this->dispatch(new ItemFormFields());
+
+        return view('admin.item.create', $data);
     }
 
     /**
@@ -39,12 +42,8 @@ class ItemController extends Controller
      */
     public function store(ItemCreateRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required',
-        ]);
-
-        Item::create($request->all());
+        $item = Item::create($request->fillData());
+        $item->syncTags($request->get('tags', []));
 
         return redirect()->route('admin.items.index')
                         ->with('success','Item created successfully');
@@ -70,8 +69,10 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
+        $data = $this->dispatch(new ItemFormFields($id));
         $item = Item::find($id);
-        return view('admin.item.edit',compact('item'));
+
+        return view('admin.item.edit', compact('item', 'data'));
     }
 
     /**
@@ -83,12 +84,9 @@ class ItemController extends Controller
      */
     public function update(ItemUpdateRequest $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required',
-        ]);
-
-        Item::find($id)->update($request->all());
+        $item = Item::find($id);
+        $item->update($request->fillData());
+        $item->syncTags($request->get('tags', []));
 
         return redirect()->route('admin.items.index')
                         ->with('success','Item updated successfully');

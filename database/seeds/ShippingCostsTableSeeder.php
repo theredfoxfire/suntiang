@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\ShippingCosts;
+use App\Model\ShippingCosts;
 
 class ShippingCostsTableSeeder extends Seeder
 {

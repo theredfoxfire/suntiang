@@ -21,28 +21,9 @@
     </div>
 		<div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Slug:</strong>
-            {{ $categories->slug }}
+            <strong>Kelompok Berdasarkan:</strong>
+            {{ strtoupper($categories->group) }}
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Deskripsi:</strong>
-            {{ $categories->description }}
-        </div>
-    </div>
-		<div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Parent ID:</strong>
-            {{ $categories->parent_id }}
-        </div>
-    </div>
-		<div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Level:</strong>
-            {{ $categories->level }}
-        </div>
-    </div>
-	</div>
 </div>
 @endsection

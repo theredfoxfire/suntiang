@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\OrderDetail;
+use App\Model\OrderDetail;
 
 class OrderDetailTableSeeder extends Seeder
 {

@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SessionsCreateRequest;
 use App\Http\Requests\SessionsUpdateRequest;
-use App\Sessions;
+use App\Model\Sessions;
 
 class SessionsController extends Controller
 {
@@ -16,9 +16,9 @@ class SessionsController extends Controller
      */
     public function index(Request $request)
     {
-        $sessions = Sessions::orderBy('id','DESC')->paginate(15);
+        $sessions = Sessions::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.sessions.index',compact('sessions'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class SessionsController extends Controller
         Sessions::create($request->all());
 
         return redirect()->route('admin.sessions.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

@@ -125,78 +125,17 @@
                 </div>
             </form>
             <div class="row multi-columns-row single-slidemob">
+                @foreach ($items as $key => $value)
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <div class="product">
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering1.jpg') }}" alt=""></a>
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 1</h5></a>
+                        <a href="{{ route('item.dailyMealShow', $value->id) }}"><img class="img-responsive" src="{{ asset('images/catering1.jpg') }}" alt=""></a>
+                        <a href="{{ route('item.dailyMealShow', $value->id) }}"><h5 class="oneline-ellipsis">{{ $value->name }}</h5></a>
                         <p class="text-grey">100 pax</p>
-                        <p class="text-green">Now Only <span>Rp 1.549.000</span></p>
-                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
+                        <p class="text-green">Now Only <span>Rp {{ formattingNumber($value->price) }}</span></p>
+                        <a href="{{ route('item.dailyMealShow', $value->id) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <div class="product">
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering2.jpg') }}" alt=""></a>
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 2</h5></a>
-                        <p class="text-grey">100 pax</p>
-                        <p class="text-green">Now Only <span>Rp 4.000.000</span></p>
-                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <div class="product">
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering3.jpg') }}" alt=""></a>
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 3</h5></a>
-                        <p class="text-grey">100 pax</p>
-                        <p class="text-green">Now Only <span>Rp 1.900.000</span></p>
-                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <div class="product">
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering4.jpg') }}" alt=""></a>
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 4</h5></a>
-                        <p class="text-grey">100 pax</p>
-                        <p class="text-green">Now Only <span>Rp 4.000.000</span></p>
-                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <div class="product">
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering1.jpg') }}" alt=""></a>
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 1</h5></a>
-                        <p class="text-grey">100 pax</p>
-                        <p class="text-green">Now Only <span>Rp 1.549.000</span></p>
-                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <div class="product">
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering2.jpg') }}" alt=""></a>
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 2</h5></a>
-                        <p class="text-grey">100 pax</p>
-                        <p class="text-green">Now Only <span>Rp 4.000.000</span></p>
-                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <div class="product">
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering3.jpg') }}" alt=""></a>
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 3</h5></a>
-                        <p class="text-grey">100 pax</p>
-                        <p class="text-green">Now Only <span>Rp 1.900.000</span></p>
-                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <div class="product">
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><img class="img-responsive" src="{{ asset('images/catering4.jpg') }}" alt=""></a>
-                        <a href="{{ route('item.dailyMealShow', 1) }}"><h5 class="oneline-ellipsis">Menu catring 4</h5></a>
-                        <p class="text-grey">100 pax</p>
-                        <p class="text-green">Now Only <span>Rp 4.000.000</span></p>
-                        <a href="{{ route('item.dailyMealShow', 1) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

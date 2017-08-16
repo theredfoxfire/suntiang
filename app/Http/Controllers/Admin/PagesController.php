@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PagesCreateRequest;
 use App\Http\Requests\PagesUpdateRequest;
-use App\Pages;
+use App\Model\Pages;
 
 class PagesController extends Controller
 {
@@ -16,9 +16,9 @@ class PagesController extends Controller
      */
     public function index(Request $request)
     {
-        $pages = Pages::orderBy('id','DESC')->paginate(15);
+        $pages = Pages::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
         return view('admin.pages.index',compact('pages'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
     /**
@@ -42,7 +42,7 @@ class PagesController extends Controller
         Pages::create($request->all());
 
         return redirect()->route('admin.pages.index')
-                        ->withSuccess("Input data session ID berhasil.");
+                        ->withSuccess("Input data  berhasil.");
     }
 
     /**

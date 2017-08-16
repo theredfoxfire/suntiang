@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pages;
+use App\Model\Pages;
 use Carbon\Carbon;
 
 class PageController extends Controller

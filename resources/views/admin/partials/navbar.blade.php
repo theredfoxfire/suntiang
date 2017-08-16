@@ -2,12 +2,12 @@
   @if (Auth::check())
   <li
     @if (Request::is('admin/post*') || Request::is('admin/tag*') ||
-     Request::is('admin/upload*') || Request::is('admin/items*') ||
+     Request::is('admin/upload*') ||
      Request::is('admin/item-images*') || Request::is('admin/products*') ||
      Request::is('admin/product_images*') || Request::is('admin/pages*') ||
      Request::is('admin/page_images*') || Request::is('admin/page_fields*') ||
-     Request::is('admin/promotions*') || Request::is('admin/sliders*') ||
-     Request::is('admin/categories*')) class="dropdown active"
+     Request::is('admin/promotions*') || Request::is('admin/sliders*'))
+    class="dropdown active"
     @else class="dropdown"
     @endif
   >
@@ -30,14 +30,6 @@
       <a href="{{ config('blog.prefix_url') }}admin/upload">Uploads</a>
       </li>
       @endpermission
-      @permission('items-list')
-      <li @if (Request::is('admin/items*')) class="active" @endif>
-      <a href="{{ route('admin.items.index') }}">Items</a>
-      </li>
-      @endpermission
-      <li @if (Request::is('admin/categories*')) class="active" @endif>
-      <a href="/admin/categories">Categories</a>
-      </li>
       @permission('item_images-list')
       <li @if (Request::is('admin/item-images*')) class="active" @endif>
       <a href="{{ route('admin.item_images.index') }}">Item Images</a>
@@ -76,6 +68,28 @@
       @permission('sliders-list')
       <li @if (Request::is('admin/sliders*')) class="active" @endif>
       <a href="{{ route('admin.sliders.index') }}">Sliders</a>
+      </li>
+      @endpermission
+    </ul>
+  </li>
+  <li
+    @if (Request::is('admin/items*') ||
+     Request::is('admin/categories*')) class="dropdown active"
+    @else class="dropdown"
+    @endif
+  >
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle"
+
+    >PRODUCT <span class="caret pull-right"></span></a>
+    <ul class="dropdown-menu col-sm-12">
+      @permission('items-list')
+      <li @if (Request::is('admin/items*')) class="active" @endif>
+      <a href="{{ route('admin.items.index') }}">Data Item</a>
+      </li>
+      @endpermission
+      @permission('categories-list')
+      <li @if (Request::is('admin/categories*')) class="active" @endif>
+      <a href="{{ route('admin.categories.index') }}">Data Kategori</a>
       </li>
       @endpermission
     </ul>

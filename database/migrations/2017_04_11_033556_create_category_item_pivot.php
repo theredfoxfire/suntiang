@@ -16,7 +16,7 @@ class CreateCategoryItemPivot extends Migration
         Schema::create('category_item_pivots', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('item_id')->unsigned()->index();
-            $table->integer('category_id')->unsigned()->index();
+            $table->integer('categories_id')->unsigned()->index();
             $table->timestamps();
         });
     }

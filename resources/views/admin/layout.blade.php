@@ -31,6 +31,8 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
   <link rel="stylesheet" href="{{ asset('css/imajiku-customs.css') }}">
+  <link href="{{ asset('css/selectize.default.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/selectize.bootstrap3.css') }}" rel="stylesheet">
   @yield('styles')
 
   <!--[if lt IE 9]>
@@ -99,6 +101,15 @@
   $(document).on('click', '.mega-dropdown', function(e) {
     e.stopPropagation()
   });
+
+  //@param integer var nmmber not null
+  //@param string var elementID nullable
+  function formattingNumber(number, elementID) {
+      var newNumber = number.toString().split(".").join("");
+      var formatted = new Intl.NumberFormat(['ban', 'id']).format(Number(newNumber));
+      document.getElementById(elementID).value = formatted;
+      return formatted;
+  }
 </script>
 @yield('scripts')
 

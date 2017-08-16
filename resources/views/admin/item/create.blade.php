@@ -13,39 +13,39 @@
 	    </div>
 	</div>
 	@include('admin.partials.errors')
-	{!! Form::open(array('route' => 'admin.items.store','method'=>'POST')) !!}
+	{!! Form::open(array('route' => 'admin.items.store', 'method'=>'POST', 'files' => true)) !!}
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
+                <strong>Nama:</strong>
                 {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
             </div>
-        </div>
-		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>price:</strong>
-                {!! Form::text('price', null, array('placeholder' => 'price','class' => 'form-control')) !!}
+                <strong>
+                Tags Kategori
+                </strong>
+                <select name="tags[]" id="tags" class="form-control" multiple>
+                @foreach ($allTags as $tag)
+                    <option @if (in_array($tag, $tags)) selected @endif
+                    value="{{ $tag }}">
+                      {{ $tag }}
+                    </option>
+                @endforeach
+                </select>
             </div>
-        </div>
-		<div class="col-xs-12 col-sm-12 col-md-12">
+	        <div class="form-group">
+                <strong>Gambar:</strong>
+                {!! Form::file('photo', null, array('placeholder' => 'Gambar','class' => 'form-control')) !!}
+            </div>
             <div class="form-group">
-                <strong>is_special:</strong>
-                {!! Form::text('is_special', null, array('placeholder' => 'is_special','class' => 'form-control')) !!}
+                <strong>Harga:</strong>
+                <input type="text" name="price" class="form-control" id="itemPrice" onkeyup="formattingNumber(this.value, 'itemPrice')" />
             </div>
-        </div>
-		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>day:</strong>
-                {!! Form::text('day', null, array('placeholder' => 'day','class' => 'form-control')) !!}
+                <strong>Status:</strong>
+                {{ Form::radio('is_active', 1, null, ['class' => '']) }} Aktif &nbsp; &nbsp; &nbsp; &nbsp;
+                {{ Form::radio('is_active', 0, null, ['class' => '']) }} Tidak Aktif
             </div>
-        </div>
-		<div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>available_date:</strong>
-                {!! Form::text('available_date', null, array('placeholder' => 'available_date','class' => 'form-control')) !!}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Description:</strong>
                 {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
