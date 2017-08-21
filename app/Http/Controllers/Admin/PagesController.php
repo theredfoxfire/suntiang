@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PagesCreateRequest;
 use App\Http\Requests\PagesUpdateRequest;
 use App\Model\Pages;
+use App\Services\PageManager;
 
 class PagesController extends Controller
 {
@@ -20,29 +21,15 @@ class PagesController extends Controller
         return view('admin.pages.index',compact('pages'))
             ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
-
     /**
-     * Show the form for creating a new resource.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function indexAbout(Request $request)
     {
-        return view('admin.pages.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  PagesCreateRequest  $request
-     * @return Response
-     */
-    public function store(PagesCreateRequest $request)
-    {
-        Pages::create($request->all());
-
-        return redirect()->route('admin.pages.index')
-                        ->withSuccess("Input data  berhasil.");
+        $pages = Pages::indexAbout();
+        return view('admin.pages.indexAbout',compact('pages'));
     }
 
     /**
@@ -56,6 +43,17 @@ class PagesController extends Controller
         $pages = Pages::find($id);
         return view('admin.pages.show',compact('pages'));
     }
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showAbout($id)
+    {
+        $pages = Pages::getAbout($id);
+        return view('admin.pages.showAbout',compact('pages'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -65,8 +63,8 @@ class PagesController extends Controller
      */
     public function edit($id)
     {
-        $pages = Pages::find($id);
-        return view('admin.pages.edit',compact('pages'));
+        $pages = Pages::getAbout($id);
+        return view('admin.pages.editAbout',compact('pages'));
     }
 
     /**
@@ -82,18 +80,5 @@ class PagesController extends Controller
 
         return redirect()->route('admin.pages.index')
                         ->with('success','Pages updated successfully');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        Pages::find($id)->delete();
-        return redirect()->route('admin.pages.index')
-                        ->with('success','Pages deleted successfully');
     }
 }

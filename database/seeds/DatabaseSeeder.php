@@ -42,6 +42,7 @@ class DatabaseSeeder extends Seeder
         $this->call('PageImagesTableSeeder');
         $this->call('PageFieldsTableSeeder');
         $this->call('TagTableSeeder');
+        $this->call('AboutTableSeeder');
     }
 
 }
