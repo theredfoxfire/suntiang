@@ -642,6 +642,30 @@ class PermissionTableSeeder extends Seeder
                 'display_name' => 'Delete users',
                 'description' => 'Delete users'
             ],
+            [
+                'id' => 106,
+                'name' => 'package-list',
+                'display_name' => 'Display package Listing',
+                'description' => 'See only Listing Of package'
+            ],
+            [
+                'id' => 107,
+                'name' => 'package-create',
+                'display_name' => 'Create package',
+                'description' => 'Create New package'
+            ],
+            [
+                'id' => 108,
+                'name' => 'package-edit',
+                'display_name' => 'Edit package',
+                'description' => 'Edit package'
+            ],
+            [
+                'id' => 109,
+                'name' => 'package-delete',
+                'display_name' => 'Delete package',
+                'description' => 'Delete package'
+            ],
         ];
 
         foreach ($permission as $key => $value) {

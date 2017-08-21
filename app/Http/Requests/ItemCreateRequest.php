@@ -51,6 +51,24 @@ class ItemCreateRequest extends FormRequest
             'description' => $this->description, 'is_active' => $this->is_active,
         ];
     }
+    /**
+     * Filled data and store file into public dir
+     *
+     * @return array
+     */
+    public function fillItem() {
+        $formData = $this->fillData();
+        return array_merge($formData, array('type' => 'item'));
+    }
+    /**
+     * Filled data and store file into public dir
+     *
+     * @return array
+     */
+    public function fillPackage() {
+        $formData = $this->fillData();
+        return array_merge($formData, array('type' => 'package'));
+    }
 
     /**
      * Get the error messages for the defined validation rules.

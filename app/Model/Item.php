@@ -9,7 +9,9 @@ use App\Model\Categories;
 
 class Item extends Model
 {
-    public $fillable = ['name', 'description', 'price', 'is_active', 'day', 'available_date', 'photo'];
+    public $fillable = ['name', 'description', 'price',
+        'is_active', 'day', 'available_date',
+        'photo', 'type'];
 
     public static function itemIndex()
     {

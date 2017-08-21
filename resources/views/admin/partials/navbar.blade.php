@@ -87,6 +87,11 @@
       <a href="{{ route('admin.items.index') }}">Data Item</a>
       </li>
       @endpermission
+      @permission('package-list')
+      <li @if (Request::is('admin/package*')) class="active" @endif>
+      <a href="{{ route('admin.package.index') }}">Data Paket</a>
+      </li>
+      @endpermission
       @permission('categories-list')
       <li @if (Request::is('admin/categories*')) class="active" @endif>
       <a href="{{ route('admin.categories.index') }}">Data Kategori</a>
