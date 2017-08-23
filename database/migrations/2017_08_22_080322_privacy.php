@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Categories extends Migration
+class Privacy extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class Categories extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('privacy', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
-            $table->string('type');
-            $table->integer('parent_id')->nullable();
+            $table->string('title', 200);
+            $table->text('description');
+            $table->integer('sort');
+            $table->boolean('is_active');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class Categories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('privacy');
     }
 }

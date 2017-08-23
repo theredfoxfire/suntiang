@@ -19,47 +19,18 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Morbi blandit, neque eget fermentum tempus,
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+                'is_condiment' => 1,
 
             ],
             [
                 'name' => 'Consectetur adipiscing elit',
                 'type' => 'package',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
-
-            ],
-            [
-                'name' => 'Fusce nec risus non ligula auctor',
-                'type' => 'package',
-                'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
-                    neque justo vehicula velit, a elementum eros metus sit amet magna',
-                'price' => 12000,
-                'is_active' => 1,
-                'day' => 1,
-
-            ],[
-                'name' => 'Lorem ipsum dolor sit amet',
-                'type' => 'package',
-                'description' => 'Morbi blandit, neque eget fermentum tempus,
-                    ante nisi pretium orci, at iaculis justo arcu id nulla.
-                    Duis varius ultrices mollis',
-                'price' => 12000,
-                'is_active' => 1,
-                'day' => 1,
-
-            ],
-            [
-                'name' => 'Consectetur adipiscing elit',
-                'type' => 'package',
-                'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
-                'price' => 12000,
-                'is_active' => 1,
-                'day' => 1,
+                'is_condiment' => 1,
 
             ],
             [
@@ -67,28 +38,58 @@ class ItemTableSeeder extends Seeder
                 'type' => 'package',
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+                'is_condiment' => 1,
 
             ],[
-                'name' => 'Lorem ipsum dolor sit amet',
+                'name' => 'Lorem ipsum dolor sit amet3',
                 'type' => 'package',
                 'description' => 'Morbi blandit, neque eget fermentum tempus,
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+                'is_condiment' => 1,
+
+            ],
+            [
+                'name' => 'Consectetur adipiscing elit3',
+                'type' => 'package',
+                'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
+                'daily_price' => 12000,
+                'is_active' => 1,
+                'is_condiment' => 1,
+
+            ],
+            [
+                'name' => 'Fusce nec risus non ligula auctor3',
+                'type' => 'package',
+                'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
+                    neque justo vehicula velit, a elementum eros metus sit amet magna',
+                'daily_price' => 12000,
+                'is_active' => 1,
+                'is_condiment' => 1,
+
+            ],[
+                'name' => 'Lorem ipsum dolor sit amet4',
+                'type' => 'package',
+                'description' => 'Morbi blandit, neque eget fermentum tempus,
+                    ante nisi pretium orci, at iaculis justo arcu id nulla.
+                    Duis varius ultrices mollis',
+                'daily_price' => 12000,
+                'is_active' => 1,
+                'is_condiment' => 1,
 
             ],
             [
                 'name' => 'Consectetur adipiscing elit',
                 'type' => 'package',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+                'is_drink' => 1,
+
 
             ],
             [
@@ -96,9 +97,10 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+                'is_drink' => 1,
+
 
             ],[
                 'name' => 'Lorem ipsum dolor sit amet',
@@ -106,18 +108,20 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Morbi blandit, neque eget fermentum tempus,
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+                'is_drink' => 1,
+
 
             ],
             [
                 'name' => 'Consectetur adipiscing elit',
                 'type' => 'item',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+                'is_drink' => 1,
+
 
             ],
             [
@@ -125,9 +129,10 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+                'is_drink' => 1,
+
 
             ],[
                 'name' => 'Lorem ipsum dolor sit amet',
@@ -135,18 +140,19 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Morbi blandit, neque eget fermentum tempus,
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+                'is_drink' => 1,
+
 
             ],
             [
                 'name' => 'Consectetur adipiscing elit',
                 'type' => 'item',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],
             [
@@ -154,9 +160,9 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],[
                 'name' => 'Lorem ipsum dolor sit amet',
@@ -164,18 +170,18 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Morbi blandit, neque eget fermentum tempus,
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],
             [
                 'name' => 'Consectetur adipiscing elit',
                 'type' => 'item',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],
             [
@@ -183,9 +189,9 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],[
                 'name' => 'Lorem ipsum dolor sit amet',
@@ -193,18 +199,18 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Morbi blandit, neque eget fermentum tempus,
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],
             [
                 'name' => 'Consectetur adipiscing elit',
                 'type' => 'item',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],
             [
@@ -212,9 +218,9 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],[
                 'name' => 'Lorem ipsum dolor sit amet',
@@ -222,18 +228,18 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Morbi blandit, neque eget fermentum tempus,
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],
             [
                 'name' => 'Consectetur adipiscing elit',
                 'type' => 'item',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],
             [
@@ -241,9 +247,9 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
-                'price' => 12000,
+                'daily_price' => 12000,
                 'is_active' => 1,
-                'day' => 1,
+
 
             ],
         ];

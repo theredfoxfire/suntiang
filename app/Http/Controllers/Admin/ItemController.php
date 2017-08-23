@@ -65,7 +65,8 @@ class ItemController extends Controller
     public function store(ItemCreateRequest $request)
     {
         $item = Item::create($request->fillItem());
-        $item->syncTags($request->get('tags', []));
+        $item->syncTags(array_merge($request->get('category', []),$request->get('area', [])));
+        $item->syncDrink($request->get('drink', []));
 
         return redirect()->route('admin.items.index')
                         ->with('success','Item created successfully');
@@ -79,7 +80,7 @@ class ItemController extends Controller
     public function storePackage(ItemCreateRequest $request)
     {
         $item = Item::create($request->fillPackage());
-        $item->syncTags($request->get('tags', []));
+        $item->syncTags(array_merge($request->get('category', []),$request->get('area', [])));
 
         return redirect()->route('admin.package.index')
                         ->with('success','Package created successfully');
@@ -117,6 +118,8 @@ class ItemController extends Controller
     public function edit($id)
     {
         $data = $this->dispatch(new ItemFormFields($id));
+        // print_r($data);
+        // exit();
         $item = Item::find($id);
 
         return view('admin.item.edit', compact('item', 'data'));
@@ -146,7 +149,7 @@ class ItemController extends Controller
     {
         $item = Item::find($id);
         $item->update($request->fillData());
-        $item->syncTags($request->get('tags', []));
+        $item->syncTags(array_merge($request->get('category', []),$request->get('area', [])));
 
         return redirect()->route('admin.items.index')
                         ->with('success','Item updated successfully');
@@ -162,7 +165,7 @@ class ItemController extends Controller
     {
         $item = Item::find($id);
         $item->update($request->fillData());
-        $item->syncTags($request->get('tags', []));
+        $item->syncTags(array_merge($request->get('category', []),$request->get('area', [])));
 
         return redirect()->route('admin.package.index')
                         ->with('success','Package updated successfully');

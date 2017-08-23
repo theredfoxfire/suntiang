@@ -2,6 +2,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Services\CategoryManager;
 
 class Categories extends Model
 {

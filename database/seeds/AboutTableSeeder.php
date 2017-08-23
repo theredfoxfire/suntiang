@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Services\PageManager;
+use App\Model\Pages;
 
 class AboutTableSeeder extends Seeder
 {
@@ -31,7 +31,7 @@ class AboutTableSeeder extends Seeder
         ];
 
         foreach ($permission as $key => $value) {
-        	PageManager::insertAbout($value);
+        	Pages::insertAbout($value);
         }
     }
 }

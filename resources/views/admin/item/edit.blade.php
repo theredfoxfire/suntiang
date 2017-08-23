@@ -21,12 +21,29 @@
                 {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
             </div>
             <div class="form-group">
+                <strong>Konversi:</strong>
+                {!! Form::text('convertion', null, array('placeholder' => 'Konversi, ex: setara 1 gelas susu.','class' => 'form-control')) !!}
+            </div>
+            <div class="form-group">
                 <strong>
-                    Tags Kategori
+                    Jenis Kategori
                 </strong>
-                <select name="tags[]" id="tags" class="form-control" multiple>
-                  @foreach ($data['allTags'] as $tag)
-                    <option @if (in_array($tag, $data['tags'])) selected @endif
+                <select name="category[]" id="category" class="form-control" multiple>
+                  @foreach ($data['allCategory'] as $tag)
+                    <option @if (in_array($tag, $data['category'])) selected @endif
+                    value="{{ $tag }}">
+                      {{ $tag }}
+                    </option>
+                  @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <strong>
+                    Jenis Area
+                </strong>
+                <select name="area[]" id="area" class="form-control" multiple>
+                  @foreach ($data['allArea'] as $tag)
+                    <option @if (in_array($tag, $data['area'])) selected @endif
                     value="{{ $tag }}">
                       {{ $tag }}
                     </option>
@@ -41,18 +58,53 @@
             </div>
             <div class="form-group">
                 <strong>Harga:</strong>
-                <input type="text" name="price" value="{{ formattingNumber($item->price) }}" class="form-control" id="itemPrice" onkeyup="formattingNumber(this.value, 'itemPrice')" />
+                <input type="text" name="daily_price" value="{{ formattingNumber($item->daily_price) }}" class="form-control" id="price1" onkeyup="formattingNumber(this.value, 'price1')" />
             </div>
             <div class="form-group">
-                <strong>Status:</strong>
-                @if ($item->is_active == 1)
-                    {{ Form::radio('is_active', 1, true, ['class' => '']) }} Aktif &nbsp; &nbsp; &nbsp; &nbsp;
-                    {{ Form::radio('is_active', 0, null, ['class' => '']) }} Tidak Aktif
-                @else
-                    {{ Form::radio('is_active', 1, null, ['class' => '']) }} Aktif &nbsp; &nbsp; &nbsp; &nbsp;
-                    {{ Form::radio('is_active', 0, true, ['class' => '']) }} Tidak Aktif
-                @endif
-
+                <strong>Harga:</strong>
+                <input type="text" name="condiment_price" value="{{ formattingNumber($item->condiment_price) }}" class="form-control" id="price2" onkeyup="formattingNumber(this.value, 'price2')" />
+            </div>
+            <div class="form-group">
+                <strong>Harga:</strong>
+                <input type="text" name="catering_price_50" value="{{ formattingNumber($item->catering_price_50) }}" class="form-control" id="price3" onkeyup="formattingNumber(this.value, 'price3')" />
+            </div>
+            <div class="form-group">
+                <strong>Harga:</strong>
+                <input type="text" name="catering_price_75" value="{{ formattingNumber($item->catering_price_75) }}" class="form-control" id="price4" onkeyup="formattingNumber(this.value, 'price4')" />
+            </div>
+            <div class="form-group">
+                <strong>Harga:</strong>
+                <input type="text" name="catering_price_100" value="{{ formattingNumber($item->catering_price_100) }}" class="form-control" id="price5" onkeyup="formattingNumber(this.value, 'price5')" />
+            </div>
+			<div class="form-group">
+                <strong>Condiment?: &nbsp; &nbsp; &nbsp; &nbsp;</strong>
+				@if ($item->is_condiment == 1)
+				{{ Form::radio('is_condiment', 1, true, ['class' => '']) }} Ya &nbsp; &nbsp; &nbsp; &nbsp;
+                {{ Form::radio('is_condiment', 0, null, ['class' => '']) }} Bukan
+				@else
+                {{ Form::radio('is_condiment', 1, null, ['class' => '']) }} Ya &nbsp; &nbsp; &nbsp; &nbsp;
+                {{ Form::radio('is_condiment', 0, true, ['class' => '']) }} Bukan
+				@endif
+            </div>
+			<div class="form-group">
+                <strong>Minuman?: &nbsp; &nbsp; &nbsp; &nbsp;</strong>
+				@if ($item->is_drink == 1)
+				{{ Form::radio('is_drink', 1, true, ['class' => '']) }} Ya &nbsp; &nbsp; &nbsp; &nbsp;
+                {{ Form::radio('is_drink', 0, null, ['class' => '']) }} Bukan
+				@else
+                {{ Form::radio('is_drink', 1, null, ['class' => '']) }} Ya &nbsp; &nbsp; &nbsp; &nbsp;
+                {{ Form::radio('is_drink', 0, true, ['class' => '']) }} Bukan
+				@endif
+            </div>
+            <div class="form-group">
+                <strong>Posisi:&nbsp; &nbsp; &nbsp; &nbsp;</strong>
+				@if ($item->is_stall == 1)
+				{{ Form::radio('is_stall', 1, true, ['class' => '']) }} Stall &nbsp; &nbsp; &nbsp; &nbsp;
+                {{ Form::radio('is_stall', 0, null, ['class' => '']) }} Buffet
+				@else
+                {{ Form::radio('is_stall', 1, null, ['class' => '']) }} Stall &nbsp; &nbsp; &nbsp; &nbsp;
+                {{ Form::radio('is_stall', 0, true, ['class' => '']) }} Buffet
+				@endif
             </div>
             <div class="form-group">
                 <strong>Description:</strong>
