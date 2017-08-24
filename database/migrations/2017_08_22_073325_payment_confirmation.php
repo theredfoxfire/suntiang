@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Categories extends Migration
+class PaymentConfirmation extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class Categories extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('payment_confirmation', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
-            $table->string('type');
-            $table->integer('parent_id')->nullable();
+            $table->integer('payment_id');
+            $table->integer('total_payment');
+            $table->string('image_notice');
+            $table->date('date');
+            $table->text('note');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class Categories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('payment_confirmation');
     }
 }

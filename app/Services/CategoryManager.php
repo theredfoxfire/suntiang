@@ -10,7 +10,7 @@ class CategoryManager
 	*/
 	public static function getAllCategories()
 	{
-		return 
+		return
 			DB::select('select * from categories as c
 				order by c.id desc
 			');

@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call('CartsProductPivotTableSeeder');
         $this->call('CartsTableSeeder');
         $this->call('CategoriesTableSeeder');
-        $this->call('CategoryProductPivotTableSeeder');
         $this->call('CouriersTableSeeder');
         $this->call('DeliveriesTableSeeder');
         $this->call('DeliveryTrackingsTableSeeder');
@@ -29,9 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call('PermissionTableSeeder');
         $this->call('UserTableSeeder');
         $this->call('PermissionRoleTableSeeder');
-        $this->call('ProductImagesTableSeeder');
         $this->call('CategoryItemPivotTableSeeder');
-        $this->call('ProductsTableSeeder');
         $this->call('PromotionsTableSeeder');
         $this->call('RoleUserTableSeeder');
         $this->call('SessionsTableSeeder');
@@ -42,6 +39,15 @@ class DatabaseSeeder extends Seeder
         $this->call('PageImagesTableSeeder');
         $this->call('PageFieldsTableSeeder');
         $this->call('TagTableSeeder');
+        $this->call('AboutTableSeeder');
+        $this->call('FaqCategoryTableSeeder');
+        $this->call('FaqTableSeeder');
+        $this->call('HowtoorderCategoryTableSeeder');
+        $this->call('HowtoorderTableSeeder');
+        $this->call('PromoTableSeeder');
+        $this->call('DesclaimerTableSeeder');
+        $this->call('PrivacyTableSeeder');
+        $this->call('TermTableSeeder');
     }
 
 }

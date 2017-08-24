@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Categories extends Migration
+class ContactMessage extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class Categories extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('contact_message', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
-            $table->string('type');
-            $table->integer('parent_id')->nullable();
+            $table->string('name', 200);
+            $table->string('email', 200);
+            $table->string('subject', 200);
+            $table->string('phone', 200);
+            $table->text('message');
+            $table->boolean('is_blocked');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class Categories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('contact_message');
     }
 }

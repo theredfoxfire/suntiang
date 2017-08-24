@@ -1,16 +1,12 @@
 <?php
-namespace App\Model;
+namespace App\Services;
 
-use Illuminate\Database\Eloquent\Model;
-use App\Services\PageManager;
+use Illuminate\Support\Facades\DB;
+use App\Services\PaginatorManager;
 
-class Pages extends Model
+class PageManager
 {
-    public $fillable = ['name', 'slug', 'is_active'];
-
-    /**
-    * Store new data into DB
-    *
+	/**
     * @param $about Array (
     *   string title
     *   text content
@@ -18,15 +14,15 @@ class Pages extends Model
     *   string reservation_info
     *   string promo
     *   string contact_person
-    * @return DB response
     * )
+	* @return DB response
     */
-    public static function insertAbout($about)
-    {
-        PageManager::insertAbout($about);
-    }
+	public static function insertAbout($about)
+	{
+		return DB::table('about')->insert($about);
+	}
 
-    /**
+	/**
     * Store new data into DB
     *
     * @param $faqCategory Array (
@@ -36,12 +32,12 @@ class Pages extends Model
     * @return DB response
     * )
     */
-    public static function insertFaqCategory($faqCategory)
-    {
-        PageManager::insertFaqCategory($faqCategory);
-    }
+	public static function insertFaqCategory($faqCategory)
+	{
+		return DB::table('faq_category')->insert($faqCategory);
+	}
 
-    /**
+	/**
     * Store new data into DB
     *
     * @param $faq Array (
@@ -52,12 +48,12 @@ class Pages extends Model
     * @return DB response
     * )
     */
-    public static function insertFaq($faq)
-    {
-        PageManager::insertFaq($faq);
-    }
+	public static function insertFaq($faq)
+	{
+		return DB::table('faq')->insert($faq);
+	}
 
-    /**
+	/**
     * Store new data into DB
     *
     * @param $promo Array (
@@ -67,12 +63,12 @@ class Pages extends Model
     * @return DB response
     * )
     */
-    public static function insertPromo($promo)
-    {
-        PageManager::insertPromo($promo);
-    }
+	public static function insertPromo($promo)
+	{
+		return DB::table('promo')->insert($promo);
+	}
 
-    /**
+	/**
     * Store new data into DB
     *
     * @param $howtoorder_category Array (
@@ -82,12 +78,12 @@ class Pages extends Model
     * @return DB response
     * )
     */
-    public static function insertHowtoorderCategory($howtoorder_category)
-    {
-        PageManager::insertHowtoorderCategory($howtoorder_category);
-    }
+	public static function insertHowtoorderCategory($howtoorder_category)
+	{
+		return DB::table('howtoorder_category')->insert($howtoorder_category);
+	}
 
-    /**
+	/**
     * Store new data into DB
     *
     * @param $howtoorder Array (
@@ -99,12 +95,12 @@ class Pages extends Model
     * @return DB response
     * )
     */
-    public static function insertHowtoorder($howtoorder)
-    {
-        PageManager::insertHowtoorder($howtoorder);
-    }
+	public static function insertHowtoorder($howtoorder)
+	{
+		return DB::table('howtoorder')->insert($howtoorder);
+	}
 
-    /**
+	/**
     * Store new data into DB
     *
     * @param $desclaimer Array (
@@ -115,11 +111,11 @@ class Pages extends Model
     * @return DB response
     * )
     */
-    public static function insertDesclaimer($desclaimer)
-    {
-        PageManager::insertDesclaimer($desclaimer);
-    }
-    /**
+	public static function insertDesclaimer($desclaimer)
+	{
+		return DB::table('desclaimer')->insert($desclaimer);
+	}
+	/**
     * Store new data into DB
     *
     * @param $privacy Array (
@@ -130,11 +126,11 @@ class Pages extends Model
     * @return DB response
     * )
     */
-    public static function insertPrivacy($privacy)
-    {
-        PageManager::insertPrivacy($privacy);
-    }
-    /**
+	public static function insertPrivacy($privacy)
+	{
+		return DB::table('privacy')->insert($privacy);
+	}
+	/**
     * Store new data into DB
     *
     * @param $term Array (
@@ -145,8 +141,8 @@ class Pages extends Model
     * @return DB response
     * )
     */
-    public static function insertTerm($term)
-    {
-        PageManager::insertTerm($term);
-    }
+	public static function insertTerm($term)
+	{
+		return DB::table('term')->insert($term);
+	}
 }

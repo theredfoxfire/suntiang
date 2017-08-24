@@ -200,6 +200,27 @@ Route::group([
     Route::delete('admin/items/{id}',['as'=>'admin.items.destroy',
         'uses'=>'ItemController@destroy',
         'middleware' => ['permission:items-delete']]);
+    Route::get('admin/package',['as'=>'admin.package.index',
+        'uses'=>'ItemController@indexPackage',
+        'middleware' => ['permission:package-list|package-create|package-edit|package-delete'],
+        ]);
+    Route::get('admin/package/create-package',['as'=>'admin.package.create',
+        'uses'=>'ItemController@createPackage',
+        'middleware' => ['permission:package-create']]);
+    Route::post('admin/package/create-package',['as'=>'admin.package.store',
+        'uses'=>'ItemController@storePackage',
+        'middleware' => ['permission:package-create']]);
+    Route::get('admin/package/{id}',['as'=>'admin.package.show',
+        'uses'=>'ItemController@showPackage']);
+    Route::get('admin/package/{id}/edit',['as'=>'admin.package.edit',
+        'uses'=>'ItemController@editPackage',
+        'middleware' => ['permission:package-edit']]);
+    Route::patch('admin/package/{id}',['as'=>'admin.package.update',
+        'uses'=>'ItemController@updatePackage',
+        'middleware' => ['permission:package-edit']]);
+    Route::delete('admin/package/{id}',['as'=>'admin.package.destroy',
+        'uses'=>'ItemController@destroyPackage',
+        'middleware' => ['permission:package-delete']]);
 
     //Carts routes
     Route::get('admin/carts', ['as'=>'admin.carts.index',

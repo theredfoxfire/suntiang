@@ -21,7 +21,6 @@ class ItemUpdateRequest extends FormRequest
         return [
             'name' => 'required',
             'description' => 'required',
-            'price' => 'required',
             'photo' => 'image',
         ];
     }
@@ -43,11 +42,24 @@ class ItemUpdateRequest extends FormRequest
         } else {
             $imageName = $this->oldPhoto;
         }
-        $newPrice = implode("", explode(".", $this->price));
+        $newDailyPrice = implode("", explode(".", $this->daily_price));
+        $newCondimentPrice = implode("", explode(".", $this->condiment_price));
+        $newCateringPrice50 = implode("", explode(".", $this->catering_price_50));
+        $newCateringPrice75 = implode("", explode(".", $this->catering_price_75));
+        $newCateringPrice100 = implode("", explode(".", $this->catering_price_100));
         return [
+            'convertion' => $this->convertion,
+            'daily_price' => $newDailyPrice,
+            'condiment_price' => $newCondimentPrice,
+            'catering_price_50' => $newCateringPrice50,
+            'catering_price_75' => $newCateringPrice75,
+            'catering_price_100' => $newCateringPrice100,
             'photo' => $imageName,
-            'name' => $this->name, 'price' => $newPrice,
-            'description' => $this->description, 'is_active' => $this->is_active,
+            'name' => $this->name,
+            'description' => $this->description,
+            'is_condiment' => $this->is_condiment,
+            'is_stall' => $this->is_stall,
+            'is_drink' => $this->is_drink,
         ];
     }
     /**
@@ -60,7 +72,6 @@ class ItemUpdateRequest extends FormRequest
         return [
             'name.required' => 'Kolom Nama harus diisi.',
             'description.required' => 'Kolom Deskripsi harus diisi.',
-            'price.required' => 'Kolom harga harus diisi.',
             'photo.image' => 'Hanya diperbolehkan mengupload file gambar (jpeg, png, bmp, gif, atau svg).',
         ];
     }

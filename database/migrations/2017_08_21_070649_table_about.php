@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Categories extends Migration
+class TableAbout extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class Categories extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('about', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
-            $table->string('type');
-            $table->integer('parent_id')->nullable();
+            $table->string('title', 200);
+            $table->text('content');
+            $table->string('opening_hour', 200);
+            $table->text('reservation_info');
+            $table->string('promo', 200);
+            $table->string('contact_person', 200);
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class Categories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('about');
     }
 }

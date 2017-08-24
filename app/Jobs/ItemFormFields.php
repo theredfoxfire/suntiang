@@ -25,12 +25,22 @@ class ItemFormFields
     * @var array
     */
     protected $fieldList = [
+        'convertion' => '',
+        'daily_price' => '',
+        'condiment_price' => '',
+        'catering_price_50' => '',
+        'catering_price_75' => '',
+        'catering_price_100' => '',
+        'is_stall' => '',
+        'is_condiment' => '',
+        'is_drink' => '',
         'name' => '',
         'photo' => '',
         'oldPhoto' => '',
         'is_active' => '',
         'description' => '',
-        'tags' => [],
+        'category' => [],
+        'area' => [],
     ];
 
     /**
@@ -61,7 +71,10 @@ class ItemFormFields
 
         return array_merge(
             $fields,
-            ['allTags' => Categories::pluck('name')->all()]
+            ['allCategory' => Categories::where('type', '!=', 'region')->pluck('name')->all()],
+            ['allArea' => Categories::where('type', 'region')->pluck('name')->all()],
+            ['allDrink' => Item::where('is_drink', 1)->where('id', '!=', $this->id)->pluck('name')->all()],
+            ['allCondiment' => Item::where('is_condiment', 1)->where('id', '!=', $this->id)->whereNull('is_drink')->orWhere('is_drink', 0)->pluck('name')->all()]
         );
     }
 
@@ -76,14 +89,16 @@ class ItemFormFields
     {
         $item = Item::findOrFail($id);
 
-        $fieldNames = array_keys(array_except($fields, ['tags']));
+        $fieldNames = array_keys(array_except($fields, ['area', 'category', 'drink', 'condiment']));
 
         $fields = ['id' => $id];
             foreach ($fieldNames as $field) {
             $fields[$field] = $item->{$field};
         }
-
-        $fields['tags'] = $item->tags()->pluck('name')->all();
+        $fields['area'] = $item->tags()->where('type', 'region')->pluck('name')->all();
+        $fields['category'] = $item->tags()->where('type', '!=', 'region')->pluck('name')->all();
+        $fields['drink'] = $item->getChild('drink', $id);
+        $fields['condiment'] = $item->getChild('condiment', $id);
 
         return $fields;
     }

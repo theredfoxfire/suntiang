@@ -90,7 +90,16 @@
   $(function() {
     $( "#publish_date" ).datepicker();
     $("#publish_time").timepicker({});
-    $("#tags").selectize({
+    $("#category").selectize({
+      create: true
+    });
+    $("#area").selectize({
+      create: true
+    });
+    $("#drink").selectize({
+      create: true
+    });
+    $("#condiment").selectize({
       create: true
     });
   });
