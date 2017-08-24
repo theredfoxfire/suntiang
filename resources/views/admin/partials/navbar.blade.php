@@ -1,12 +1,10 @@
 <ul class="nav nav-pills nav-stacked">
   @if (Auth::check())
   <li
-    @if (Request::is('admin/post*') || Request::is('admin/tag*') ||
+    @if (
      Request::is('admin/upload*') ||
-     Request::is('admin/item-images*') || Request::is('admin/products*') ||
-     Request::is('admin/product_images*') || Request::is('admin/pages*') ||
-     Request::is('admin/page_images*') || Request::is('admin/page_fields*') ||
-     Request::is('admin/promotions*') || Request::is('admin/sliders*'))
+     Request::is('admin/promotions*') || Request::is('admin/sliders*')
+     )
     class="dropdown active"
     @else class="dropdown"
     @endif
@@ -15,49 +13,9 @@
 
     >CONTENTS <span class="caret pull-right"></span></a>
     <ul class="dropdown-menu col-sm-12">
-      @permission('post-list')
-      <li @if (Request::is('admin/post*')) class="active" @endif>
-      <a href="{{ config('blog.prefix_url') }}admin/post">Posts</a>
-      </li>
-      @endpermission
-      @permission('tag-list')
-      <li @if (Request::is('admin/tag*')) class="active" @endif>
-      <a href="{{ config('blog.prefix_url') }}admin/tag">Tags</a>
-      </li>
-      @endpermission
       @permission('upload-list')
       <li @if (Request::is('admin/upload*')) class="active" @endif>
       <a href="{{ config('blog.prefix_url') }}admin/upload">Uploads</a>
-      </li>
-      @endpermission
-      @permission('item_images-list')
-      <li @if (Request::is('admin/item-images*')) class="active" @endif>
-      <a href="{{ route('admin.item_images.index') }}">Item Images</a>
-      </li>
-      @endpermission
-      @permission('products-list')
-      <li @if (Request::is('admin/products*')) class="active" @endif>
-      <a href="{{ route('admin.products.index') }}">Products</a>
-      </li>
-      @endpermission
-      @permission('product_images-list')
-      <li @if (Request::is('admin/product_images*')) class="active" @endif>
-      <a href="{{ route('admin.product_images.index') }}">Product Images</a>
-      </li>
-      @endpermission
-      @permission('pages-list')
-      <li @if (Request::is('admin/pages*')) class="active" @endif>
-      <a href="{{ route('admin.pages.index') }}">Pages</a>
-      </li>
-      @endpermission
-      @permission('page_images-list')
-      <li @if (Request::is('admin/page_images*')) class="active" @endif>
-      <a href="{{ route('admin.page_images.index') }}">Page Images</a>
-      </li>
-      @endpermission
-      @permission('page_fields-list')
-      <li @if (Request::is('admin/page_fields*')) class="active" @endif>
-      <a href="{{ route('admin.page_fields.index') }}">Page Fields</a>
       </li>
       @endpermission
       @permission('promotions-list')
@@ -68,6 +26,61 @@
       @permission('sliders-list')
       <li @if (Request::is('admin/sliders*')) class="active" @endif>
       <a href="{{ route('admin.sliders.index') }}">Sliders</a>
+      </li>
+      @endpermission
+    </ul>
+  </li>
+  <li
+    @if (
+     Request::is('admin/upload*') ||
+     Request::is('admin/promotions*') || Request::is('admin/sliders*')
+     )
+    class="dropdown active"
+    @else class="dropdown"
+    @endif
+  >
+    <a href="#" data-toggle="dropdown" class="dropdown-toggle"
+
+    >HALAMAN <span class="caret pull-right"></span></a>
+    <ul class="dropdown-menu col-sm-12">
+      @permission('upload-list')
+      <li @if (Request::is('admin/*')) class="active" @endif>
+      <a href="{{ route('admin.items.index') }}">About US</a>
+      </li>
+      @endpermission
+      @permission('upload-list')
+      <li @if (Request::is('admin/*')) class="active" @endif>
+      <a href="{{ route('admin.items.index') }}">FAQ</a>
+      </li>
+      @endpermission
+      @permission('upload-list')
+      <li @if (Request::is('admin/*')) class="active" @endif>
+      <a href="{{ route('admin.items.index') }}">Promo</a>
+      </li>
+      @endpermission
+      @permission('upload-list')
+      <li @if (Request::is('admin/*')) class="active" @endif>
+      <a href="{{ route('admin.items.index') }}">How to order</a>
+      </li>
+      @endpermission
+      @permission('upload-list')
+      <li @if (Request::is('admin/*')) class="active" @endif>
+      <a href="{{ route('admin.items.index') }}">Contact Us</a>
+      </li>
+      @endpermission
+      @permission('upload-list')
+      <li @if (Request::is('admin/*')) class="active" @endif>
+      <a href="{{ route('admin.items.index') }}">Disclaimer</a>
+      </li>
+      @endpermission
+      @permission('upload-list')
+      <li @if (Request::is('admin/*')) class="active" @endif>
+      <a href="{{ route('admin.items.index') }}">Privacy Policy</a>
+      </li>
+      @endpermission
+      @permission('upload-list')
+      <li @if (Request::is('admin/*')) class="active" @endif>
+      <a href="{{ route('admin.items.index') }}">Term of Use</a>
       </li>
       @endpermission
     </ul>
@@ -92,9 +105,29 @@
       <a href="{{ route('admin.package.index') }}">Data Paket</a>
       </li>
       @endpermission
+      @permission('package-list')
+      <li @if (Request::is('admin/package*')) class="active" @endif>
+      <a href="{{ route('admin.package.index') }}">Item/Paket Aprovment</a>
+      </li>
+      @endpermission
       @permission('categories-list')
       <li @if (Request::is('admin/categories*')) class="active" @endif>
-      <a href="{{ route('admin.categories.index') }}">Data Kategori</a>
+      <a href="{{ route('admin.categories.index') }}">Kategori Jenis</a>
+      </li>
+      @endpermission
+      @permission('categories-list')
+      <li @if (Request::is('admin/categories*')) class="active" @endif>
+      <a href="{{ route('admin.categories.index') }}">Kategori Area</a>
+      </li>
+      @endpermission
+      @permission('categories-list')
+      <li @if (Request::is('admin/categories*')) class="active" @endif>
+      <a href="{{ route('admin.categories.index') }}">Kupon</a>
+      </li>
+      @endpermission
+      @permission('categories-list')
+      <li @if (Request::is('admin/categories*')) class="active" @endif>
+      <a href="{{ route('admin.categories.index') }}">Set Kategori Homepage</a>
       </li>
       @endpermission
     </ul>
@@ -113,7 +146,7 @@
     <ul class="dropdown-menu col-sm-12">
           @permission('payments-list')
           <li @if (Request::is('admin/payments*')) class="active" @endif>
-            <a href="{{ route('admin.payments.index') }}">Payments</a>
+            <a href="{{ route('admin.payments.index') }}">Data Konfirmasi Pembayaran</a>
           </li>
           @endpermission
           @permission('couriers-list')

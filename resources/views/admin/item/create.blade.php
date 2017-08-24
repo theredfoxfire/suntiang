@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 <strong>
-                Jenis Kategori
+                Kategori Jenis
                 </strong>
                 <select name="category[]" id="category" class="form-control" multiple>
                 @foreach ($allCategory as $tag)
@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
                 <strong>
-                Jenis Area
+                Kategori Area
                 </strong>
                 <select name="area[]" id="area" class="form-control" multiple>
                 @foreach ($allArea as $tag)
@@ -68,7 +68,7 @@
                 Pilih Condiment
                 </strong>
                 <select name="condiment[]" id="condiment" class="form-control" multiple>
-                @foreach ($allCodiment as $tag)
+                @foreach ($allCondiment as $tag)
                     <option
                     value="{{ $tag }}">
                       {{ $tag }}

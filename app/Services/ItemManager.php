@@ -22,4 +22,50 @@ class ItemManager
 					'))
 		;
 	}
+
+	/**
+	* Insert item into pivot item
+	* @param $formData array(
+	*	integer itemID
+	* )
+	* @param integer $itemID latest itemID
+	* @param string $type item
+	*/
+	public static function insertItemPivot($formData, $itemID, $type)
+	{
+		$data = array();
+		foreach ($formData as $value) {
+			array_push($data, array(
+				'parent_id' => $itemID,
+				'child_id' => $value,
+				'type' => $type,
+			));
+		}
+		return DB::table('item_pivot')->insert($data);
+	}
+	/**
+	* @param string $type
+	* @return Array Object items
+	*/
+	public static function getChild($type, $itemID)
+	{
+		$dbdata = DB::select("
+			select ic.name from item_pivot as ip inner join items as ic
+			on ip.child_id = ic.id where ip.type = '$type' and ip.parent_id = $itemID
+		");
+		$data = array();
+		foreach ($dbdata as $key => $value) {
+			array_push($data, $value->name);
+		}
+		return $data;
+	}
+
+	/**
+	* Delete item_pivot by parentID
+	* @param integer $parentID
+	*/
+	public static function deleteChild($parentID)
+	{
+		DB::table('item_pivot')->where('parent_id', '=', $parentID)->delete();
+	}
 }

@@ -66,7 +66,8 @@ class ItemController extends Controller
     {
         $item = Item::create($request->fillItem());
         $item->syncTags(array_merge($request->get('category', []),$request->get('area', [])));
-        $item->syncDrink($request->get('drink', []));
+        $item->syncChild($request->get('drink', []), 'drink');
+        $item->syncChild($request->get('condiment', []), 'condiment');
 
         return redirect()->route('admin.items.index')
                         ->with('success','Item created successfully');
@@ -118,8 +119,6 @@ class ItemController extends Controller
     public function edit($id)
     {
         $data = $this->dispatch(new ItemFormFields($id));
-        // print_r($data);
-        // exit();
         $item = Item::find($id);
 
         return view('admin.item.edit', compact('item', 'data'));
@@ -150,6 +149,9 @@ class ItemController extends Controller
         $item = Item::find($id);
         $item->update($request->fillData());
         $item->syncTags(array_merge($request->get('category', []),$request->get('area', [])));
+        Item::deleteChild($id);
+        $item->syncChild($request->get('drink', []), 'drink');
+        $item->syncChild($request->get('condiment', []), 'condiment');
 
         return redirect()->route('admin.items.index')
                         ->with('success','Item updated successfully');
@@ -180,6 +182,7 @@ class ItemController extends Controller
     public function destroy($id)
     {
         Item::find($id)->delete();
+        Item::deleteChild($id);
         return redirect()->route('admin.items.index')
                         ->with('success','Item deleted successfully');
     }

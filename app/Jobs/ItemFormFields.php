@@ -73,8 +73,8 @@ class ItemFormFields
             $fields,
             ['allCategory' => Categories::where('type', '!=', 'region')->pluck('name')->all()],
             ['allArea' => Categories::where('type', 'region')->pluck('name')->all()],
-            ['allDrink' => Item::where('is_drink', 1)->pluck('name')->all()],
-            ['allCodiment' => Item::where('is_condiment', 1)->pluck('name')->all()]
+            ['allDrink' => Item::where('is_drink', 1)->where('id', '!=', $this->id)->pluck('name')->all()],
+            ['allCondiment' => Item::where('is_condiment', 1)->where('id', '!=', $this->id)->whereNull('is_drink')->orWhere('is_drink', 0)->pluck('name')->all()]
         );
     }
 
@@ -95,11 +95,10 @@ class ItemFormFields
             foreach ($fieldNames as $field) {
             $fields[$field] = $item->{$field};
         }
-
         $fields['area'] = $item->tags()->where('type', 'region')->pluck('name')->all();
         $fields['category'] = $item->tags()->where('type', '!=', 'region')->pluck('name')->all();
-        $fields['drink'] = $item->drink()->where('is_drink', '1')->pluck('name')->all();
-        $fields['condiment'] = $item->condiment()->where('is_condiment', '1')->pluck('name')->all();
+        $fields['drink'] = $item->getChild('drink', $id);
+        $fields['condiment'] = $item->getChild('condiment', $id);
 
         return $fields;
     }

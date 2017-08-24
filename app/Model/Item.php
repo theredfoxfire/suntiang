@@ -33,24 +33,6 @@ class Item extends Model
     {
         return $this->belongsToMany('App\Model\Categories', 'category_item_pivots');
     }
-    /**
-    * The many-to-many relationship between categories and items.
-    *
-    * @return BelongsToMany
-    */
-    public function drink()
-    {
-        return $this->belongsToMany('App\Model\Item', 'item_pivot');
-    }
-    /**
-    * The many-to-many relationship between categories and items.
-    *
-    * @return BelongsToMany
-    */
-    public function condiment()
-    {
-        return $this->belongsToMany('App\Model\Item', 'item_pivot');
-    }
 
     /**
     * Sync tag relation adding new tags as needed
@@ -72,34 +54,30 @@ class Item extends Model
     * Sync tag relation adding new tags as needed
     *
     * @param array $tags
+    * @return DB Response
     */
-    public function syncDrink(array $tags)
+    public function syncChild(array $tags, $type)
     {
-        print_r($this->whereIn('name', $tags)->pluck('id')->all());
-        exit();
-        if (count($tags)) {
-            $this->drink()->sync(
-                $this->whereIn('name', $tags)->pluck('id')->all()
-            );
-            return;
-        }
+        $formData = $this->whereIn('name', $tags)->pluck('id')->all();
+        $itemID = $this->id;
 
-        $this->drink()->detach();
+        return ItemManager::insertItemPivot($formData, $itemID, $type);
     }
     /**
-    * Sync tag relation adding new tags as needed
-    *
-    * @param array $tags
+    * Get item child
+    * @param string $type, integer $itemID
+    * @return Array Object of items
     */
-    public function syncCodiment(array $tags)
+    public function getChild($type, $itemID)
     {
-        if (count($tags)) {
-            $this->condiment()->sync(
-                $this->whereIn('name', $tags)->pluck('id')->all()
-            );
-            return;
-        }
-
-        $this->condiment()->detach();
+        return ItemManager::getChild($type, $itemID);
     }
+    /**
+	* Delete item_pivot by parentID
+	* @param integer $parentID
+	*/
+	public static function deleteChild($parentID)
+	{
+		ItemManager::deleteChild($parentID);
+	}
 }
