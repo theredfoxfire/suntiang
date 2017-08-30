@@ -498,6 +498,36 @@ Route::group([
         'uses'=>'PagesController@destroy',
         'middleware' => ['permission:pages-delete']]);
 
+    //page about
+    Route::get('admin/about/{id}',['as'=>'admin.about.edit',
+        'uses'=>'PagesController@editAbout',
+        'middleware' => ['permission:about-edit']]);
+    Route::get('admin/about',['as'=>'admin.about.index',
+        'uses'=>'PagesController@indexAbout',
+        'middleware' => ['permission:about-list']]);
+    Route::post('admin/about/update',['as'=>'admin.about.update',
+        'uses'=>'PagesController@updateAbout',
+        'middleware' => ['permission:about-update']]);
+    //page faq
+    Route::get('admin/faq/create',['as'=>'admin.faq.create',
+        'uses'=>'PagesController@createFaq',
+        'middleware' => ['permission:faq-create']]);
+    Route::post('admin/faq/store',['as'=>'admin.faq.store',
+        'uses'=>'PagesController@storeFaq',
+        'middleware' => ['permission:faq-store']]);
+    Route::get('admin/faq/{id}',['as'=>'admin.faq.edit',
+        'uses'=>'PagesController@editFaq',
+        'middleware' => ['permission:faq-edit']]);
+    Route::post('admin/faq/update',['as'=>'admin.faq.update',
+        'uses'=>'PagesController@updateFaq',
+        'middleware' => ['permission:faq-update']]);
+    Route::delete('admin/faq/{id}',['as'=>'admin.faq.delete',
+        'uses'=>'PagesController@deleteFaq',
+        'middleware' => ['permission:pages-delete']]);
+    Route::get('admin/faq',['as'=>'admin.faq.index',
+        'uses'=>'PagesController@indexFaq',
+        'middleware' => ['permission:faq-list']]);
+
     //Payments routes
     Route::get('admin/payments', ['as'=>'admin.payments.index',
         'uses'=>'PaymentsController@index',
@@ -521,6 +551,72 @@ Route::group([
         'uses'=>'PaymentsController@destroy',
         'middleware' => ['permission:payments-delete']]);
 
+    //faq category routes
+    Route::get('admin/faq-category', ['as'=>'admin.faq-category.index',
+        'uses'=>'FaqCategoryController@index',
+        'middleware' => ['permission:faq-category-list|faq-category-create|faq-category-edit|faq-category-delete'],
+    ]);
+    Route::get('admin/faq-category/create',['as'=>'admin.faq-category.create',
+        'uses'=>'FaqCategoryController@create',
+        'middleware' => ['permission:faq-category-create']]);
+    Route::post('admin/faq-category/store',['as'=>'admin.faq-category.store',
+        'uses'=>'FaqCategoryController@store',
+        'middleware' => ['permission:faq-category-create']]);
+    Route::get('admin/faq-category/{id}',['as'=>'admin.faq-category.show',
+        'uses'=>'FaqCategoryController@show']);
+    Route::get('admin/faq-category/{id}/edit',['as'=>'admin.faq-category.edit',
+        'uses'=>'FaqCategoryController@edit',
+        'middleware' => ['permission:faq-category-edit']]);
+    Route::patch('admin/faq-category/{id}',['as'=>'admin.faq-category.update',
+        'uses'=>'FaqCategoryController@update',
+        'middleware' => ['permission:faq-category-edit']]);
+    Route::delete('admin/faq-category/{id}',['as'=>'admin.faq-category.destroy',
+        'uses'=>'FaqCategoryController@destroy',
+        'middleware' => ['permission:faq-category-delete']]);
+    //Promo routes
+    Route::get('admin/promo', ['as'=>'admin.promo.index',
+        'uses'=>'PromoController@index',
+        'middleware' => ['permission:promo-list|promo-create|promo-edit|promo-delete'],
+    ]);
+    Route::get('admin/promo/create',['as'=>'admin.promo.create',
+        'uses'=>'PromoController@create',
+        'middleware' => ['permission:promo-create']]);
+    Route::post('admin/promo/store',['as'=>'admin.promo.store',
+        'uses'=>'PromoController@store',
+        'middleware' => ['permission:promo-create']]);
+    Route::get('admin/promo/{id}',['as'=>'admin.promo.show',
+        'uses'=>'PromoController@show']);
+    Route::get('admin/promo/{id}/edit',['as'=>'admin.promo.edit',
+        'uses'=>'PromoController@edit',
+        'middleware' => ['permission:promo-edit']]);
+    Route::patch('admin/promo/{id}',['as'=>'admin.promo.update',
+        'uses'=>'PromoController@update',
+        'middleware' => ['permission:promo-edit']]);
+    Route::delete('admin/promo/{id}',['as'=>'admin.promo.destroy',
+        'uses'=>'PromoController@destroy',
+        'middleware' => ['permission:promo-delete']]);
+    //How to order routes
+    Route::get('admin/how_to_order', ['as'=>'admin.how_to_order.index',
+        'uses'=>'PromoController@index',
+        'middleware' => ['permission:how_to_order-list|how_to_order-create|how_to_order-edit|how_to_order-delete'],
+    ]);
+    Route::get('admin/how_to_order/create',['as'=>'admin.how_to_order.create',
+        'uses'=>'PromoController@create',
+        'middleware' => ['permission:how_to_order-create']]);
+    Route::post('admin/how_to_order/store',['as'=>'admin.how_to_order.store',
+        'uses'=>'PromoController@store',
+        'middleware' => ['permission:how_to_order-create']]);
+    Route::get('admin/how_to_order/{id}',['as'=>'admin.how_to_order.show',
+        'uses'=>'PromoController@show']);
+    Route::get('admin/how_to_order/{id}/edit',['as'=>'admin.how_to_order.edit',
+        'uses'=>'PromoController@edit',
+        'middleware' => ['permission:how_to_order-edit']]);
+    Route::patch('admin/how_to_order/{id}',['as'=>'admin.how_to_order.update',
+        'uses'=>'PromoController@update',
+        'middleware' => ['permission:how_to_order-edit']]);
+    Route::delete('admin/how_to_order/{id}',['as'=>'admin.how_to_order.destroy',
+        'uses'=>'PromoController@destroy',
+        'middleware' => ['permission:how_to_order-delete']]);
     //Permissions routes
     Route::get('admin/permissions', ['as'=>'admin.permissions.index',
         'uses'=>'PermissionController@index',

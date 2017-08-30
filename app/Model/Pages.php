@@ -29,21 +29,6 @@ class Pages extends Model
     /**
     * Store new data into DB
     *
-    * @param $faqCategory Array (
-    *   string name
-    *   string description
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-    public static function insertFaqCategory($faqCategory)
-    {
-        PageManager::insertFaqCategory($faqCategory);
-    }
-
-    /**
-    * Store new data into DB
-    *
     * @param $faq Array (
     *   integer category_id
     *   string question
@@ -55,21 +40,6 @@ class Pages extends Model
     public static function insertFaq($faq)
     {
         PageManager::insertFaq($faq);
-    }
-
-    /**
-    * Store new data into DB
-    *
-    * @param $promo Array (
-    *   string image
-    *   string description
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-    public static function insertPromo($promo)
-    {
-        PageManager::insertPromo($promo);
     }
 
     /**

@@ -31,6 +31,95 @@ class PagesController extends Controller
         $pages = Pages::indexAbout();
         return view('admin.pages.indexAbout',compact('pages'));
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editAbout($id)
+    {
+        $pages = Pages::getAbout($id);
+        return view('admin.pages.editAbout',compact('pages'));
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function updateAbout(AboutUpdateRequest $request, $id)
+    {
+        Pages::updateAbout($id, $request->all());
+
+        return redirect()->route('admin.about.index')
+                        ->with('success','Pages updated successfully');
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexFaq(Request $request)
+    {
+        $pages = Pages::indexFaq();
+        return view('admin.pages.indexFaq',compact('pages'));
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editFaq($id)
+    {
+        $pages = Pages::getFaq($id);
+        return view('admin.pages.editFaq',compact('pages'));
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function updateFaq(FaqUpdateRequest $request, $id)
+    {
+        Pages::updateFaq($id, $request->all());
+
+        return redirect()->route('admin.faq.index')
+                        ->with('success','Faq updated successfully');
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createFaq()
+    {
+        $faqCategory = Pages::getCategoryFaq();
+        return view('admin.pages.createFaq',compact('faqCategory'));
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function storeFaq(FaqCreateRequest $request)
+    {
+        Pages::insertFaq($request->all());
+
+        return redirect()->route('admin.faq.index')
+                        ->with('success','Faq updated successfully');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteFaq($id)
+    {
+        Pages::getFaq($id)->delete();
+        return redirect()->route('admin.faq.index')
+                        ->with('success','Faq deleted successfully');
+    }
 
     /**
      * Display the specified resource.
@@ -42,17 +131,6 @@ class PagesController extends Controller
     {
         $pages = Pages::find($id);
         return view('admin.pages.show',compact('pages'));
-    }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function showAbout($id)
-    {
-        $pages = Pages::getAbout($id);
-        return view('admin.pages.showAbout',compact('pages'));
     }
 
     /**

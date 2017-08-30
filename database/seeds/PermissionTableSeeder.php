@@ -666,6 +666,132 @@ class PermissionTableSeeder extends Seeder
                 'display_name' => 'Delete package',
                 'description' => 'Delete package'
             ],
+            [
+                'id' => 110,
+                'name' => 'about-list',
+                'display_name' => 'Display about Listing',
+                'description' => 'See only Listing Of package'
+            ],
+            [
+                'id' => 111,
+                'name' => 'about-edit',
+                'display_name' => 'about edit',
+                'description' => 'about edit'
+            ],
+            [
+                'id' => 112,
+                'name' => 'about-update',
+                'display_name' => 'about update',
+                'description' => 'about update'
+            ],
+            [
+                'id' => 113,
+                'name' => 'faq-list',
+                'display_name' => 'FAQ list',
+                'description' => 'FAQ list'
+            ],
+            [
+                'id' => 114,
+                'name' => 'faq-edit',
+                'display_name' => 'FAQ Edit',
+                'description' => 'FAQ Edit'
+            ],
+            [
+                'id' => 115,
+                'name' => 'faq-update',
+                'display_name' => 'FAQ Update',
+                'description' => 'FAQ Update'
+            ],
+            [
+                'id' => 116,
+                'name' => 'faq-create',
+                'display_name' => 'FAQ create',
+                'description' => 'FAQ create'
+            ],
+            [
+                'id' => 117,
+                'name' => 'faq-store',
+                'display_name' => 'FAQ store',
+                'description' => 'FAQ store'
+            ],
+            [
+                'id' => 118,
+                'name' => 'faq-delete',
+                'display_name' => 'FAQ delete',
+                'description' => 'FAQ delete'
+            ],
+            [
+                'id' => 119,
+                'name' => 'faq_category-list',
+                'display_name' => 'Display faq_category Listing',
+                'description' => 'See only Listing Of faq_category'
+            ],
+            [
+                'id' => 120,
+                'name' => 'faq_category-create',
+                'display_name' => 'Create faq_category',
+                'description' => 'Create New faq_category'
+            ],
+            [
+                'id' => 121,
+                'name' => 'faq_category-edit',
+                'display_name' => 'Edit faq_category',
+                'description' => 'Edit faq_category'
+            ],
+            [
+                'id' => 122,
+                'name' => 'faq_category-delete',
+                'display_name' => 'Delete faq_category',
+                'description' => 'Delete faq_category'
+            ],
+            [
+                'id' => 123,
+                'name' => 'promo-list',
+                'display_name' => 'Display promo Listing',
+                'description' => 'See only Listing Of promo'
+            ],
+            [
+                'id' => 124,
+                'name' => 'promo-create',
+                'display_name' => 'Create promo',
+                'description' => 'Create New promo'
+            ],
+            [
+                'id' => 125,
+                'name' => 'promo-edit',
+                'display_name' => 'Edit promo',
+                'description' => 'Edit promo'
+            ],
+            [
+                'id' => 126,
+                'name' => 'promo-delete',
+                'display_name' => 'Delete promo',
+                'description' => 'Delete promo'
+            ],
+            [
+                'id' => 127,
+                'name' => 'how_to_order-list',
+                'display_name' => 'Display how_to_order Listing',
+                'description' => 'See only Listing Of how_to_order'
+            ],
+            [
+                'id' => 128,
+                'name' => 'how_to_order-create',
+                'display_name' => 'Create how_to_order',
+                'description' => 'Create New how_to_order'
+            ],
+            [
+                'id' => 129,
+                'name' => 'how_to_order-edit',
+                'display_name' => 'Edit how_to_order',
+                'description' => 'Edit how_to_order'
+            ],
+            [
+                'id' => 130,
+                'name' => 'how_to_order-delete',
+                'display_name' => 'Delete how_to_order',
+                'description' => 'Delete how_to_order'
+            ],
         ];
 
         foreach ($permission as $key => $value) {
