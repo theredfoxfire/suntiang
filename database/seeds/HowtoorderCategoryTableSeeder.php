@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Model\Pages;
+use App\Model\HowtoorderCategory;
 
 class HowtoorderCategoryTableSeeder extends Seeder
 {
@@ -25,7 +25,7 @@ class HowtoorderCategoryTableSeeder extends Seeder
         ];
 
         foreach ($permission as $key => $value) {
-        	Pages::insertHowtoorderCategory($value);
+        	HowtoorderCategory::create($value);
         }
     }
 }

@@ -82,6 +82,8 @@ class ItemController extends Controller
     {
         $item = Item::create($request->fillPackage());
         $item->syncTags(array_merge($request->get('category', []),$request->get('area', [])));
+        $item->syncChild($request->get('drink', []), 'drink');
+        $item->syncChild($request->get('condiment', []), 'condiment');
 
         return redirect()->route('admin.package.index')
                         ->with('success','Package created successfully');
@@ -168,6 +170,9 @@ class ItemController extends Controller
         $item = Item::find($id);
         $item->update($request->fillData());
         $item->syncTags(array_merge($request->get('category', []),$request->get('area', [])));
+        Item::deleteChild($id);
+        $item->syncChild($request->get('drink', []), 'drink');
+        $item->syncChild($request->get('condiment', []), 'condiment');
 
         return redirect()->route('admin.package.index')
                         ->with('success','Package updated successfully');

@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Model\Pages;
+use App\Model\Promo;
 
 class PromoTableSeeder extends Seeder
 {
@@ -39,7 +39,7 @@ class PromoTableSeeder extends Seeder
         ];
 
         foreach ($permission as $key => $value) {
-        	Pages::insertPromo($value);
+        	Promo::create($value);
         }
     }
 }

@@ -82,13 +82,15 @@
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 <script src="{{ asset('js/selectize.js') }}"></script>
 <script>
   $(function() {
     $( "#publish_date" ).datepicker();
+    $( "#start_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+    $( "#end_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
     $("#publish_time").timepicker({});
     $("#category").selectize({
       create: true

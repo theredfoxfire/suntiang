@@ -13,7 +13,7 @@ class ContactMessage extends Migration
      */
     public function up()
     {
-        Schema::create('contact_message', function (Blueprint $table) {
+        Schema::create('contact_messages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 200);
             $table->string('email', 200);
@@ -32,6 +32,6 @@ class ContactMessage extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_message');
+        Schema::dropIfExists('contact_messages');
     }
 }

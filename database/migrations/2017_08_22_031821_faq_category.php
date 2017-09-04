@@ -13,7 +13,7 @@ class FaqCategory extends Migration
      */
     public function up()
     {
-        Schema::create('faq_category', function (Blueprint $table) {
+        Schema::create('faq_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 200);
             $table->string('description', 200)->nullable();
@@ -29,6 +29,6 @@ class FaqCategory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('faq_category');
+        Schema::dropIfExists('faq_categories');
     }
 }

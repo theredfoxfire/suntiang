@@ -18,26 +18,29 @@
 	<table class="table table-bordered">
 		<tr>
 			<th>No</th>
-			<th>order_id</th>
-			<th>amount</th>
-			<th>payment_method</th>
-			<th>payment_status</th>
-			<th width="280px">Action</th>
+			<th>Kategori</th>
+			<th>Judul</th>
+			<th>Urutan</th>
+			<th>Status</th>
+			<th class="col-sm-2">Action</th>
 		</tr>
-	@foreach ($how_to_order as $key => $payment)
+	@foreach ($how_to_order as $key => $data)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $payment->order_id }}</td>
-		<td>{{ $payment->amount }}</td>
-		<td>{{ $payment->payment_method }}</td>
-		<td>{{ $payment->payment_status }}</td>
+		<td>{{ $data->category_id }}</td>
+		<td>{{ $data->title }}</td>
+		<td>{{ $data->step }}</td>
 		<td>
-			<a class="btn btn-info" href="{{ route('admin.how_to_order.show',$payment->id) }}">Show</a>
+			@if ($data->is_active)  <label class="label label-success">Aktif</label>
+			@else <label class="label label-danger">Tidak Aktif</label>
+			@endif
+		</td>
+		<td>
 			@permission('how_to_order-edit')
-			<a class="btn btn-primary" href="{{ route('admin.how_to_order.edit',$payment->id) }}">Edit</a>
+			<a class="btn btn-primary btn-xs" href="{{ route('admin.how_to_order.edit',$data->id) }}">Edit</a>
 			@endpermission
 			@permission('how_to_order-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/how_to_order/{{ $payment->id }}">Delete</a>
+			<a class="btn btn-danger delete-confirm btn-xs" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/how_to_order/{{ $data->id }}">Delete</a>
         	@endpermission
 		</td>
 	</tr>

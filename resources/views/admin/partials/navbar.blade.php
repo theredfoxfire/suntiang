@@ -32,8 +32,11 @@
   </li>
   <li
     @if (
-     Request::is('admin/upload*') ||
-     Request::is('admin/promotions*') || Request::is('admin/sliders*')
+     Request::is('admin/about*') || Request::is('admin/faq*') ||
+     Request::is('admin/promo*') || Request::is('admin/how_to_order*') ||
+     Request::is('admin/contact_info*') || Request::is('admin/contact_message*') ||
+     Request::is('admin/privacy*') || Request::is('admin/term*') ||
+     Request::is('admin/disclaimer*')
      )
     class="dropdown active"
     @else class="dropdown"
@@ -43,50 +46,55 @@
 
     >HALAMAN <span class="caret pull-right"></span></a>
     <ul class="dropdown-menu col-sm-12">
-      @permission('upload-list')
-      <li @if (Request::is('admin/*')) class="active" @endif>
-      <a href="{{ route('admin.items.index') }}">About US</a>
+      @permission('about-list')
+      <li @if (Request::is('admin/about*')) class="active" @endif>
+      <a href="{{ route('admin.about.index') }}">About US</a>
       </li>
       @endpermission
-      @permission('upload-list')
-      <li @if (Request::is('admin/*')) class="active" @endif>
-      <a href="{{ route('admin.items.index') }}">FAQ</a>
+      @permission('faq-list')
+      <li @if (Request::is('admin/faq*')) class="active" @endif>
+      <a href="{{ route('admin.faq.index') }}">FAQ</a>
       </li>
       @endpermission
-      @permission('upload-list')
-      <li @if (Request::is('admin/*')) class="active" @endif>
-      <a href="{{ route('admin.items.index') }}">Promo</a>
+      @permission('promo-list')
+      <li @if (Request::is('admin/promo*')) class="active" @endif>
+      <a href="{{ route('admin.promo.index') }}">Promo</a>
       </li>
       @endpermission
-      @permission('upload-list')
-      <li @if (Request::is('admin/*')) class="active" @endif>
-      <a href="{{ route('admin.items.index') }}">How to order</a>
+      @permission('how_to_order-list')
+      <li @if (Request::is('admin/how_to_order*')) class="active" @endif>
+      <a href="{{ route('admin.how_to_order.index') }}">How to order</a>
       </li>
       @endpermission
-      @permission('upload-list')
-      <li @if (Request::is('admin/*')) class="active" @endif>
-      <a href="{{ route('admin.items.index') }}">Contact Us</a>
+      @permission('contact_info-list')
+      <li @if (Request::is('admin/contact_info*')) class="active" @endif>
+      <a href="{{ route('admin.contact_info.index') }}">Contact Info</a>
       </li>
       @endpermission
-      @permission('upload-list')
-      <li @if (Request::is('admin/*')) class="active" @endif>
-      <a href="{{ route('admin.items.index') }}">Disclaimer</a>
+      @permission('contact_message-list')
+      <li @if (Request::is('admin/contact_message*')) class="active" @endif>
+      <a href="{{ route('admin.contact_message.index') }}">Contact Message</a>
       </li>
       @endpermission
-      @permission('upload-list')
-      <li @if (Request::is('admin/*')) class="active" @endif>
-      <a href="{{ route('admin.items.index') }}">Privacy Policy</a>
+      @permission('disclaimer-list')
+      <li @if (Request::is('admin/disclaimer*')) class="active" @endif>
+      <a href="{{ route('admin.disclaimer.index') }}">Disclaimer</a>
       </li>
       @endpermission
-      @permission('upload-list')
-      <li @if (Request::is('admin/*')) class="active" @endif>
-      <a href="{{ route('admin.items.index') }}">Term of Use</a>
+      @permission('privacy-list')
+      <li @if (Request::is('admin/privacy*')) class="active" @endif>
+      <a href="{{ route('admin.privacy.index') }}">Privacy Policy</a>
+      </li>
+      @endpermission
+      @permission('term-list')
+      <li @if (Request::is('admin/term*')) class="active" @endif>
+      <a href="{{ route('admin.term.index') }}">Term of Use</a>
       </li>
       @endpermission
     </ul>
   </li>
   <li
-    @if (Request::is('admin/items*') ||
+    @if (Request::is('admin/items*') || Request::is('admin/coupon*') ||
      Request::is('admin/categories*')) class="dropdown active"
     @else class="dropdown"
     @endif
@@ -120,9 +128,9 @@
       <a href="{{ route('admin.categories.index') }}">Kategori Area</a>
       </li>
       @endpermission
-      @permission('categories-list')
-      <li @if (Request::is('admin/categories*')) class="active" @endif>
-      <a href="{{ route('admin.categories.index') }}">Kupon</a>
+      @permission('coupon-list')
+      <li @if (Request::is('admin/coupon*')) class="active" @endif>
+      <a href="{{ route('admin.coupon.index') }}">Kupon</a>
       </li>
       @endpermission
       @permission('categories-list')

@@ -505,7 +505,7 @@ Route::group([
     Route::get('admin/about',['as'=>'admin.about.index',
         'uses'=>'PagesController@indexAbout',
         'middleware' => ['permission:about-list']]);
-    Route::post('admin/about/update',['as'=>'admin.about.update',
+    Route::post('admin/about/update/{id}',['as'=>'admin.about.update',
         'uses'=>'PagesController@updateAbout',
         'middleware' => ['permission:about-update']]);
     //page faq
@@ -518,12 +518,12 @@ Route::group([
     Route::get('admin/faq/{id}',['as'=>'admin.faq.edit',
         'uses'=>'PagesController@editFaq',
         'middleware' => ['permission:faq-edit']]);
-    Route::post('admin/faq/update',['as'=>'admin.faq.update',
+    Route::post('admin/faq/update/{id}',['as'=>'admin.faq.update',
         'uses'=>'PagesController@updateFaq',
         'middleware' => ['permission:faq-update']]);
     Route::delete('admin/faq/{id}',['as'=>'admin.faq.delete',
         'uses'=>'PagesController@deleteFaq',
-        'middleware' => ['permission:pages-delete']]);
+        'middleware' => ['permission:faq-delete']]);
     Route::get('admin/faq',['as'=>'admin.faq.index',
         'uses'=>'PagesController@indexFaq',
         'middleware' => ['permission:faq-list']]);
@@ -595,28 +595,174 @@ Route::group([
     Route::delete('admin/promo/{id}',['as'=>'admin.promo.destroy',
         'uses'=>'PromoController@destroy',
         'middleware' => ['permission:promo-delete']]);
+
     //How to order routes
     Route::get('admin/how_to_order', ['as'=>'admin.how_to_order.index',
-        'uses'=>'PromoController@index',
+        'uses'=>'HowToOrderController@index',
         'middleware' => ['permission:how_to_order-list|how_to_order-create|how_to_order-edit|how_to_order-delete'],
     ]);
     Route::get('admin/how_to_order/create',['as'=>'admin.how_to_order.create',
-        'uses'=>'PromoController@create',
+        'uses'=>'HowToOrderController@create',
         'middleware' => ['permission:how_to_order-create']]);
     Route::post('admin/how_to_order/store',['as'=>'admin.how_to_order.store',
-        'uses'=>'PromoController@store',
+        'uses'=>'HowToOrderController@store',
         'middleware' => ['permission:how_to_order-create']]);
     Route::get('admin/how_to_order/{id}',['as'=>'admin.how_to_order.show',
-        'uses'=>'PromoController@show']);
+        'uses'=>'HowToOrderController@show']);
     Route::get('admin/how_to_order/{id}/edit',['as'=>'admin.how_to_order.edit',
-        'uses'=>'PromoController@edit',
+        'uses'=>'HowToOrderController@edit',
         'middleware' => ['permission:how_to_order-edit']]);
     Route::patch('admin/how_to_order/{id}',['as'=>'admin.how_to_order.update',
-        'uses'=>'PromoController@update',
+        'uses'=>'HowToOrderController@update',
         'middleware' => ['permission:how_to_order-edit']]);
     Route::delete('admin/how_to_order/{id}',['as'=>'admin.how_to_order.destroy',
-        'uses'=>'PromoController@destroy',
+        'uses'=>'HowToOrderController@destroy',
         'middleware' => ['permission:how_to_order-delete']]);
+
+    //contact info routes
+    Route::get('admin/contact_info', ['as'=>'admin.contact_info.index',
+        'uses'=>'ContactInfoController@index',
+        'middleware' => ['permission:contact_info-list|contact_info-create|contact_info-edit|contact_info-delete'],
+    ]);
+    Route::get('admin/contact_info/create',['as'=>'admin.contact_info.create',
+        'uses'=>'ContactInfoController@create',
+        'middleware' => ['permission:contact_info-create']]);
+    Route::post('admin/contact_info/store',['as'=>'admin.contact_info.store',
+        'uses'=>'ContactInfoController@store',
+        'middleware' => ['permission:contact_info-create']]);
+    Route::get('admin/contact_info/{id}',['as'=>'admin.contact_info.show',
+        'uses'=>'ContactInfoController@show']);
+    Route::get('admin/contact_info/{id}/edit',['as'=>'admin.contact_info.edit',
+        'uses'=>'ContactInfoController@edit',
+        'middleware' => ['permission:contact_info-edit']]);
+    Route::patch('admin/contact_info/{id}',['as'=>'admin.contact_info.update',
+        'uses'=>'ContactInfoController@update',
+        'middleware' => ['permission:contact_info-edit']]);
+    Route::delete('admin/contact_info/{id}',['as'=>'admin.contact_info.destroy',
+        'uses'=>'ContactInfoController@destroy',
+        'middleware' => ['permission:contact_info-delete']]
+    );
+
+    //Disclaimer routes
+    Route::get('admin/disclaimer', ['as'=>'admin.disclaimer.index',
+        'uses'=>'DisclaimerController@index',
+        'middleware' => ['permission:disclaimer-list|disclaimer-create|disclaimer-edit|disclaimer-delete'],
+    ]);
+    Route::get('admin/disclaimer/create',['as'=>'admin.disclaimer.create',
+        'uses'=>'DisclaimerController@create',
+        'middleware' => ['permission:disclaimer-create']]);
+    Route::post('admin/disclaimer/store',['as'=>'admin.disclaimer.store',
+        'uses'=>'DisclaimerController@store',
+        'middleware' => ['permission:disclaimer-create']]);
+    Route::get('admin/disclaimer/{id}',['as'=>'admin.disclaimer.show',
+        'uses'=>'DisclaimerController@show']);
+    Route::get('admin/disclaimer/{id}/edit',['as'=>'admin.disclaimer.edit',
+        'uses'=>'DisclaimerController@edit',
+        'middleware' => ['permission:disclaimer-edit']]);
+    Route::patch('admin/disclaimer/{id}',['as'=>'admin.disclaimer.update',
+        'uses'=>'DisclaimerController@update',
+        'middleware' => ['permission:disclaimer-edit']]);
+    Route::delete('admin/disclaimer/{id}',['as'=>'admin.disclaimer.destroy',
+        'uses'=>'DisclaimerController@destroy',
+        'middleware' => ['permission:disclaimer-delete']]
+    );
+
+    //Term routes
+    Route::get('admin/term', ['as'=>'admin.term.index',
+        'uses'=>'TermController@index',
+        'middleware' => ['permission:term-list|term-create|term-edit|term-delete'],
+    ]);
+    Route::get('admin/term/create',['as'=>'admin.term.create',
+        'uses'=>'TermController@create',
+        'middleware' => ['permission:term-create']]);
+    Route::post('admin/term/store',['as'=>'admin.term.store',
+        'uses'=>'TermController@store',
+        'middleware' => ['permission:term-create']]);
+    Route::get('admin/term/{id}',['as'=>'admin.term.show',
+        'uses'=>'TermController@show']);
+    Route::get('admin/term/{id}/edit',['as'=>'admin.term.edit',
+        'uses'=>'TermController@edit',
+        'middleware' => ['permission:term-edit']]);
+    Route::patch('admin/term/{id}',['as'=>'admin.term.update',
+        'uses'=>'TermController@update',
+        'middleware' => ['permission:term-edit']]);
+    Route::delete('admin/term/{id}',['as'=>'admin.term.destroy',
+        'uses'=>'TermController@destroy',
+        'middleware' => ['permission:term-delete']]
+    );
+
+    //Privacy routes
+    Route::get('admin/privacy', ['as'=>'admin.privacy.index',
+        'uses'=>'PrivacyController@index',
+        'middleware' => ['permission:privacy-list|privacy-create|privacy-edit|privacy-delete'],
+    ]);
+    Route::get('admin/privacy/create',['as'=>'admin.privacy.create',
+        'uses'=>'PrivacyController@create',
+        'middleware' => ['permission:privacy-create']]);
+    Route::post('admin/privacy/store',['as'=>'admin.privacy.store',
+        'uses'=>'PrivacyController@store',
+        'middleware' => ['permission:privacy-create']]);
+    Route::get('admin/privacy/{id}',['as'=>'admin.privacy.show',
+        'uses'=>'PrivacyController@show']);
+    Route::get('admin/privacy/{id}/edit',['as'=>'admin.privacy.edit',
+        'uses'=>'PrivacyController@edit',
+        'middleware' => ['permission:privacy-edit']]);
+    Route::patch('admin/privacy/{id}',['as'=>'admin.privacy.update',
+        'uses'=>'PrivacyController@update',
+        'middleware' => ['permission:privacy-edit']]);
+    Route::delete('admin/privacy/{id}',['as'=>'admin.privacy.destroy',
+        'uses'=>'PrivacyController@destroy',
+        'middleware' => ['permission:privacy-delete']]
+    );
+
+    //Coupon routes
+    Route::get('admin/coupon', ['as'=>'admin.coupon.index',
+        'uses'=>'CouponController@index',
+        'middleware' => ['permission:coupon-list|coupon-create|coupon-edit|coupon-delete'],
+    ]);
+    Route::get('admin/coupon/create',['as'=>'admin.coupon.create',
+        'uses'=>'CouponController@create',
+        'middleware' => ['permission:coupon-create']]);
+    Route::post('admin/coupon/store',['as'=>'admin.coupon.store',
+        'uses'=>'CouponController@store',
+        'middleware' => ['permission:coupon-create']]);
+    Route::get('admin/coupon/{id}',['as'=>'admin.coupon.show',
+        'uses'=>'CouponController@show']);
+    Route::get('admin/coupon/{id}/edit',['as'=>'admin.coupon.edit',
+        'uses'=>'CouponController@edit',
+        'middleware' => ['permission:coupon-edit']]);
+    Route::patch('admin/coupon/{id}',['as'=>'admin.coupon.update',
+        'uses'=>'CouponController@update',
+        'middleware' => ['permission:coupon-edit']]);
+    Route::delete('admin/coupon/{id}',['as'=>'admin.coupon.destroy',
+        'uses'=>'CouponController@destroy',
+        'middleware' => ['permission:coupon-delete']]
+    );
+
+    //ContactMessage routes
+    Route::get('admin/contact_message', ['as'=>'admin.contact_message.index',
+        'uses'=>'ContactMessageController@index',
+        'middleware' => ['permission:contact_message-list|contact_message-create|contact_message-edit|contact_message-delete'],
+    ]);
+    Route::get('admin/contact_message/create',['as'=>'admin.contact_message.create',
+        'uses'=>'ContactMessageController@create',
+        'middleware' => ['permission:contact_message-create']]);
+    Route::post('admin/contact_message/store',['as'=>'admin.contact_message.store',
+        'uses'=>'ContactMessageController@store',
+        'middleware' => ['permission:contact_message-create']]);
+    Route::get('admin/contact_message/{id}',['as'=>'admin.contact_message.show',
+        'uses'=>'ContactMessageController@show']);
+    Route::get('admin/contact_message/{id}/edit',['as'=>'admin.contact_message.edit',
+        'uses'=>'ContactMessageController@edit',
+        'middleware' => ['permission:contact_message-edit']]);
+    Route::patch('admin/contact_message/{id}',['as'=>'admin.contact_message.update',
+        'uses'=>'ContactMessageController@update',
+        'middleware' => ['permission:contact_message-edit']]);
+    Route::delete('admin/contact_message/{id}',['as'=>'admin.contact_message.destroy',
+        'uses'=>'ContactMessageController@destroy',
+        'middleware' => ['permission:contact_message-delete']]
+    );
+
     //Permissions routes
     Route::get('admin/permissions', ['as'=>'admin.permissions.index',
         'uses'=>'PermissionController@index',

@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Model\Pages;
+use App\Model\Disclaimer;
 
 class DesclaimerTableSeeder extends Seeder
 {
@@ -57,7 +57,7 @@ class DesclaimerTableSeeder extends Seeder
         ];
 
         foreach ($permission as $key => $value) {
-        	Pages::insertDesclaimer($value);
+        	Disclaimer::create($value);
         }
     }
 }

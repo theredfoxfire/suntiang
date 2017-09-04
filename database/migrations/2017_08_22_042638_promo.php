@@ -13,7 +13,7 @@ class Promo extends Migration
      */
     public function up()
     {
-        Schema::create('promo', function (Blueprint $table) {
+        Schema::create('promos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('image', 200);
             $table->string('description');
@@ -29,6 +29,6 @@ class Promo extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('promo');
+        Schema::dropIfExists('promos');
     }
 }

@@ -3,6 +3,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Services\PageManager;
+use App\Services\PaginatorManager;
 
 class Pages extends Model
 {
@@ -25,6 +26,55 @@ class Pages extends Model
     {
         PageManager::insertAbout($about);
     }
+    /**
+    * Listing About
+    */
+    public static function indexAbout()
+    {
+        return PageManager::indexAbout();
+    }
+    /**
+    * Get single About
+    */
+    public static function getAbout($id)
+    {
+        return PageManager::getAbout($id);
+    }
+    /**
+    * Update About Data
+    */
+    public static function updateAbout($id, $data)
+    {
+        return PageManager::updateAbout($id, $data);
+    }
+    /**
+    * Listing Faq
+    */
+    public static function indexFaq()
+    {
+        return PaginatorManager::paginate(PageManager::indexFaq());
+    }
+    /**
+    * Get single Faq
+    */
+    public static function getFaq($id)
+    {
+        return PageManager::getFaq($id);
+    }
+    /**
+    * Update Faq Data
+    */
+    public static function updateFaq($id, $data)
+    {
+        return PageManager::updateFaq($id, $data);
+    }
+    /**
+    * Delete Faq Data
+    */
+    public static function deleteFaq($id)
+    {
+        return PageManager::deleteFaq($id);
+    }
 
     /**
     * Store new data into DB
@@ -40,83 +90,5 @@ class Pages extends Model
     public static function insertFaq($faq)
     {
         PageManager::insertFaq($faq);
-    }
-
-    /**
-    * Store new data into DB
-    *
-    * @param $howtoorder_category Array (
-    *   string name
-    *   string description
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-    public static function insertHowtoorderCategory($howtoorder_category)
-    {
-        PageManager::insertHowtoorderCategory($howtoorder_category);
-    }
-
-    /**
-    * Store new data into DB
-    *
-    * @param $howtoorder Array (
-	* 	integer category_id
-    *   string title
-    *   string description
-	*	integer step
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-    public static function insertHowtoorder($howtoorder)
-    {
-        PageManager::insertHowtoorder($howtoorder);
-    }
-
-    /**
-    * Store new data into DB
-    *
-    * @param $desclaimer Array (
-    *   string title
-    *   string description
-	*	integer sort
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-    public static function insertDesclaimer($desclaimer)
-    {
-        PageManager::insertDesclaimer($desclaimer);
-    }
-    /**
-    * Store new data into DB
-    *
-    * @param $privacy Array (
-    *   string title
-    *   string description
-	*	integer sort
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-    public static function insertPrivacy($privacy)
-    {
-        PageManager::insertPrivacy($privacy);
-    }
-    /**
-    * Store new data into DB
-    *
-    * @param $term Array (
-    *   string title
-    *   string description
-	*	integer sort
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-    public static function insertTerm($term)
-    {
-        PageManager::insertTerm($term);
     }
 }

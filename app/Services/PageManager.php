@@ -23,19 +23,63 @@ class PageManager
 	}
 
 	/**
-    * Store new data into DB
-    *
-    * @param $faqCategory Array (
-    *   string name
-    *   string description
-    *   tiny int is_active
-    * @return DB response
-    * )
+    * Listing About
     */
-	public static function insertFaqCategory($faqCategory)
-	{
-		return DB::table('faq_category')->insert($faqCategory);
-	}
+    public static function indexAbout()
+    {
+        return DB::table('about')->get();
+    }
+	/**
+    * Listing Faq
+    */
+    public static function indexFaq()
+    {
+        return DB::select('select c.name as category_name, f.* from faq as f left join faq_categories as c
+            on f.category_id = c.id
+        ');
+    }
+	/**
+    * Get single About
+    */
+    public static function getAbout($id)
+    {
+        $data = DB::table('about')->where('id', '=', $id)->get();
+        return $data[0];
+    }
+	/**
+    * Get single FAQ
+    */
+    public static function getFaq($id)
+    {
+        $data = DB::table('faq')->where('id', '=', $id)->get();
+        return $data[0];
+    }
+    /**
+    * Update About Data
+    */
+    public static function updateAbout($id, $data)
+    {
+        unset($data['_token']);
+        return DB::table('about')->where('id', $id)
+            ->update($data);
+    }
+    /**
+    * Update About Data
+    */
+    public static function updateFaq($id, $data)
+    {
+        unset($data['_token']);
+        return DB::table('faq')->where('id', $id)
+            ->update($data);
+    }
+    /**
+    * Delete Faq Data
+    */
+    public static function deleteFaq($id)
+    {
+        return DB::table('faq')->where('id', $id)
+            ->delete();
+    }
 
 	/**
     * Store new data into DB
@@ -50,99 +94,7 @@ class PageManager
     */
 	public static function insertFaq($faq)
 	{
+        unset($faq['_token']);
 		return DB::table('faq')->insert($faq);
-	}
-
-	/**
-    * Store new data into DB
-    *
-    * @param $promo Array (
-    *   string image
-    *   string description
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-	public static function insertPromo($promo)
-	{
-		return DB::table('promo')->insert($promo);
-	}
-
-	/**
-    * Store new data into DB
-    *
-    * @param $howtoorder_category Array (
-    *   string name
-    *   string description
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-	public static function insertHowtoorderCategory($howtoorder_category)
-	{
-		return DB::table('howtoorder_category')->insert($howtoorder_category);
-	}
-
-	/**
-    * Store new data into DB
-    *
-    * @param $howtoorder Array (
-	* 	integer category_id
-    *   string title
-    *   string description
-	*	integer step
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-	public static function insertHowtoorder($howtoorder)
-	{
-		return DB::table('howtoorder')->insert($howtoorder);
-	}
-
-	/**
-    * Store new data into DB
-    *
-    * @param $desclaimer Array (
-    *   string title
-    *   string description
-	*	integer sort
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-	public static function insertDesclaimer($desclaimer)
-	{
-		return DB::table('desclaimer')->insert($desclaimer);
-	}
-	/**
-    * Store new data into DB
-    *
-    * @param $privacy Array (
-    *   string title
-    *   string description
-	*	integer sort
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-	public static function insertPrivacy($privacy)
-	{
-		return DB::table('privacy')->insert($privacy);
-	}
-	/**
-    * Store new data into DB
-    *
-    * @param $term Array (
-    *   string title
-    *   string description
-	*	integer sort
-    *   tiny int is_active
-    * @return DB response
-    * )
-    */
-	public static function insertTerm($term)
-	{
-		return DB::table('term')->insert($term);
 	}
 }

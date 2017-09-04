@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Model\Pages;
+use App\Model\Term;
 
 class TermTableSeeder extends Seeder
 {
@@ -57,7 +57,7 @@ class TermTableSeeder extends Seeder
         ];
 
         foreach ($permission as $key => $value) {
-        	Pages::insertTerm($value);
+        	Term::create($value);
         }
     }
 }

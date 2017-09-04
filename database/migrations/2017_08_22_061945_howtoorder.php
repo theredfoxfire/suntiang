@@ -13,7 +13,7 @@ class Howtoorder extends Migration
      */
     public function up()
     {
-        Schema::create('howtoorder', function (Blueprint $table) {
+        Schema::create('how_to_orders', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id');
             $table->string('title', 200);
@@ -31,6 +31,6 @@ class Howtoorder extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('howtoorder');
+        Schema::dropIfExists('how_to_orders');
     }
 }

@@ -792,6 +792,150 @@ class PermissionTableSeeder extends Seeder
                 'display_name' => 'Delete how_to_order',
                 'description' => 'Delete how_to_order'
             ],
+            [
+                'id' => 131,
+                'name' => 'contact_info-list',
+                'display_name' => 'Display contact_info Listing',
+                'description' => 'See only Listing Of contact_info'
+            ],
+            [
+                'id' => 132,
+                'name' => 'contact_info-create',
+                'display_name' => 'Create contact_info',
+                'description' => 'Create New contact_info'
+            ],
+            [
+                'id' => 133,
+                'name' => 'contact_info-edit',
+                'display_name' => 'Edit contact_info',
+                'description' => 'Edit contact_info'
+            ],
+            [
+                'id' => 134,
+                'name' => 'contact_info-delete',
+                'display_name' => 'Delete contact_info',
+                'description' => 'Delete contact_info'
+            ],
+            [
+                'id' => 135,
+                'name' => 'contact_message-list',
+                'display_name' => 'Display contact_message Listing',
+                'description' => 'See only Listing Of contact_message'
+            ],
+            [
+                'id' => 136,
+                'name' => 'contact_message-edit',
+                'display_name' => 'Edit contact_message',
+                'description' => 'Edit contact_message'
+            ],
+            [
+                'id' => 137,
+                'name' => 'contact_message-delete',
+                'display_name' => 'Delete contact_message',
+                'description' => 'Delete contact_message'
+            ],
+            [
+                'id' => 138,
+                'name' => 'disclaimer-list',
+                'display_name' => 'Display disclaimer Listing',
+                'description' => 'See only Listing Of disclaimer'
+            ],
+            [
+                'id' => 139,
+                'name' => 'disclaimer-create',
+                'display_name' => 'Create disclaimer',
+                'description' => 'Create New disclaimer'
+            ],
+            [
+                'id' => 140,
+                'name' => 'disclaimer-edit',
+                'display_name' => 'Edit disclaimer',
+                'description' => 'Edit disclaimer'
+            ],
+            [
+                'id' => 141,
+                'name' => 'disclaimer-delete',
+                'display_name' => 'Delete disclaimer',
+                'description' => 'Delete disclaimer'
+            ],
+            [
+                'id' => 142,
+                'name' => 'term-list',
+                'display_name' => 'Display term Listing',
+                'description' => 'See only Listing Of term'
+            ],
+            [
+                'id' => 143,
+                'name' => 'term-create',
+                'display_name' => 'Create term',
+                'description' => 'Create New term'
+            ],
+            [
+                'id' => 144,
+                'name' => 'term-edit',
+                'display_name' => 'Edit term',
+                'description' => 'Edit term'
+            ],
+            [
+                'id' => 145,
+                'name' => 'term-delete',
+                'display_name' => 'Delete term',
+                'description' => 'Delete term'
+            ],
+            [
+                'id' => 146,
+                'name' => 'privacy-list',
+                'display_name' => 'Display privacy Listing',
+                'description' => 'See only Listing Of privacy'
+            ],
+            [
+                'id' => 147,
+                'name' => 'privacy-create',
+                'display_name' => 'Create privacy',
+                'description' => 'Create New privacy'
+            ],
+            [
+                'id' => 148,
+                'name' => 'privacy-edit',
+                'display_name' => 'Edit privacy',
+                'description' => 'Edit privacy'
+            ],
+            [
+                'id' => 149,
+                'name' => 'privacy-delete',
+                'display_name' => 'Delete privacy',
+                'description' => 'Delete privacy'
+            ],
+            [
+                'id' => 150,
+                'name' => 'coupon-list',
+                'display_name' => 'Display coupon Listing',
+                'description' => 'See only Listing Of coupon'
+            ],
+            [
+                'id' => 151,
+                'name' => 'coupon-create',
+                'display_name' => 'Create coupon',
+                'description' => 'Create New coupon'
+            ],
+            [
+                'id' => 152,
+                'name' => 'coupon-edit',
+                'display_name' => 'Edit coupon',
+                'description' => 'Edit coupon'
+            ],
+            [
+                'id' => 153,
+                'name' => 'coupon-delete',
+                'display_name' => 'Delete coupon',
+                'description' => 'Delete coupon'
+            ],
+            [
+                'id' => 154,
+                'name' => 'contact_message-create',
+                'display_name' => 'Create contact_message',
+                'description' => 'Create contact_message'
+            ],
         ];
 
         foreach ($permission as $key => $value) {

@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Model\Pages;
+use App\Model\Privacy;
 
 class PrivacyTableSeeder extends Seeder
 {
@@ -57,7 +57,7 @@ class PrivacyTableSeeder extends Seeder
         ];
 
         foreach ($permission as $key => $value) {
-        	Pages::insertPrivacy($value);
+        	Privacy::create($value);
         }
     }
 }

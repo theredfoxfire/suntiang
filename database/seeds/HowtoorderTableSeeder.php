@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Model\Pages;
+use App\Model\HowToOrder;
 
 class HowtoorderTableSeeder extends Seeder
 {
@@ -63,7 +63,7 @@ class HowtoorderTableSeeder extends Seeder
         ];
 
         foreach ($permission as $key => $value) {
-        	Pages::insertHowtoorder($value);
+        	HowToOrder::create($value);
         }
     }
 }

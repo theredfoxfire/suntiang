@@ -13,7 +13,7 @@ class Desclaimer extends Migration
      */
     public function up()
     {
-        Schema::create('desclaimer', function (Blueprint $table) {
+        Schema::create('disclaimers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 200);
             $table->text('description');
@@ -30,6 +30,6 @@ class Desclaimer extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('desclaimer');
+        Schema::dropIfExists('disclaimers');
     }
 }

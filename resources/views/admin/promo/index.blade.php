@@ -5,11 +5,11 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Payments List</h2>
+	            <h2>Promo List</h2>
 	        </div>
 	        <div class="pull-right">
-	        	@permission('payments-create')
-	            <a class="btn btn-success" href="{{ route('admin.payments.create') }}"> Create New Item</a>
+	        	@permission('promo-create')
+	            <a class="btn btn-success" href="{{ route('admin.promo.create') }}"> Create New</a>
 	            @endpermission
 	        </div>
 	    </div>
@@ -18,32 +18,33 @@
 	<table class="table table-bordered">
 		<tr>
 			<th>No</th>
-			<th>order_id</th>
-			<th>amount</th>
-			<th>payment_method</th>
-			<th>payment_status</th>
-			<th width="280px">Action</th>
+			<th>Image</th>
+			<th>Description</th>
+			<th>Status</th>
+			<th class="col-md-2">Action</th>
 		</tr>
-	@foreach ($payments as $key => $payment)
+	@foreach ($promo as $key => $data)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $payment->order_id }}</td>
-		<td>{{ $payment->amount }}</td>
-		<td>{{ $payment->payment_method }}</td>
-		<td>{{ $payment->payment_status }}</td>
+		<td>{{ $data->image }}</td>
+		<td>{{ $data->description }}</td>
 		<td>
-			<a class="btn btn-info" href="{{ route('admin.payments.show',$payment->id) }}">Show</a>
-			@permission('payments-edit')
-			<a class="btn btn-primary" href="{{ route('admin.payments.edit',$payment->id) }}">Edit</a>
+			@if ($data->is_active)  <label class="label label-success">Aktif</label>
+			@else <label class="label label-danger">Tidak Aktif</label>
+			@endif
+		</td>
+		<td>
+			@permission('promo-edit')
+			<a class="btn btn-primary btn-xs" href="{{ route('admin.promo.edit',$data->id) }}">Edit</a>
 			@endpermission
-			@permission('payments-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/payments/{{ $payment->id }}">Delete</a>
+			@permission('promo-delete')
+			<a class="btn btn-danger delete-confirm btn-xs" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/promo/{{ $data->id }}">Delete</a>
         	@endpermission
 		</td>
 	</tr>
 	@endforeach
 	</table>
-	{!! $payments->render() !!}
+	{!! $promo->render() !!}
 	@include('admin.partials.deleteConfirm')
 </div>
 @endsection

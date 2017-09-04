@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use App\Model\Pages;
+use App\Model\FaqCategory;
 
 class FaqCategoryTableSeeder extends Seeder
 {
@@ -30,7 +30,7 @@ class FaqCategoryTableSeeder extends Seeder
         ];
 
         foreach ($permission as $key => $value) {
-        	Pages::insertFaqCategory($value);
+        	FaqCategory::create($value);
         }
     }
 }

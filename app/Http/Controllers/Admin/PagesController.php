@@ -5,7 +5,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PagesCreateRequest;
 use App\Http\Requests\PagesUpdateRequest;
+use App\Http\Requests\AboutUpdateRequest;
+use App\Http\Requests\FaqCreateRequest;
+use App\Http\Requests\FaqUpdateRequest;
 use App\Model\Pages;
+use App\Model\FaqCategory;
 use App\Services\PageManager;
 
 class PagesController extends Controller
@@ -71,7 +75,8 @@ class PagesController extends Controller
     public function editFaq($id)
     {
         $pages = Pages::getFaq($id);
-        return view('admin.pages.editFaq',compact('pages'));
+        $faqCategory = FaqCategory::orderBy('name','DESC')->get();
+        return view('admin.pages.editFaq',compact('pages', 'faqCategory'));
     }
     /**
      * Display a listing of the resource.
@@ -92,7 +97,7 @@ class PagesController extends Controller
      */
     public function createFaq()
     {
-        $faqCategory = Pages::getCategoryFaq();
+        $faqCategory = FaqCategory::orderBy('name','DESC')->get();
         return view('admin.pages.createFaq',compact('faqCategory'));
     }
     /**
@@ -116,7 +121,7 @@ class PagesController extends Controller
      */
     public function deleteFaq($id)
     {
-        Pages::getFaq($id)->delete();
+        Pages::deleteFaq($id);
         return redirect()->route('admin.faq.index')
                         ->with('success','Faq deleted successfully');
     }

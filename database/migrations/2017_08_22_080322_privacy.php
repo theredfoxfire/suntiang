@@ -13,7 +13,7 @@ class Privacy extends Migration
      */
     public function up()
     {
-        Schema::create('privacy', function (Blueprint $table) {
+        Schema::create('privacies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 200);
             $table->text('description');
@@ -30,6 +30,6 @@ class Privacy extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('privacy');
+        Schema::dropIfExists('privacies');
     }
 }
