@@ -50,11 +50,17 @@ class ItemController extends Controller
         return view('item.search', $datas);
     }
 
-    public function custom()
+    public function customDaily()
     {
-        $datas = Item::itemIndex();
+        $datas = Item::getAllCategoriesWithItem();
 
-        return view('item.custom', $datas);
+        return view('item.customDaily', compact('datas'));
+    }
+    public function customCatering()
+    {
+        $datas = Item::getAllCategoriesWithItem();
+
+        return view('item.customCatering', compact('datas'));
     }
 
     public function itemDetail($id)

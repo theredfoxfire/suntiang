@@ -21,17 +21,6 @@
             {!! Form::text('name', null, array('placeholder' => 'Nama','class' => 'form-control')) !!}
         </div>
     </div>
-	<div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Kelompok:</strong>
-            <select name="group" class="form-control">
-				<option value="">Berdasarkan</option>
-				<option value="region">Regional</option>
-				<option value="jenis">Jenis</option>
-				<option value="isi">Isi/Kandungan</option>
-			</select>
-        </div>
-    </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 		<button type="submit" class="btn btn-primary">Submit</button>
     </div>

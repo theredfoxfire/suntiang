@@ -39,7 +39,7 @@ class SlidersController extends Controller
      */
     public function store(SlidersCreateRequest $request)
     {
-        Sliders::create($request->all());
+        Sliders::create($request->fillData());
 
         return redirect()->route('admin.sliders.index')
                         ->withSuccess("Input data  berhasil.");
@@ -78,7 +78,7 @@ class SlidersController extends Controller
      */
     public function update(SlidersUpdateRequest $request, $id)
     {
-        Sliders::find($id)->update($request->all());
+        Sliders::find($id)->update($request->fillData());
 
         return redirect()->route('admin.sliders.index')
                         ->with('success','Sliders updated successfully');

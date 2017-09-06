@@ -26,7 +26,7 @@
 	@foreach ($contact_info as $key => $data)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $data->address }}</td>
+		<td>{!! $data->address !!}</td>
 		<td>{{ $data->phone }}</td>
 		<td>
 			@if ($data->is_active)  <label class="label label-success">Aktif</label>

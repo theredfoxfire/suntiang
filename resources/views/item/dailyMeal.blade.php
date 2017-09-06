@@ -64,8 +64,8 @@
                         <div class="product">
                             <a href="{{ route('item.dailyMealShow', $value->id) }}"><img class="img-responsive" src="{{ asset('images/prod1.jpg') }}" alt=""></a>
                             <a href="{{ route('item.dailyMealShow', $value->id) }}"><h5 class="oneline-ellipsis">{{ $value->name }}</h5></a>
-                            <p class="text-grey text-linethrough">Rp {{ formattingNumber($value->price) }}</p>
-                            <p class="text-green">Now Only <span>Rp {{ formattingNumber($value->price) }}</span></p>
+                            <p class="text-grey text-linethrough">Rp {{ formattingNumber($value->daily_price) }}</p>
+                            <p class="text-green">Now Only <span>Rp {{ formattingNumber($value->daily_price) }}</span></p>
                             <a href="{{ route('item.dailyMealShow', $value->id) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                         </div>
                     </div>
@@ -80,8 +80,8 @@
                 <div class="col-sm-12">
                     <h2 class="text-damion-curved">Choose your Ala Carte</h2>
                     <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit</p>
-                    <img class="img-responsive center-block" src="{{ asset('images/choosealacarte.png" alt="">
-                    <a href="dm-prodlistcust.html" class="btn btn-lg btn-flaregreen">CLICK HERE TO ORDER <span class="icon icon-food"></span></a>
+                    <img class="img-responsive center-block" src="{{ asset('images/choosealacarte.png') }}" alt="">
+                    <a href="{{ route('item.customDaily') }}" class="btn btn-lg btn-flaregreen">CLICK HERE TO ORDER <span class="icon icon-food"></span></a>
                 </div>
             </div>
         </div>

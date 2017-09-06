@@ -18,20 +18,23 @@
 	<table class="table table-bordered">
 		<tr>
 			<th>No</th>
-			<th>Name</th>
+			<th>Title</th>
+			<th>Image</th>
 			<th width="280px">Action</th>
 		</tr>
 	@foreach ($sliders as $key => $slider)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $slider->name }}</td>
+		<td>{{ $slider->title }}</td>
 		<td>
-			<a class="btn btn-info" href="{{ route('admin.sliders.show',$slider->id) }}">Show</a>
+			<img src="{{ asset(config('blog.sliderWebPath').'/'.$slider->file) }}" style="width: 120px; height: auto;">
+		</td>
+		<td>
 			@permission('sliders-edit')
-			<a class="btn btn-primary" href="{{ route('admin.sliders.edit',$slider->id) }}">Edit</a>
+			<a class="btn btn-primary btn-xs" href="{{ route('admin.sliders.edit',$slider->id) }}">Edit</a>
 			@endpermission
 			@permission('sliders-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/sliders/{{ $slider->id }}">Delete</a>
+			<a class="btn btn-danger btn-xs delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/sliders/{{ $slider->id }}">Delete</a>
     	@endpermission
 		</td>
 	</tr>

@@ -14,15 +14,18 @@ class SlidersTableSeeder extends Seeder
         $permission = [
         	[
                 'id' => 1,
-        		'name' => 'Sliders 1',
+        		'title' => 'Sliders 1',
+                'file' => 'slide.jpg',
         	],
         	[
                 'id' => 2,
-        		'name' => 'Sliders 2',
+        		'title' => 'Sliders 2',
+                'file' => 'slide.jpg',
         	],
         	[
                 'id' => 3,
-        		'name' => 'Sliders 3',
+        		'title' => 'Sliders 3',
+                'file' => 'slide.jpg',
         	],
         ];
 

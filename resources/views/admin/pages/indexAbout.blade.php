@@ -28,9 +28,9 @@
 	@foreach ($pages as $key => $page)
 	<tr>
 		<td>{{ $page->title }}</td>
-		<td>{{ $page->content }}</td>
+		<td>{!! $page->content !!}</td>
 		<td>{{ $page->opening_hour }}</td>
-		<td>{{ $page->reservation_info }}</td>
+		<td>{!! $page->reservation_info !!}</td>
 		<td>{{ $page->promo }}</td>
 		<td>{{ $page->contact_person }}</td>
 		<td>

@@ -29,6 +29,20 @@ class PageManager
     {
         return DB::table('about')->get();
     }
+
+	public static function getFaqCategory()
+	{
+		return DB::select('
+			select * from faq_categories limit 1
+		');
+	}
+
+	public static function getFaqByCategory($id)
+	{
+		return DB::select('
+			select * from faq where category_id = '.$id.'
+		');
+	}
 	/**
     * Listing Faq
     */

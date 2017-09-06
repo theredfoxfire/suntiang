@@ -14,22 +14,30 @@ class ItemTableSeeder extends Seeder
     {
         $permission = [
             [
-                'name' => 'Lorem ipsum dolor sit ametqw',
+                'name' => 'dolor sit ametqw',
                 'type' => 'package',
                 'description' => 'Morbi blandit, neque eget fermentum tempus,
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
                 'daily_price' => 12000,
-                'is_active' => 1,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
+                'is_active' => 0,
                 'is_condiment' => 1,
 
             ],
             [
-                'name' => 'Consectetur adipiscing eliter',
+                'name' => 'adipiscing eliter',
                 'type' => 'package',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
                 'daily_price' => 12000,
-                'is_active' => 1,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
+                'is_active' => 0,
                 'is_condiment' => 1,
 
             ],
@@ -39,7 +47,11 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
                 'daily_price' => 12000,
-                'is_active' => 1,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
+                'is_active' => 0,
                 'is_condiment' => 1,
 
             ],[
@@ -49,7 +61,11 @@ class ItemTableSeeder extends Seeder
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
                 'daily_price' => 12000,
-                'is_active' => 1,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
+                'is_active' => 0,
                 'is_condiment' => 1,
 
             ],
@@ -58,7 +74,11 @@ class ItemTableSeeder extends Seeder
                 'type' => 'package',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
                 'daily_price' => 12000,
-                'is_active' => 1,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
+                'is_active' => 0,
                 'is_condiment' => 1,
 
             ],
@@ -68,7 +88,11 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
                 'daily_price' => 12000,
-                'is_active' => 1,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
+                'is_active' => 0,
                 'is_condiment' => 1,
 
             ],[
@@ -78,7 +102,11 @@ class ItemTableSeeder extends Seeder
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
                 'daily_price' => 12000,
-                'is_active' => 1,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
+                'is_active' => 0,
                 'is_condiment' => 1,
 
             ],
@@ -87,7 +115,11 @@ class ItemTableSeeder extends Seeder
                 'type' => 'package',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
                 'daily_price' => 12000,
-                'is_active' => 1,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
+                'is_active' => 0,
                 'is_drink' => 1,
 
 
@@ -98,6 +130,10 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
                 'is_drink' => 1,
 
@@ -109,6 +145,10 @@ class ItemTableSeeder extends Seeder
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
                 'is_drink' => 1,
 
@@ -119,6 +159,10 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
                 'is_drink' => 1,
 
@@ -130,6 +174,10 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
                 'is_drink' => 1,
 
@@ -141,6 +189,10 @@ class ItemTableSeeder extends Seeder
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
                 'is_drink' => 1,
 
@@ -151,6 +203,10 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 
@@ -161,6 +217,10 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 
@@ -171,6 +231,10 @@ class ItemTableSeeder extends Seeder
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 
@@ -180,6 +244,10 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 
@@ -190,6 +258,10 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 
@@ -200,6 +272,10 @@ class ItemTableSeeder extends Seeder
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 
@@ -209,6 +285,10 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 
@@ -219,6 +299,10 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 
@@ -229,6 +313,10 @@ class ItemTableSeeder extends Seeder
                     ante nisi pretium orci, at iaculis justo arcu id nulla.
                     Duis varius ultrices mollis',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 
@@ -238,6 +326,10 @@ class ItemTableSeeder extends Seeder
                 'type' => 'item',
                 'description' => 'Nullam lacinia sem neque, dignissim euismod odio facilisis non',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 
@@ -248,6 +340,10 @@ class ItemTableSeeder extends Seeder
                 'description' => 'Pellentesque sagittis, ligula quis tincidunt mattis,
                     neque justo vehicula velit, a elementum eros metus sit amet magna',
                 'daily_price' => 12000,
+                'condiment_price' => 12000,
+                'catering_price_50' => 70000,
+                'catering_price_75' => 90000,
+                'catering_price_100' => 120000,
                 'is_active' => 1,
 
 

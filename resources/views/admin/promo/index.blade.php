@@ -26,8 +26,10 @@
 	@foreach ($promo as $key => $data)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $data->image }}</td>
-		<td>{{ $data->description }}</td>
+		<td>
+			<img src="{{ asset(config('blog.promoWebPath').'/'.$data->image) }}" style="width: 120px; height: auto;">
+		</td>
+		<td>{!! $data->description !!}</td>
 		<td>
 			@if ($data->is_active)  <label class="label label-success">Aktif</label>
 			@else <label class="label label-danger">Tidak Aktif</label>

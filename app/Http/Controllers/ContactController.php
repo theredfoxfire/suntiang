@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactMeRequest;
+use App\Http\Requests\ContactMessageCreateRequest;
 use Mail;
+use App\Model\ContactMessage;
+use App\Model\ContactInfo;
 use App\Mail\ContactMail;
 
 class ContactController extends Controller
@@ -16,7 +19,19 @@ class ContactController extends Controller
     */
     public function showForm()
     {
-        return view('contact.contact');
+        $contact = ContactInfo::all();
+        return view('contact.contact', compact('contact'));
+    }
+
+    /**
+    * Store message from contact
+    */
+    public function sendMessage(ContactMessageCreateRequest $request)
+    {
+        $data = array_merge(['is_blocked' => false], $request->all());
+        ContactMessage::create($data);
+        return redirect()->route('contact')
+            ->withSuccess('Pesan Anda berhasil dikirim.');
     }
 
     /**

@@ -18,26 +18,19 @@
 	<table class="table table-bordered">
 		<tr>
 			<th>No</th>
-			<th>order_id</th>
-			<th>amount</th>
-			<th>payment_method</th>
-			<th>payment_status</th>
-			<th width="280px">Action</th>
+			<th>Nama</th>
+			<th class="col-sm-2">Action</th>
 		</tr>
-	@foreach ($faq_category as $key => $payment)
+	@foreach ($faq_category as $key => $data)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $payment->order_id }}</td>
-		<td>{{ $payment->amount }}</td>
-		<td>{{ $payment->payment_method }}</td>
-		<td>{{ $payment->payment_status }}</td>
+		<td>{{ $data->name }}</td>
 		<td>
-			<a class="btn btn-info" href="{{ route('admin.faq_category.show',$payment->id) }}">Show</a>
 			@permission('faq_category-edit')
-			<a class="btn btn-primary" href="{{ route('admin.faq_category.edit',$payment->id) }}">Edit</a>
+			<a class="btn btn-primary btn-xs" href="{{ route('admin.faq_category.edit',$data->id) }}">Edit</a>
 			@endpermission
 			@permission('faq_category-delete')
-			<a class="btn btn-danger delete-confirm" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/faq_category/{{ $payment->id }}">Delete</a>
+			<a class="btn btn-danger delete-confirm btn-xs" data-toggle="modal" data-target="#modal-delete" data-id="{{ config('blog.prefix_url') }}admin/categoryfaq/{{ $data->id }}">Delete</a>
         	@endpermission
 		</td>
 	</tr>

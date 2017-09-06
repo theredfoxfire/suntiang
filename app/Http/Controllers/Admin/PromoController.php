@@ -39,7 +39,7 @@ class PromoController extends Controller
      */
     public function store(PromoCreateRequest $request)
     {
-        Promo::create($request->all());
+        Promo::create($request->fillData());
 
         return redirect()->route('admin.promo.index')
                         ->withSuccess("Input data  berhasil.");
@@ -78,7 +78,7 @@ class PromoController extends Controller
      */
     public function update(PromoUpdateRequest $request, $id)
     {
-        Promo::find($id)->update($request->all());
+        Promo::find($id)->update($request->fillData());
 
         return redirect()->route('admin.promo.index')
                         ->with('success','Promo updated successfully');

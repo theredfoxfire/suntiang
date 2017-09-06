@@ -82,10 +82,34 @@
 </div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{ asset('tinymce/tinymce.min.js') }}"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 <script src="{{ asset('js/selectize.js') }}"></script>
+<script type="text/javascript">
+        tinymce.init({
+            // General options
+            selector : "textarea:not(.NoEditor)",
+            plugins: [
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons paste textcolor colorpicker textpattern moxiemanager imagetools youtube'
+            ],
+            toolbar1: 'insertfile undo redo | styleselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image youtube',
+            toolbar2: 'print preview media | forecolor backcolor emoticons',
+            document_base_url: "{{ config('blog.prefix_url') }}",
+            convert_urls : false,
+            relative_urls : false,
+            remove_script_host : false,
+            height : "400px",
+            extended_valid_elements: "+iframe[src|width|height|name|align|class]",
+            font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n'
+
+
+        });
+    </script>
 <script>
   $(function() {
     $( "#publish_date" ).datepicker();

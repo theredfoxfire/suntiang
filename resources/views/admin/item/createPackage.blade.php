@@ -22,11 +22,50 @@
             </div>
             <div class="form-group">
                 <strong>
-                Tags Kategori
+                Kategori Jenis
                 </strong>
-                <select name="tags[]" id="tags" class="form-control" multiple>
-                @foreach ($allTags as $tag)
-                    <option @if (in_array($tag, $tags)) selected @endif
+                <select name="category[]" id="category" class="form-control" multiple>
+                @foreach ($allCategory as $tag)
+                    <option
+                    value="{{ $tag }}">
+                      {{ $tag }}
+                    </option>
+                @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <strong>
+                Kategori Area
+                </strong>
+                <select name="area[]" id="area" class="form-control" multiple>
+                @foreach ($allArea as $tag)
+                    <option
+                    value="{{ $tag }}">
+                      {{ $tag }}
+                    </option>
+                @endforeach
+                </select>
+            </div>
+			<div class="form-group">
+                <strong>
+                Pilih Drink
+                </strong>
+                <select name="drink[]" id="drink" class="form-control" multiple>
+                @foreach ($allDrink as $tag)
+                    <option
+                    value="{{ $tag }}">
+                      {{ $tag }}
+                    </option>
+                @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <strong>
+                Pilih Condiment
+                </strong>
+                <select name="condiment[]" id="condiment" class="form-control" multiple>
+                @foreach ($allCondiment as $tag)
+                    <option
                     value="{{ $tag }}">
                       {{ $tag }}
                     </option>
@@ -38,13 +77,29 @@
                 {!! Form::file('photo', null, array('placeholder' => 'Gambar','class' => 'form-control')) !!}
             </div>
             <div class="form-group">
-                <strong>Harga:</strong>
-                <input type="text" name="price" class="form-control" id="itemPrice" onkeyup="formattingNumber(this.value, 'itemPrice')" />
+                <strong>Harga Daily Meal:</strong>
+                <input type="text" name="daily_price" class="form-control" id="price1" onkeyup="formattingNumber(this.value, 'price1')" />
             </div>
             <div class="form-group">
-                <strong>Status:</strong>
-                {{ Form::radio('is_active', 1, null, ['class' => '']) }} Aktif &nbsp; &nbsp; &nbsp; &nbsp;
-                {{ Form::radio('is_active', 0, null, ['class' => '']) }} Tidak Aktif
+                <strong>Harga Condement:</strong>
+                <input type="text" name="condiment_price" class="form-control" id="price2" onkeyup="formattingNumber(this.value, 'price2')" />
+            </div>
+            <div class="form-group">
+                <strong>Harga Catering/50 pax:</strong>
+                <input type="text" name="catering_price_50" class="form-control" id="price3" onkeyup="formattingNumber(this.value, 'price3')" />
+            </div>
+            <div class="form-group">
+                <strong>Harga Catering/75 pax:</strong>
+                <input type="text" name="catering_price_75" class="form-control" id="price4" onkeyup="formattingNumber(this.value, 'price4')" />
+            </div>
+            <div class="form-group">
+                <strong>Harga Catering/100 pax:</strong>
+                <input type="text" name="catering_price_100" class="form-control" id="price5" onkeyup="formattingNumber(this.value, 'price5')" />
+            </div>
+            <div class="form-group">
+                <strong>Posisi:&nbsp; &nbsp; &nbsp; &nbsp;</strong>
+                {{ Form::radio('is_stall', 1, true, ['class' => '']) }} Stall &nbsp; &nbsp; &nbsp; &nbsp;
+                {{ Form::radio('is_stall', 0, null, ['class' => '']) }} Buffet
             </div>
             <div class="form-group">
                 <strong>Description:</strong>

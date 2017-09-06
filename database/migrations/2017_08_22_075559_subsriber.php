@@ -13,7 +13,7 @@ class Subsriber extends Migration
      */
     public function up()
     {
-        Schema::create('subscriber', function (Blueprint $table) {
+        Schema::create('subscribers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email', 200);
             $table->boolean('is_active');
@@ -28,6 +28,6 @@ class Subsriber extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subscriber');
+        Schema::dropIfExists('subscribers');
     }
 }

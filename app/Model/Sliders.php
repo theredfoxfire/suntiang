@@ -5,5 +5,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sliders extends Model
 {
-    public $fillable = ['name'];
+    public $fillable = ['title', 'file'];
 }

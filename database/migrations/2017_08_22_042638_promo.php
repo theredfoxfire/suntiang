@@ -16,7 +16,7 @@ class Promo extends Migration
         Schema::create('promos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('image', 200);
-            $table->string('description');
+            $table->text('description');
             $table->boolean('is_active');
             $table->timestamps();
         });

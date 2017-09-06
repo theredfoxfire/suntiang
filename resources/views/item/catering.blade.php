@@ -131,7 +131,7 @@
                         <a href="{{ route('item.dailyMealShow', $value->id) }}"><img class="img-responsive" src="{{ asset('images/catering1.jpg') }}" alt=""></a>
                         <a href="{{ route('item.dailyMealShow', $value->id) }}"><h5 class="oneline-ellipsis">{{ $value->name }}</h5></a>
                         <p class="text-grey">100 pax</p>
-                        <p class="text-green">Now Only <span>Rp {{ formattingNumber($value->price) }}</span></p>
+                        <p class="text-green">Now Only <span>Rp {{ formattingNumber($value->catering_price_100) }}</span></p>
                         <a href="{{ route('item.dailyMealShow', $value->id) }}" class="btn btn-lg btn-flare">CHOOSE MENU <span class="icon icon-bowl"></span></a>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
             <div class="col-sm-12">
                 <h2 class="text-damion-curved">Custom Your Menu</h2>
                 <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit</p>
-                <a href="{{ route('item.custom') }}" class="btn btn-lg btn-flaregreen">CUSTOM MENU <span class="icon icon-food"></span></a>
+                <a href="{{ route('item.customCatering') }}" class="btn btn-lg btn-flaregreen">CUSTOM MENU <span class="icon icon-food"></span></a>
             </div>
         </div>
     </div>

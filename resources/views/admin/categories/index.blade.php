@@ -5,12 +5,12 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Categories List</h2>
+	            <h2>Kategori Jenis</h2>
 	        </div>
 	        <div class="pull-right">
 	        	@permission('categories-create')
 	            <a class="btn btn-success" href="{{ route('admin.categories.create') }}"> Tambah Kategori Baru</a>
-            @endpermission
+	            @endpermission
 	        </div>
 	    </div>
 	</div>
@@ -19,16 +19,13 @@
 		<tr>
 			<th class="col-sm-1">No</th>
 			<th class="col-sm-5">Name</th>
-			<th class="col-sm-4">Kelompok</th>
 			<th class="col-sm-2">Action</th>
 		</tr>
 	@foreach ($categories as $key => $category)
 	<tr>
 		<td>{{ ++$i }}</td>
 		<td>{{ $category->name }}</td>
-		<td>{{ strtoupper($category->group) }}</td>
 		<td>
-			<a class="btn btn-info btn-xs" href="{{ route('admin.categories.show',$category->id) }}">Show</a>
 			@permission('categories-edit')
 			<a class="btn btn-primary btn-xs" href="{{ route('admin.categories.edit',$category->id) }}">Edit</a>
 			@endpermission

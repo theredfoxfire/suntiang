@@ -26,18 +26,22 @@ Route::get('item/daily-meal-show/{id}', 'ItemController@dailyMealDetail')->name(
 Route::get('item/catering', 'ItemController@catering')->name('item.catering');
 Route::get('item/snackbox', 'ItemController@snackbox')->name('item.snackbox');
 Route::get('item/search', 'ItemController@search')->name('item.search');
-Route::get('item/custom', 'ItemController@custom')->name('item.custom');
+Route::get('item/custom-catering', 'ItemController@customCatering')->name('item.customCatering');
+Route::get('item/custom-daily', 'ItemController@customDaily')->name('item.customDaily');
 
 //Page Static
 Route::get('page/show/{id}', 'PageController@pageDetail')->name('page.show');
+Route::post('page/subscriber', 'PageController@subscriber')->name('page.subscriber');
 Route::get('page/about', 'PageController@about')->name('page.about');
 Route::get('page/faq', 'PageController@faq')->name('page.faq');
+Route::get('page/faq/{category_id}', 'PageController@faqByCategory')->name('page.faqByCategory');
 Route::get('page/promo', 'PageController@promo')->name('page.promo');
 Route::get('page/faq', 'PageController@faq')->name('page.faq');
 Route::get('page/disclaimer', 'PageController@disclaimer')->name('page.disclaimer');
 Route::get('page/privacy', 'PageController@privacy')->name('page.privacy');
 Route::get('page/term-of-use', 'PageController@tou')->name('page.tou');
 Route::get('page/how-to-order', 'PageController@how')->name('page.how');
+Route::get('page/how-to-order/{category_id}', 'PageController@howByCategory')->name('page.howByCategory');
 Route::get('page/payment-confirmation', 'PageController@payment')->name('page.payment');
 Route::get('page/{id}', 'PageController@pageDetail');
 
@@ -46,6 +50,7 @@ Route::get('cart', 'ShopController@showCart')->name('cart');
 
 //Contact
 Route::get('contact', 'ContactController@showForm')->name('contact');
+Route::post('contact/send', 'ContactController@sendMessage')->name('contact.send');
 Route::post('contact', 'ContactController@sendContactInfo');
 
 // Logging in and out
@@ -61,7 +66,7 @@ Route::get('/home', 'HomeController@index');
 
 // Admin area
 Route::get('admin', function () {
-    return redirect('/admin/post');
+    return redirect('/admin/items');
 });
 
 Route::group([
@@ -200,6 +205,14 @@ Route::group([
     Route::delete('admin/items/{id}',['as'=>'admin.items.destroy',
         'uses'=>'ItemController@destroy',
         'middleware' => ['permission:items-delete']]);
+    Route::post('admin/approve/{id}',['as'=>'admin.approve.update',
+        'uses'=>'ItemController@approve',
+        'middleware' => ['permission:approve-update']]
+    );
+    Route::get('admin/approve',['as'=>'admin.approve.list',
+        'uses'=>'ItemController@indexApprove',
+        'middleware' => ['permission:approve-list']]
+    );
     Route::get('admin/package',['as'=>'admin.package.index',
         'uses'=>'ItemController@indexPackage',
         'middleware' => ['permission:package-list|package-create|package-edit|package-delete'],
@@ -266,7 +279,33 @@ Route::group([
         'middleware' => ['permission:categories-edit']]);
     Route::delete('admin/categories/{id}',['as'=>'admin.categories.destroy',
         'uses'=>'CategoriesController@destroy',
-        'middleware' => ['permission:categories-delete']]);
+        'middleware' => ['permission:categories-delete']
+    ]);
+
+
+
+    Route::get('admin/region', ['as'=>'admin.region.index',
+        'uses'=>'CategoriesController@indexRegion',
+        'middleware' => ['permission:region-list|region-create|region-edit|region-delete'],
+    ]);
+    Route::get('admin/region/create',['as'=>'admin.region.create',
+        'uses'=>'CategoriesController@createRegion',
+        'middleware' => ['permission:region-create']]);
+    Route::post('admin/region/store',['as'=>'admin.region.store',
+        'uses'=>'CategoriesController@storeRegion',
+        'middleware' => ['permission:region-create']]);
+    Route::get('admin/region/{id}',['as'=>'admin.region.show',
+        'uses'=>'CategoriesController@show']);
+    Route::get('admin/region/{id}/edit',['as'=>'admin.region.edit',
+        'uses'=>'CategoriesController@editRegion',
+        'middleware' => ['permission:region-edit']]);
+    Route::patch('admin/region/{id}',['as'=>'admin.region.update',
+        'uses'=>'CategoriesController@updateRegion',
+        'middleware' => ['permission:region-edit']]);
+    Route::delete('admin/region/{id}',['as'=>'admin.region.destroy',
+        'uses'=>'CategoriesController@destroyRegion',
+        'middleware' => ['permission:region-delete']
+    ]);
 
     //Couriers routes
     Route::get('admin/couriers', ['as'=>'admin.couriers.index',
@@ -335,7 +374,32 @@ Route::group([
         'middleware' => ['permission:delivery_trackings-edit']]);
     Route::delete('admin/delivery_trackings/{id}',['as'=>'admin.delivery_trackings.destroy',
         'uses'=>'DeliveryTrackingsController@destroy',
-        'middleware' => ['permission:delivery_trackings-delete']]);
+        'middleware' => ['permission:delivery_trackings-delete']
+    ]);
+
+    //SelectedCategory routes
+    Route::get('admin/selected_category', ['as'=>'admin.selected_category.index',
+        'uses'=>'SelectedCategoryController@index',
+        'middleware' => ['permission:selected_category-list|selected_category-create|selected_category-edit|selected_category-delete'],
+    ]);
+    Route::get('admin/selected_category/create',['as'=>'admin.selected_category.create',
+        'uses'=>'SelectedCategoryController@create',
+        'middleware' => ['permission:selected_category-create']]);
+    Route::post('admin/selected_category/store',['as'=>'admin.selected_category.store',
+        'uses'=>'SelectedCategoryController@store',
+        'middleware' => ['permission:selected_category-create']]);
+    Route::get('admin/selected_category/{id}',['as'=>'admin.selected_category.show',
+        'uses'=>'SelectedCategoryController@show']);
+    Route::get('admin/selected_category/{id}/edit',['as'=>'admin.selected_category.edit',
+        'uses'=>'SelectedCategoryController@edit',
+        'middleware' => ['permission:selected_category-edit']]);
+    Route::patch('admin/selected_category/{id}',['as'=>'admin.selected_category.update',
+        'uses'=>'SelectedCategoryController@update',
+        'middleware' => ['permission:selected_category-edit']]);
+    Route::delete('admin/selected_category/{id}',['as'=>'admin.selected_category.destroy',
+        'uses'=>'SelectedCategoryController@destroy',
+        'middleware' => ['permission:selected_category-delete']
+    ]);
 
     //Item Image routes
     Route::get('admin/item-images', ['as'=>'admin.item_images.index',
@@ -526,7 +590,53 @@ Route::group([
         'middleware' => ['permission:faq-delete']]);
     Route::get('admin/faq',['as'=>'admin.faq.index',
         'uses'=>'PagesController@indexFaq',
-        'middleware' => ['permission:faq-list']]);
+        'middleware' => ['permission:faq-list']
+    ]);
+
+    //HowToCategory
+    Route::get('admin/categoryhow/create',['as'=>'admin.categoryhow.create',
+        'uses'=>'CategoryHowController@create',
+        'middleware' => ['permission:categoryhow-create']]);
+    Route::post('admin/categoryhow/store',['as'=>'admin.categoryhow.store',
+        'uses'=>'CategoryHowController@store',
+        'middleware' => ['permission:categoryhow-create']]);
+    Route::get('admin/categoryhow/{id}',['as'=>'admin.categoryhow.edit',
+        'uses'=>'CategoryHowController@edit',
+        'middleware' => ['permission:categoryhow-edit']]);
+    Route::patch('admin/categoryhow/update/{id}',['as'=>'admin.categoryhow.update',
+        'uses'=>'CategoryHowController@update',
+        'middleware' => ['permission:categoryhow-edit']]);
+    Route::delete('admin/categoryhow/{id}',['as'=>'admin.categoryhow.delete',
+        'uses'=>'CategoryHowController@delete',
+        'middleware' => ['permission:categoryhow-delete']]);
+    Route::get('admin/categoryhow',['as'=>'admin.categoryhow.index',
+        'uses'=>'CategoryHowController@index',
+        'middleware' => ['permission:categoryhow-list']
+    ]);
+
+    //FaqCategory routes
+    Route::get('admin/categoryfaq', ['as'=>'admin.faq_category.index',
+        'uses'=>'FaqCategoryController@index',
+        'middleware' => ['permission:faq_category-list|faq_category-create|faq_category-edit|faq_category-delete'],
+    ]);
+    Route::get('admin/categoryfaq/create',['as'=>'admin.faq_category.create',
+        'uses'=>'FaqCategoryController@create',
+        'middleware' => ['permission:faq_category-create']]);
+    Route::post('admin/categoryfaq/store',['as'=>'admin.faq_category.store',
+        'uses'=>'FaqCategoryController@store',
+        'middleware' => ['permission:faq_category-create']]);
+    Route::get('admin/categoryfaq/{id}',['as'=>'admin.faq_category.show',
+        'uses'=>'FaqCategoryController@show']);
+    Route::get('admin/categoryfaq/{id}/edit',['as'=>'admin.faq_category.edit',
+        'uses'=>'FaqCategoryController@edit',
+        'middleware' => ['permission:faq_category-edit']]);
+    Route::patch('admin/categoryfaq/{id}',['as'=>'admin.faq_category.update',
+        'uses'=>'FaqCategoryController@update',
+        'middleware' => ['permission:faq_category-edit']]);
+    Route::delete('admin/categoryfaq/{id}',['as'=>'admin.faq_category.destroy',
+        'uses'=>'FaqCategoryController@destroy',
+        'middleware' => ['permission:faq_category-delete']
+    ]);
 
     //Payments routes
     Route::get('admin/payments', ['as'=>'admin.payments.index',
@@ -876,7 +986,32 @@ Route::group([
         'middleware' => ['permission:sessions-edit']]);
     Route::delete('admin/sessions/{id}',['as'=>'admin.sessions.destroy',
         'uses'=>'SessionsController@destroy',
-        'middleware' => ['permission:sessions-delete']]);
+        'middleware' => ['permission:sessions-delete']
+    ]);
+
+    //Subscriber routes
+    Route::get('admin/subscriber', ['as'=>'admin.subscriber.index',
+        'uses'=>'SubscriberController@index',
+        'middleware' => ['permission:subscriber-list|subscriber-create|subscriber-edit|subscriber-delete'],
+    ]);
+    Route::get('admin/subscriber/create',['as'=>'admin.subscriber.create',
+        'uses'=>'SubscriberController@create',
+        'middleware' => ['permission:subscriber-create']]);
+    Route::post('admin/subscriber/store',['as'=>'admin.subscriber.store',
+        'uses'=>'SubscriberController@store',
+        'middleware' => ['permission:subscriber-create']]);
+    Route::get('admin/subscriber/{id}',['as'=>'admin.subscriber.show',
+        'uses'=>'SubscriberController@show']);
+    Route::get('admin/subscriber/{id}/edit',['as'=>'admin.subscriber.edit',
+        'uses'=>'SubscriberController@edit',
+        'middleware' => ['permission:subscriber-edit']]);
+    Route::patch('admin/subscriber/{id}',['as'=>'admin.subscriber.update',
+        'uses'=>'SubscriberController@update',
+        'middleware' => ['permission:subscriber-edit']]);
+    Route::delete('admin/subscriber/{id}',['as'=>'admin.subscriber.destroy',
+        'uses'=>'SubscriberController@destroy',
+        'middleware' => ['permission:subscriber-delete']
+    ]);
 
     //ShippingCosts routes
     Route::get('admin/shipping_costs', ['as'=>'admin.shipping_costs.index',

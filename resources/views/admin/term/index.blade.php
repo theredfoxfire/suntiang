@@ -22,13 +22,13 @@
 			<th>Description</th>
 			<th>Sort</th>
 			<th>Status</th>
-			<th>Action</th>
+			<th class="col-md-2">Action</th>
 		</tr>
 	@foreach ($term as $key => $data)
 	<tr>
 		<td>{{ ++$i }}</td>
 		<td>{{ $data->title }}</td>
-		<td>{{ $data->description }}</td>
+		<td>{!! $data->description !!}</td>
 		<td>{{ $data->sort }}</td>
 		<td>
 			@if ($data->is_active)  <label class="label label-success">Aktif</label>

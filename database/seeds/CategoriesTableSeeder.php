@@ -114,18 +114,6 @@ class CategoriesTableSeeder extends Seeder
                 'type' => 'region',
                 'parent_id' => 0,
         	],
-            [
-                'id' => 1,
-        		'name' => 'Daily Meal',
-                'type' => 'utama',
-                'parent_id' => 0,
-        	],
-            [
-                'id' => 2,
-        		'name' => 'Catering',
-                'type' => 'utama',
-                'parent_id' => 0,
-        	],
         ];
 
         foreach ($permission as $key => $value) {

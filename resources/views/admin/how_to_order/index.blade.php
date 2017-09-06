@@ -27,7 +27,7 @@
 	@foreach ($how_to_order as $key => $data)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $data->category_id }}</td>
+		<td>{{ $data->category_name }}</td>
 		<td>{{ $data->title }}</td>
 		<td>{{ $data->step }}</td>
 		<td>

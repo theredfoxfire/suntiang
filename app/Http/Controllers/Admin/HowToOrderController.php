@@ -3,9 +3,10 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\HowToOrderCreateRequest;
-use App\Http\Requests\HowToOrderUpdateRequest;
+use App\Http\Requests\HowCreateRequest;
+use App\Http\Requests\HowCreateRequest as HowUpdateRequest;
 use App\Model\HowToOrder;
+use App\Model\CategoryHow;
 
 class HowToOrderController extends Controller
 {
@@ -16,7 +17,7 @@ class HowToOrderController extends Controller
      */
     public function index(Request $request)
     {
-        $how_to_order = HowToOrder::orderBy('id','DESC')->paginate(config('blog.posts_per_page'));
+        $how_to_order = HowToOrder::indexHow();
         return view('admin.how_to_order.index',compact('how_to_order'))
             ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
@@ -28,7 +29,8 @@ class HowToOrderController extends Controller
      */
     public function create()
     {
-        return view('admin.how_to_order.create');
+        $category = CategoryHow::all();
+        return view('admin.how_to_order.create', compact('category'));
     }
 
     /**
@@ -37,7 +39,7 @@ class HowToOrderController extends Controller
      * @param  HowToOrderCreateRequest  $request
      * @return Response
      */
-    public function store(HowToOrderCreateRequest $request)
+    public function store(HowCreateRequest $request)
     {
         HowToOrder::create($request->all());
 
@@ -65,8 +67,9 @@ class HowToOrderController extends Controller
      */
     public function edit($id)
     {
+        $category = CategoryHow::all();
         $how_to_order = HowToOrder::find($id);
-        return view('admin.how_to_order.edit',compact('how_to_order'));
+        return view('admin.how_to_order.edit',compact('how_to_order', 'category'));
     }
 
     /**
@@ -76,7 +79,7 @@ class HowToOrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(HowToOrderUpdateRequest $request, $id)
+    public function update(HowUpdateRequest $request, $id)
     {
         HowToOrder::find($id)->update($request->all());
 

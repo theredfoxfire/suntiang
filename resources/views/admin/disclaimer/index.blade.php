@@ -22,7 +22,7 @@
 			<th>Description</th>
 			<th>Sort</th>
 			<th>Status</th>
-			<th>Action</th>
+			<th class="col-md-2">Action</th>
 		</tr>
 	@foreach ($disclaimer as $key => $data)
 	<tr>

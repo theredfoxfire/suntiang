@@ -24,7 +24,31 @@ class SlidersCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'title' => 'required',
+            'file' => 'required|image',
+        ];
+    }
+    /**
+     * Filled data and store file into public dir
+     *
+     * @return array
+     */
+    public function fillData()
+    {
+        if (!empty($this->file)) {
+            $fileName = md5(uniqid()).'.'.$this->file->getClientOriginalExtension();
+            $this->file->storeAs(config('blog.sliderPath'), $fileName);
+            $path = empty($this->oldPhoto) ? public_path('uploads').'/'.config('blog.sliderPath').'/'.'hdhdhsjd.jjj' : public_path('uploads').'/'.config('blog.promoPath').'/'.$this->oldPhoto;
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        } else {
+            $fileName = '';
+        }
+
+        return [
+            'file' => $fileName,
+            'title' => $this->title,
         ];
     }
     /**
@@ -35,7 +59,9 @@ class SlidersCreateRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Kolom Nama harus diisi.'
+            'title.required' => 'Kolom Judul harus diisi.',
+            'file.required' => 'Kolom Gambar harus diisi.',
+            'file.image' => 'Hanya diperbolehkan mengupload file gambar (jpeg, png, bmp, gif, atau svg).',
         ];
     }
 }

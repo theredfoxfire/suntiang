@@ -21,17 +21,6 @@
             {!! Form::text('name', null, array('placeholder' => 'Nama','class' => 'form-control')) !!}
         </div>
     </div>
-	<div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Kelompok:</strong>
-            <select name="group" class="form-control">
-				<option value="">Berdasarkan</option>
-				<option value="region" @if ($categories->group == 'region') selected @endif >Regional</option>
-				<option value="jenis" @if ($categories->group == 'jenis') selected @endif>Jenis</option>
-				<option value="isi" @if ($categories->group == 'isi') selected @endif>Isi/Kandungan</option>
-			</select>
-        </div>
-    </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 		<button type="submit" class="btn btn-primary">Submit</button>
     </div>

@@ -42,9 +42,9 @@
     </div>
     <div class="collapse navbar-collapse" id="main-menu">
         <ul class="nav navbar-nav">
-            <li class="main-li "><a href="{{ route('item.dailyMeal') }}">DAILY MEAL</a></li>
-            <li class="main-li "><a href="{{ route('item.catering') }}">CATERING</a></li>
-            <li class="main-li "><a href="{{ route('item.snackbox') }}">SNACK BOX</a></li>
+            <li class="main-li @if (Request::is('item/daily-meal*')) active @endif"><a href="{{ route('item.dailyMeal') }}">DAILY MEAL</a></li>
+            <li class="main-li @if (Request::is('item/catering*')) active @endif"><a href="{{ route('item.catering') }}">CATERING</a></li>
+            <li class="main-li @if (Request::is('item/snackbox*')) active @endif"><a href="{{ route('item.snackbox') }}">SNACK BOX</a></li>
             <li class=" hidden-xs"><a href="{{ route('memberLogin') }}">Login</a></li>
             <li class=""><a href="{{ route('memberRegister') }}">Register</a></li>
             <li class="cart hidden-xs">

@@ -62,6 +62,18 @@ class Pages extends Model
         return PageManager::getFaq($id);
     }
     /**
+    * Get Faq by Kategori
+    * @param $id integer of category id
+    */
+    public static function getFaqByCategory($id)
+    {
+        return PageManager::getFaqByCategory($id);
+    }
+    public static function getFaqCategory()
+    {
+        return PageManager::getFaqCategory();
+    }
+    /**
     * Update Faq Data
     */
     public static function updateFaq($id, $data)

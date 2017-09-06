@@ -6,7 +6,7 @@ use App\Services\CategoryManager;
 
 class Categories extends Model
 {
-    public $fillable = ['name', 'group', 'parent_id'];
+    public $fillable = ['name', 'group', 'parent_id', 'type'];
 
     /**
     * The many-to-many relationship between categories and items.

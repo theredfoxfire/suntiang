@@ -17,7 +17,7 @@ class FaqCategory extends Migration
             $table->increments('id');
             $table->string('name', 200);
             $table->string('description', 200)->nullable();
-            $table->boolean('is_active');
+            $table->boolean('is_active')->nullable();
             $table->timestamps();
         });
     }

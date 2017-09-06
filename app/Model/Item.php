@@ -80,4 +80,8 @@ class Item extends Model
 	{
 		ItemManager::deleteChild($parentID);
 	}
+    public static function getAllCategoriesWithItem()
+    {
+        return ItemManager::getAllCategoriesWithItem();
+    }
 }

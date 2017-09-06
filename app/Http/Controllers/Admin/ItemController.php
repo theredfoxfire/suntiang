@@ -17,7 +17,7 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     {
-        $items = Item::orderBy('id','DESC')->where('type', 'item')->paginate(config('blog.posts_per_page'));
+        $items = Item::orderBy('id','DESC')->where('type', 'item')->where('is_active', 1)->paginate(config('blog.posts_per_page'));
         return view('admin.item.index',compact('items'))
             ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
@@ -28,8 +28,19 @@ class ItemController extends Controller
      */
     public function indexPackage(Request $request)
     {
-        $items = Item::orderBy('id','DESC')->where('type', 'package')->paginate(config('blog.posts_per_page'));
+        $items = Item::orderBy('id','DESC')->where('type', 'package')->where('is_active', 1)->paginate(config('blog.posts_per_page'));
         return view('admin.item.indexPackage',compact('items'))
+            ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexApprove(Request $request)
+    {
+        $items = Item::orderBy('id','DESC')->whereNull('is_active')->orWhere('is_active', 0)->paginate(config('blog.posts_per_page'));
+        return view('admin.item.indexApprove',compact('items'))
             ->with('i', ($request->input('page', 1) - 1) * config('blog.posts_per_page'));
     }
 
@@ -190,6 +201,20 @@ class ItemController extends Controller
         Item::deleteChild($id);
         return redirect()->route('admin.items.index')
                         ->with('success','Item deleted successfully');
+    }
+    /**
+     * Approve the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function approve($id)
+    {
+        $item = Item::findOrFail($id);
+        $item->is_active = 1;
+        $item->save();
+        return redirect()->route('admin.items.index')
+                        ->with('success','Approvement success');
     }
     /**
      * Remove the specified resource from storage.

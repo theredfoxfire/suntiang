@@ -13,11 +13,11 @@ class HowtoorderCategory extends Migration
      */
     public function up()
     {
-        Schema::create('howtoorder_categories', function (Blueprint $table) {
+        Schema::create('category_hows', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 200);
             $table->string('description', 200)->nullable();
-            $table->boolean('is_active');
+            $table->boolean('is_active')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class HowtoorderCategory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('howtoorder_categories');
+        Schema::dropIfExists('category_hows');
     }
 }

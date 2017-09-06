@@ -27,7 +27,7 @@
 	<tr>
 		<td>{{ $page->category_name }}</td>
 		<td>{{ $page->question }}</td>
-		<td>{{ $page->answer }}</td>
+		<td>{!! $page->answer !!}</td>
 		<td>
 			@if ($page->is_active)  <label class="label label-success">Aktif</label>
 			@else <label class="label label-danger">Tidak Aktif</label>

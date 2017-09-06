@@ -25,7 +25,6 @@ class CategoriesUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'group' => 'required',
         ];
     }
 
@@ -38,7 +37,6 @@ class CategoriesUpdateRequest extends FormRequest
     {
         return [
             'name.required' => 'Kolom Nama harus diisi.',
-            'group.required' => 'Kolom Slug harus diisi.',
         ];
     }
 }

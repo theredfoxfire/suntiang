@@ -5,7 +5,7 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Items List</h2>
+	            <h2>Package List</h2>
 	        </div>
 	        <div class="pull-right">
 	        	@permission('package-create')
@@ -19,7 +19,7 @@
 		<tr>
 			<th class="col-sm-1">No</th>
 			<th class="col-sm-2">Nama</th>
-			<th class="col-sm-2">Harga</th>
+			<th class="col-sm-2">Harga Daily</th>
 			<th class="col-sm-4">Description</th>
 			<th class="col-sm-1">Status</th>
 			<th class="col-sm-2">Action</th>
@@ -28,7 +28,7 @@
 	<tr>
 		<td>{{ ++$i }}</td>
 		<td>{{ $item->name }}</td>
-		<td>{{formattingNumber($item->price) }}</td>
+		<td>{{formattingNumber($item->daily_price) }}</td>
 		<td>{{ getWords($item->description, 30) }}</td>
 		<td>
 			@if ($item->is_active)  <label class="label label-success">Aktif</label>
@@ -36,7 +36,6 @@
 			@endif
 		</td>
 		<td>
-			<a class="btn btn-info btn-xs" href="{{ route('admin.package.show',$item->id) }}">Show</a>
 			@permission('package-edit')
 			<a class="btn btn-primary btn-xs" href="{{ route('admin.package.edit',$item->id) }}">Edit</a>
 			@endpermission

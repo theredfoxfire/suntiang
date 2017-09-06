@@ -56,6 +56,7 @@
   </noscript>
   <header itemscope itemtype="https://schema.org/WPHeader">
     <div class="bg-header">
+      @include('admin.partials.success')
       <div class="container">
         <div class="row">
           <div class="col-sm-2 col-md-2">
@@ -93,7 +94,7 @@
           </ul>
         </div>
         <div class="col-sm-4">
-          <form id="form-subscribe" class="form-horizontal form-default" action="#">
+          {!! Form::open(array('class' => 'form-horizontal form-default', 'route' => 'page.subscriber','method'=>'POST')) !!}
             <div class="form-group">
               <label for="subscribe" class="control-label col-sm-12">Subscribe Our Newsletter</label>
               <div class="col-sm-12">
@@ -105,7 +106,7 @@
                 </div>
               </div>
             </div>
-          </form>
+          {!! Form::close() !!}
         </div>
       </div>
     </div>
@@ -127,7 +128,7 @@
     </div>
   </footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

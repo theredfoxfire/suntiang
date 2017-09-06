@@ -666,6 +666,78 @@ class PermissionRoleTableSeeder extends Seeder
                 'role_id' => 1,
             ],
             [
+                'permission_id' => 155,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 156,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 157,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 158,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 159,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 160,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 161,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 162,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 163,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 164,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 165,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 166,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 167,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 168,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 169,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 170,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 171,
+                'role_id' => 1,
+            ],
+            [
+                'permission_id' => 172,
+                'role_id' => 1,
+            ],
+            [
                 'permission_id' => 1,
                 'role_id' => 3,
             ],

@@ -17,10 +17,15 @@
             <div class="row center-gap">
                 <div class="col-sm-6">
                     <h3 class="text-damion">Get in touch</h3>
-                    <form id="form-contact" class="form-horizontal form-default form-bggrey" action="#">
+                    {!! Form::open(array('class' => 'form-horizontal form-default form-bggrey', 'route' => 'contact.send', 'method'=>'POST', 'files' => true)) !!}
                         <div class="form-group form-group-lg">
                             <div class="col-sm-12">
-                                <input class="form-control" type="text" name="fullname" placeholder="Full Name">
+                                <input class="form-control" type="text" name="name" placeholder="Full Name">
+                            </div>
+                        </div>
+                        <div class="form-group form-group-lg">
+                            <div class="col-sm-12">
+                                <input class="form-control" type="text" name="phone" placeholder="Phone">
                             </div>
                         </div>
                         <div class="form-group form-group-lg">
@@ -43,40 +48,23 @@
                                 <button type="submit" class="btn btn-lg btn-yellowgrad">Send</button>
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
                 <div class="col-sm-6">
                     <h3 class="text-damion">Find Us</h3>
+                    @foreach ($contact as $key => $data)
                     <div class="media-icon">
                         <div class="media-left">
                             <img class="media-object" src="{{ asset('images/icon-map-marker.png') }}" alt="">
                         </div>
                         <div class="media-body">
                             <address>
-                                <p>Grand Indonesia<br>Level 3A, West Mall<br><a href="tel:123580448">Ph (021) 23580448</a></p>
+                                {!! $data->address !!}
+                                <br><p><a href="tel:123580448">Ph {{ $data->phone }}</a></p>
                             </address>
                         </div>
                     </div>
-                    <div class="media-icon">
-                        <div class="media-left">
-                            <img class="media-object" src="{{ asset('images/icon-map-marker.png') }}" alt="">
-                        </div>
-                        <div class="media-body">
-                            <address>
-                                <p>Setiabudi One<br>Ground Floor<br><a href="tel:123580448">Ph (021) 23580448</a></p>
-                            </address>
-                        </div>
-                    </div>
-                    <div class="media-icon">
-                        <div class="media-left">
-                            <img class="media-object" src="{{ asset('images/icon-map-marker.png') }}" alt="">
-                        </div>
-                        <div class="media-body">
-                            <address>
-                                <p>Suntiang Catering<br><a href="tel:123580448">Ph (021) 23580448</a> / <a href="tel:123580448">Ph (021) 23580448</a></p>
-                            </address>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

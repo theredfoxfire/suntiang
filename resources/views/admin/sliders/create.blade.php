@@ -13,12 +13,18 @@
 	    </div>
 	</div>
 	@include('admin.partials.errors')
-	{!! Form::open(array('route' => 'admin.sliders.store','method'=>'POST')) !!}
+	{!! Form::open(array('route' => 'admin.sliders.store','files' => true, 'method'=>'POST')) !!}
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                <strong>Judul:</strong>
+                {!! Form::text('title', null, array('placeholder' => 'Judul','class' => 'form-control')) !!}
+            </div>
+        </div>
+		<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Gambar: (recomended 1365 px X 570 px)</strong>
+                <input type="file" name="file" class="form-control">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

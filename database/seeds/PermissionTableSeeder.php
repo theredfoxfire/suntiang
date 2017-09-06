@@ -936,6 +936,114 @@ class PermissionTableSeeder extends Seeder
                 'display_name' => 'Create contact_message',
                 'description' => 'Create contact_message'
             ],
+            [
+                'id' => 155,
+                'name' => 'approve-list',
+                'display_name' => 'Approvement List',
+                'description' => 'Approvement List'
+            ],
+            [
+                'id' => 156,
+                'name' => 'approve-update',
+                'display_name' => 'Approve Item',
+                'description' => 'Approve Item'
+            ],
+            [
+                'id' => 157,
+                'name' => 'region-list',
+                'display_name' => 'Display region Listing',
+                'description' => 'See only Listing Of region'
+            ],
+            [
+                'id' => 158,
+                'name' => 'region-create',
+                'display_name' => 'Create region',
+                'description' => 'Create New region'
+            ],
+            [
+                'id' => 159,
+                'name' => 'region-edit',
+                'display_name' => 'Edit region',
+                'description' => 'Edit region'
+            ],
+            [
+                'id' => 160,
+                'name' => 'region-delete',
+                'display_name' => 'Delete region',
+                'description' => 'Delete region'
+            ],
+            [
+                'id' => 161,
+                'name' => 'selected_category-list',
+                'display_name' => 'Display selected_category Listing',
+                'description' => 'See only Listing Of selected_category'
+            ],
+            [
+                'id' => 162,
+                'name' => 'selected_category-create',
+                'display_name' => 'Create selected_category',
+                'description' => 'Create New selected_category'
+            ],
+            [
+                'id' => 163,
+                'name' => 'selected_category-edit',
+                'display_name' => 'Edit selected_category',
+                'description' => 'Edit selected_category'
+            ],
+            [
+                'id' => 164,
+                'name' => 'selected_category-delete',
+                'display_name' => 'Delete selected_category',
+                'description' => 'Delete selected_category'
+            ],
+            [
+                'id' => 165,
+                'name' => 'categoryhow-list',
+                'display_name' => 'Display categoryhow Listing',
+                'description' => 'See only Listing Of categoryhow'
+            ],
+            [
+                'id' => 166,
+                'name' => 'categoryhow-create',
+                'display_name' => 'Create categoryhow',
+                'description' => 'Create New categoryhow'
+            ],
+            [
+                'id' => 167,
+                'name' => 'categoryhow-edit',
+                'display_name' => 'Edit categoryhow',
+                'description' => 'Edit categoryhow'
+            ],
+            [
+                'id' => 168,
+                'name' => 'categoryhow-delete',
+                'display_name' => 'Delete categoryhow',
+                'description' => 'Delete categoryhow'
+            ],
+            [
+                'id' => 169,
+                'name' => 'subscriber-list',
+                'display_name' => 'Display subscriber Listing',
+                'description' => 'See only Listing Of subscriber'
+            ],
+            [
+                'id' => 170,
+                'name' => 'subscriber-create',
+                'display_name' => 'Create subscriber',
+                'description' => 'Create New subscriber'
+            ],
+            [
+                'id' => 171,
+                'name' => 'subscriber-edit',
+                'display_name' => 'Edit subscriber',
+                'description' => 'Edit subscriber'
+            ],
+            [
+                'id' => 172,
+                'name' => 'subscriber-delete',
+                'display_name' => 'Delete subscriber',
+                'description' => 'Delete subscriber'
+            ],
         ];
 
         foreach ($permission as $key => $value) {
