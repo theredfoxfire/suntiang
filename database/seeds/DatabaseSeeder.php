@@ -12,7 +12,6 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
         $this->call('AdditionalProductPivotTableSeeder');
-        $this->call('CartsProductPivotTableSeeder');
         $this->call('CartsTableSeeder');
         $this->call('CategoriesTableSeeder');
         $this->call('CouriersTableSeeder');

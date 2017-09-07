@@ -25,6 +25,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($cart as $data)
                         <tr>
                             <td>
                                 <div class="media media-thumb">
@@ -32,14 +33,14 @@
                                         <img class="media-object" src="images/prod1.jpg" alt="">
                                     </div>
                                     <div class="media-body">
-                                        <h5>SATE 4 musim</h5>
+                                        <h5>{{ $data->name }}</h5>
                                         <p class="text-grey">Add. Sambal Korek</p>
                                         <p class="text-grey">Delivery 1 week 4-10 March 2017</p>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <p>Rp 119.000</p>
+                                <p>{{ formattingNumber($data->daily_price) }}</p>
                             </td>
                             <td>
                                 <div class="form-group-lg">
@@ -60,41 +61,7 @@
                                 <a href="#" class="text-danger"><span class="fa fa-times"></span></a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <div class="media media-thumb">
-                                    <div class="media-left">
-                                        <img class="media-object" src="images/prod2.jpg" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <h5>Lidah Sapi</h5>
-                                        <p class="text-grey">Add. Sambal Korek</p>
-                                        <p class="text-grey">Delivery 1, 4, 8 March 2017</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <p>Rp 119.000</p>
-                            </td>
-                            <td>
-                                <div class="form-group-lg">
-                                    <select class="selectpicker" name="qty" data-width="100px" data-style="btn-lg">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                </div>
-                            </td>
-                            <td>
-                                <p>1531.60Kkal</p>
-                            </td>
-                            <td>
-                                <p>Rp 119.000</p>
-                            </td>
-                            <td>
-                                <a href="#" class="text-danger"><span class="fa fa-times"></span></a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>

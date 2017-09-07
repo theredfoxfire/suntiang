@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Model\Item;
 use Carbon\Carbon;
 
@@ -22,11 +23,15 @@ class ItemController extends Controller
         return view('item.dailyMeal', $datas);
     }
 
-    public function dailyMealDetail($id)
+    public function dailyMealDetail(Request $request, $id)
     {
-        // $item = Item::whereId($id)->firstOrFail();
+        $item = Item::whereId($id)->firstOrFail();
+        $response = Response(view('item.dailyMealShow', compact('item')));
+        if (empty($request->cookie('sessionID'))) {
+            $response->withCookie(cookie('sessionID', md5(uniqid()), 36000));
+        }
 
-        return view('item.dailyMealShow');
+        return $response;
     }
 
     public function catering()

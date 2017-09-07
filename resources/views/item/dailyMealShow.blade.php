@@ -25,12 +25,6 @@
                           <div>
                               <img class="img-responsive" src="{{ asset('images/prod-det.jpg') }}" alt="">
                           </div>
-                          <div>
-                              <img class="img-responsive" src="{{ asset('images/prod-det2.jpg') }}" alt="">
-                          </div>
-                          <div>
-                              <img class="img-responsive" src="{{ asset('images/prod-det3.jpg') }}" alt="">
-                          </div>
                       </div>
                   </div>
                   <div class="col-xs-10 col-sm-11 col-md-6">
@@ -43,24 +37,9 @@
                                           <span class="fa fa-arrows-alt"></span>
                                       </a>
                                   </div>
-                                  <div>
-                                      <a data-fancybox="img-prod" href="{{ asset('images/prod-det2.jpg') }}">
-                                          <img class="img-responsive" src="{{ asset('images/prod-det2.jpg') }}" alt="">
-                                          <span class="fa fa-arrows-alt"></span>
-                                      </a>
-                                  </div>
-                                  <div>
-                                      <a data-fancybox="img-prod" href="{{ asset('images/prod-det3.jpg') }}">
-                                          <img class="img-responsive" src="{{ asset('images/prod-det3.jpg') }}" alt="">
-                                          <span class="fa fa-arrows-alt"></span>
-                                      </a>
-                                  </div>
                               </div>
                               <ul class="list-inline tag-grey hidden-xs">
                                   <li><a href="#">Sunda</a></li>
-                                  <li><a href="#">Balado</a></li>
-                                  <li><a href="#">Saus</a></li>
-                                  <li><a href="#">Beef</a></li>
                               </ul>
                           </div>
                           <div class="col-sm-6 col-md-12 hidden-xs">
@@ -75,20 +54,6 @@
                                                   <div class="col-sm-5 oneline-ellipsis"><p>equal with 3 glass milk</p></div>
                                               </div>
                                           </li>
-                                          <li>
-                                              <div class="row">
-                                                  <div class="col-sm-4"><img src="{{ asset('images/nutr-2.png') }}" alt=""><p>Karbohidrat</p></div>
-                                                  <div class="col-sm-3"><p>153Kkal</p></div>
-                                                  <div class="col-sm-5 oneline-ellipsis"><p>equal with 3 potatoes</p></div>
-                                              </div>
-                                          </li>
-                                          <li>
-                                              <div class="row">
-                                                  <div class="col-sm-4"><img src="{{ asset('images/nutr-3.png') }}" alt=""><p>Protein</p></div>
-                                                  <div class="col-sm-3"><p>153Kkal</p></div>
-                                                  <div class="col-sm-5 oneline-ellipsis"><p>equal with 3 eggs</p></div>
-                                              </div>
-                                          </li>
                                       </ul>
                                   </li>
                                   <li>
@@ -97,20 +62,6 @@
                                           <li class="active">
                                               <a href="dm-proddet.html" class="row">
                                                   <div class="col-sm-4"><p>Monday</p></div>
-                                                  <div class="col-sm-2"><p>12:30</p></div>
-                                                  <div class="col-sm-6 oneline-ellipsis"><p>Beef Enoki Saus Balado</p></div>
-                                              </a>
-                                          </li>
-                                          <li>
-                                              <a href="dm-proddet.html" class="row">
-                                                  <div class="col-sm-4"><p>Tuesday</p></div>
-                                                  <div class="col-sm-2"><p>12:30</p></div>
-                                                  <div class="col-sm-6 oneline-ellipsis"><p>Beef Enoki Saus Balado</p></div>
-                                              </a>
-                                          </li>
-                                          <li>
-                                              <a href="dm-proddet.html" class="row">
-                                                  <div class="col-sm-4"><p>Wednesday</p></div>
                                                   <div class="col-sm-2"><p>12:30</p></div>
                                                   <div class="col-sm-6 oneline-ellipsis"><p>Beef Enoki Saus Balado</p></div>
                                               </a>
@@ -124,9 +75,6 @@
                   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-0 prod-desc">
                       <ul class="list-inline tag-grey visible-xs">
                           <li><a href="#">Sunda</a></li>
-                          <li><a href="#">Balado</a></li>
-                          <li><a href="#">Saus</a></li>
-                          <li><a href="#">Beef</a></li>
                       </ul>
                       <ul class="list-normal accordion-grey visible-xs">
                           <li>
@@ -139,20 +87,6 @@
                                           <div class="col-sm-5 oneline-ellipsis"><p>equal with 3 glass milk</p></div>
                                       </div>
                                   </li>
-                                  <li>
-                                      <div class="row">
-                                          <div class="col-sm-4"><img src="{{ asset('images/nutr-2.png') }}" alt=""><p>Karbohidrat</p></div>
-                                          <div class="col-sm-3"><p>153Kkal</p></div>
-                                          <div class="col-sm-5 oneline-ellipsis"><p>equal with 3 potatoes</p></div>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="row">
-                                          <div class="col-sm-4"><img src="{{ asset('images/nutr-3.png') }}" alt=""><p>Protein</p></div>
-                                          <div class="col-sm-3"><p>153Kkal</p></div>
-                                          <div class="col-sm-5 oneline-ellipsis"><p>equal with 3 eggs</p></div>
-                                      </div>
-                                  </li>
                               </ul>
                           </li>
                           <li>
@@ -161,20 +95,6 @@
                                   <li class="active">
                                       <a href="dm-proddet.html" class="row">
                                           <div class="col-sm-4"><p>Monday</p></div>
-                                          <div class="col-sm-2"><p>12:30</p></div>
-                                          <div class="col-sm-6 oneline-ellipsis"><p>Beef Enoki Saus Balado</p></div>
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a href="dm-proddet.html" class="row">
-                                          <div class="col-sm-4"><p>Tuesday</p></div>
-                                          <div class="col-sm-2"><p>12:30</p></div>
-                                          <div class="col-sm-6 oneline-ellipsis"><p>Beef Enoki Saus Balado</p></div>
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a href="dm-proddet.html" class="row">
-                                          <div class="col-sm-4"><p>Wednesday</p></div>
                                           <div class="col-sm-2"><p>12:30</p></div>
                                           <div class="col-sm-6 oneline-ellipsis"><p>Beef Enoki Saus Balado</p></div>
                                       </a>
@@ -197,14 +117,16 @@
                       </ul>
                       <p class="text-grey text-linethrough">Rp 69.000</p>
                       <p class="text-green">Now Only <span>Rp 49.000</span></p>
-                      <form id="form-proddet" class="form-horizontal form-default" action="cart.html">
+                      {!! Form::open(array('route' => 'cart.add','method'=>'POST', 'class' => 'form-horizontal form-default')) !!}
+                          <input type="hidden" name="item_id" value="{{ $item->id }}">
+                          <input type="hidden" name="price" value="{{ $item->daily_price }}">
                           <label for="deliverydate" class="control-label">DELIVERY & SCHEDULE DATE</label>
                           <div class="row">
                               <div class="col-sm-6">
                                   <div class="form-group form-group-lg">
                                       <div class="col-sm-12">
                                           <div class="input-group input-group-lg">
-                                              <input id="deliverydate" class="form-control" type="text" name="deliverydate" placeholder="Date">
+                                              <input id="deliverydate" class="form-control" type="text" name="on_date" placeholder="Date">
                                               <label for="deliverydate" class="input-group-addon"><span class="fa fa-calendar"></span></label>
                                           </div>
                                       </div>
@@ -213,9 +135,9 @@
                               <div class="col-sm-6 form-inline">
                                   <div class="form-group form-group-lg">
                                       <label for="deliverytime" class="control-label">Time</label>
-                                      <select id="deliverytime" class="selectpicker" name="deliverytime" data-width="100px" data-style="btn-lg">
-                                          <option value="lorem">12:30</option>
-                                          <option value="lorem">13:00</option>
+                                      <select id="deliverytime" class="selectpicker" name="on_hour" data-width="100px" data-style="btn-lg">
+                                          <option value="12:30">12:30</option>
+                                          <option value="13:00">13:00</option>
                                       </select>
                                   </div>
                               </div>
@@ -233,7 +155,7 @@
                                           <div class="slider-4slides-adds">
                                               <div class="text-center">
                                                   <div class="radio radio-img">
-                                                      <input id="des1" type="radio" name="dessert" value="">
+                                                      <input id="des1" type="radio" name="condiments" value="2">
                                                       <label for="des1"><img class="img-circle img-responsive" src="{{ asset('images/add3.jpg') }}" alt=""><span class="fa fa-check-circle"></span></label>
                                                   </div>
                                                   <div class="text-left additional">
@@ -246,7 +168,7 @@
                                               </div>
                                               <div class="text-center">
                                                   <div class="radio radio-img">
-                                                      <input id="des2" type="radio" name="dessert" value="">
+                                                      <input id="des2" type="radio" name="condiments" value="1">
                                                       <label for="des2"><img class="img-circle img-responsive" src="{{ asset('images/add2.jpg') }}" alt=""><span class="fa fa-check-circle"></span></label>
                                                   </div>
                                                   <div class="text-left additional">
@@ -259,7 +181,7 @@
                                               </div>
                                               <div class="text-center">
                                                   <div class="radio radio-img">
-                                                      <input id="des3" type="radio" name="dessert" value="">
+                                                      <input id="des3" type="radio" name="condiments" value="3">
                                                       <label for="des3"><img class="img-circle img-responsive" src="{{ asset('images/add3.jpg') }}" alt=""><span class="fa fa-check-circle"></span></label>
                                                   </div>
                                                   <div class="text-left additional">
@@ -272,7 +194,7 @@
                                               </div>
                                               <div class="text-center">
                                                   <div class="radio radio-img">
-                                                      <input id="des4" type="radio" name="dessert" value="">
+                                                      <input id="des4" type="radio" name="condiments" value="4">
                                                       <label for="des4"><img class="img-circle img-responsive" src="{{ asset('images/add4.jpg') }}" alt=""><span class="fa fa-check-circle"></span></label>
                                                   </div>
                                                   <div class="text-left additional">
@@ -285,7 +207,7 @@
                                               </div>
                                               <div class="text-center">
                                                   <div class="radio radio-img">
-                                                      <input id="des5" type="radio" name="dessert" value="">
+                                                      <input id="des5" type="radio" name="condiments" value="5">
                                                       <label for="des5"><img class="img-circle img-responsive" src="{{ asset('images/add4.jpg') }}" alt=""><span class="fa fa-check-circle"></span></label>
                                                   </div>
                                                   <div class="text-left additional">
@@ -302,7 +224,7 @@
                                           <div class="slider-4slides-adds">
                                               <div class="text-center">
                                                   <div class="radio radio-img">
-                                                      <input id="des1" type="radio" name="dessert" value="">
+                                                      <input id="des1" type="radio" name="drink" value="1">
                                                       <label for="des1"><img class="img-circle img-responsive" src="{{ asset('images/add3.jpg') }}" alt=""><span class="fa fa-check-circle"></span></label>
                                                   </div>
                                                   <div class="text-left additional">
@@ -315,50 +237,11 @@
                                               </div>
                                               <div class="text-center">
                                                   <div class="radio radio-img">
-                                                      <input id="des2" type="radio" name="dessert" value="">
+                                                      <input id="des2" type="radio" name="drink" value="2">
                                                       <label for="des2"><img class="img-circle img-responsive" src="{{ asset('images/add2.jpg') }}" alt=""><span class="fa fa-check-circle"></span></label>
                                                   </div>
                                                   <div class="text-left additional">
                                                       <h6>Sambal Terasi</h6>
-                                                      <ul class="list-normal">
-                                                          <li>Rp 500 <span>(packet)</span></li>
-                                                          <li>Rp 1000</li>
-                                                      </ul>
-                                                  </div>
-                                              </div>
-                                              <div class="text-center">
-                                                  <div class="radio radio-img">
-                                                      <input id="des3" type="radio" name="dessert" value="">
-                                                      <label for="des3"><img class="img-circle img-responsive" src="{{ asset('images/add3.jpg') }}" alt=""><span class="fa fa-check-circle"></span></label>
-                                                  </div>
-                                                  <div class="text-left additional">
-                                                      <h6>Sambal Matah</h6>
-                                                      <ul class="list-normal">
-                                                          <li>Rp 500 <span>(packet)</span></li>
-                                                          <li>Rp 1000</li>
-                                                      </ul>
-                                                  </div>
-                                              </div>
-                                              <div class="text-center">
-                                                  <div class="radio radio-img">
-                                                      <input id="des4" type="radio" name="dessert" value="">
-                                                      <label for="des4"><img class="img-circle img-responsive" src="{{ asset('images/add4.jpg') }}" alt=""><span class="fa fa-check-circle"></span></label>
-                                                  </div>
-                                                  <div class="text-left additional">
-                                                      <h6>Sambal Korek</h6>
-                                                      <ul class="list-normal">
-                                                          <li>Rp 500 <span>(packet)</span></li>
-                                                          <li>Rp 1000</li>
-                                                      </ul>
-                                                  </div>
-                                              </div>
-                                              <div class="text-center">
-                                                  <div class="radio radio-img">
-                                                      <input id="des5" type="radio" name="dessert" value="">
-                                                      <label for="des5"><img class="img-circle img-responsive" src="{{ asset('images/add4.jpg') }}" alt=""><span class="fa fa-check-circle"></span></label>
-                                                  </div>
-                                                  <div class="text-left additional">
-                                                      <h6>Sambal Matah</h6>
                                                       <ul class="list-normal">
                                                           <li>Rp 500 <span>(packet)</span></li>
                                                           <li>Rp 1000</li>
@@ -382,10 +265,10 @@
                               <div class="col-sm-5 form-inline">
                                   <div class="form-group form-group-lg">
                                       <label for="qty" class="control-label">Qty</label>
-                                      <select id="qty" class="selectpicker" name="qty" data-width="100px" data-style="btn-lg">
-                                          <option value="lorem">1</option>
-                                          <option value="lorem">2</option>
-                                          <option value="lorem">3</option>
+                                      <select id="qty" class="selectpicker" name="quantity" data-width="100px" data-style="btn-lg">
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
                                       </select>
                                   </div>
                               </div>

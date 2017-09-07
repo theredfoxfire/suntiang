@@ -16,6 +16,11 @@ class CreateCartsTable extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('session_id');
+            $table->integer('item_id')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->integer('price')->nullable();
+            $table->date('on_date')->nullable();
+            $table->string('on_hour')->nullable();
             $table->timestamps();
         });
     }

@@ -27,6 +27,11 @@ class ItemCreateRequest extends FormRequest
             'name' => 'required|unique:items,name',
             'description' => 'required',
             'photo' => 'image',
+            'daily_price' => 'required',
+            'catering_price_50' => 'required',
+            'catering_price_75' => 'required',
+            'condiment_price' => 'required',
+            'catering_price_100' => 'required',
         ];
     }
 

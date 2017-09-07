@@ -47,6 +47,7 @@ Route::get('page/{id}', 'PageController@pageDetail');
 
 //Shop
 Route::get('cart', 'ShopController@showCart')->name('cart');
+Route::post('cart/add', 'ShopController@addCart')->name('cart.add');
 
 //Contact
 Route::get('contact', 'ContactController@showForm')->name('contact');
